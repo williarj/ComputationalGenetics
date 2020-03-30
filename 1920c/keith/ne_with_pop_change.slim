@@ -25,8 +25,10 @@ initialize() {
 }
 
 2000 late() { 
+	samp = p1.sampleIndividuals(10);
+
 	// get the unique mutations in the sim, sorted by position
-	m = sortBy(unique(sim.mutations), "position");
+	m = sortBy(unique(samp.genomes.mutations), "position");
 
 	// print the number of segregating sites
 	cat("Segsites (S): " + size(m) + "\n"); 
@@ -34,7 +36,7 @@ initialize() {
 	// Calculate mean nucleotide heterozygosity across the population
  	total = 0.0;
 
-	for (ind in p1.individuals)
+	for (ind in samp)
 	{
 		// Calculate the nucleotide heterozygosity of this individual
 		muts0 = ind.genomes[0].mutations;
@@ -47,11 +49,11 @@ initialize() {
 		unshared_count = muts0.size() + muts1.size() - 2 * shared_count;
 
 		// pi is the mean heterozygosity across the chromosome
-		pi_ind = unshared_count / (sim.chromosome.lastPosition + 1);
+		pi_ind = unshared_count; // (sim.chromosome.lastPosition + 1);
 		total = total + pi_ind;
 	}
 
-	pi = total / p1.individuals.size();
+	pi = total / samp.size();
 
 	cat("Average Pairwise (Pi): " + pi + "\n");
 }
