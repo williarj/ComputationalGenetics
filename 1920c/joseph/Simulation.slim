@@ -1,0 +1,16 @@
+// Keywords: 
+
+initialize() {
+	initializeMutationRate(1e-7);
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	initializeGenomicElementType("g1", m1, 1.0);
+	initializeGenomicElement(g1, 0, 99999);
+	initializeRecombinationRate(1e-8);
+}
+1 { sim.addSubpop("p1", 1000); }
+1000 { p1.setSubpopulationSize(100); }
+2000 { p1.setSubpopulationSize(1000); }
+3000 late() { //samples 10 individuals from population p1
+	samp = p1.sampleIndividuals(10);
+	//outputs those individauls in MS format
+	samp.genomes.outputMS();}
