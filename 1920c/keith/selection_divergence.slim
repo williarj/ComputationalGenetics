@@ -1,0 +1,42 @@
+// set up a simple neutral simulation
+initialize() {
+	initializeMutationRate(1e-6);
+	
+	// m1 mutation type: neutral
+	initializeMutationType("m1", 0.5, "f", 0.0);//synonymous
+	initializeMutationType("m2", 0.5, "f", -0.5);//non-synonymous (deleterious)
+	//this keeps the simulation from cleaning up fixed differences
+	m1.convertToSubstitution = F;
+	m2.convertToSubstitution = F;
+	//this keeps SLiM from 'stacking' mutations
+	m1.mutationStackPolicy = "l"; 
+	m2.mutationStackPolicy = "l"; 
+	
+	// g1 genomic element type: uses m1 and m2
+	initializeGenomicElementType("g1", c(m1, m2), c(0.01, 0.99));
+	
+	// uniform chromosome of length 100 kb with uniform recombination
+	initializeGenomicElement(g1, 0, 99999);
+	initializeRecombinationRate(1e-8);
+}
+
+// create an ancestral population 
+1 {
+	sim.addSubpop("p1", 500);
+}
+
+1000 {
+	//a new population splits off (same size as the old one)
+	sim.addSubpopSplit("p2", 500, p1);
+
+}
+
+// output samples of 10 genomes periodically, all fixed mutations at end
+5000 late() { 
+	//sample out individual for divergence estimates
+	print("Sample from p1");
+	p1.outputSample(1, filePath="./divergence.txt");
+	
+	print("Population from p2");
+	p2.outputSample(20, filePath="./sample.txt");
+}
