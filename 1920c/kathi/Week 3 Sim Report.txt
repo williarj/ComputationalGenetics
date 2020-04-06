@@ -1,0 +1,11 @@
+Week 3 Simulation Report
+
+Kathi’s Model:
+
+In my model, I began with a population experiencing two mutations: one was neutral, making synonymous mutations, and one was not, making nonsynonymous mutations. In the nonsynonymous mutations, there was a dominance coefficient of 0.5 (as in the synonymous), but a fixed fitness effect coefficient of 0.03. Genomic elements of the population were initialized to have a roughly 1:2 proportion of synonymous to nonsynonymous mutations. An ancestral subpopulation of 500 individuals was initialized and a split was introduced at generation 1000, also having 500 individuals. At generation 1500, the ancestral population experienced a downsize in population, from 500 to 250. Both populations carried on till generation 5000, when genomic data was output in the  form of one individual from the  ancestral population and a sample of 20 individuals from the newer population. 
+
+With the nature of the positive selection coefficient, I would expect this population to experience positive selection. From my program, I calculated a dN/dS of about 5.3 and a pN/pS of about 4.1.  The constraint variable c was estimated to be about -4.3. Since pN/pS is less than dN/dS, this also indicates the population is under positive selection. I know the split time does not violate the assumptions required for dN/dS tests because, the split was at generation 1500, and the population continued to generation 5000. That left 3500 generations between the point of the split and the point where dN/dS was calculated. The expected value of fixation time here is 2000 generations, and the assumption is that we are exceeding that. If this assumption was not met, then it is possible the mutations have not had enough time to become fixed in the population, so the dN/dS test would be very unreliable.
+
+Unknown Model:
+
+According to my calculations, the data given to me on Sunday has a dN/dS ratio of about 0.57 and a pN/pS ratio of about 0.62. The constraint variable c was estimated as about 0.42.  Which in general, indicates negative selection; however, the values are so close that I wonder a certain threshold would allow for these values to indicate effectively neutral selection.
