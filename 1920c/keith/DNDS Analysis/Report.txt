@@ -1,0 +1,19 @@
+Divergence:
+DN:  2
+DS:  6
+DN/DS:  0.333333333333
+c:  0.666666666667
+Negative Selection
+66.6666666667% of mutations are bad
+Sample (mK):
+DN:  14
+DS:  5
+DN/DS:  2.8
+c:  -1.8
+-180.0% of mutations are bad
+PN:  1.4
+PS:  0.894736842105
+PN/PS 1.56470588235
+Positive Selection
+
+Based on analysis of my data, I got conflicting results between the Divergence data and the Sample data, both in the end conclusion (positive vs negative selection) and the actual DN/DS value. I'm more inclined to believe the Sample data, as it contains a larger amount of individuals and therefore should be more accurate. In addition, I saw a large amount of variation of the Divergence data between runs, including the first which had no m2 sites. The DN/DS and Mk Test for the Sample data both indicated positive selection, which isn't necessary true. The m2 mutation was bad, really bad, in fact. However, there were significantly more (0.99 vs 0.01) m2 mutations than m1 mutations, so this negated the negative selection. The split times assumption wasn't violated, however, since the data was taken at generation 5000, which as 4000 generations after the population split. This is plenty of time to allow the mutations to take effect. If this assumption was violated, the DN/DS test would reveal inaccurate results. 
