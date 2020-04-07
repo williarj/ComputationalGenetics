@@ -1,0 +1,38 @@
+// Keywords: 
+
+initialize() {
+	initializeMutationRate(1e-7);
+	initializeMutationType("m1", 0.5, "f", 0.0);         // non-coding
+	initializeMutationType("m2", 0.5, "f", 0.0);         // synonymous
+	initializeMutationType("m3", 0.1, "g", -0.03, 0.2);  // deleterious
+	initializeMutationType("m4", 0.8, "e", 0.1);         // beneficial
+	initializeGenomicElementType("g1", c(m2,m3,m4), c(2,8,0.01));  // exon
+	initializeGenomicElementType("g2", c(m1,m3), c(9,1));       // intron
+	initializeGenomicElementType("g3", c(m1), 1);          // non-coding
+	initializeGenomicElementType("g4", c(m2,m3,m4), c(2,8,0.1));  // exontype2 (more positive selection)
+	
+	
+	initializeGenomicElement(g3, 0, 1000);
+	initializeGenomicElement(g1, 1001, 2000);
+	initializeGenomicElement(g2, 2001, 3000);
+	initializeGenomicElement(g1, 3001, 4000);
+	initializeGenomicElement(g3, 4001, 5000);
+	initializeGenomicElement(g1, 5001, 6000);
+	initializeGenomicElement(g2, 6001, 7000);
+	initializeGenomicElement(g4, 7001, 8000);
+	initializeGenomicElement(g3, 8001, 9000);
+	
+	
+	initializeRecombinationRate(1e-8);
+}
+
+2000 {sim.addSubpopSplit("p2", 500, p1);}
+
+//see manual section 9.2 for explanation of this
+//m4 mutations are 10% better in population p2
+fitness(m4, p2){
+	return relFitness*1.1;
+}
+
+1 { sim.addSubpop("p1", 5000); }
+10000 { sim.simulationFinished(); }
