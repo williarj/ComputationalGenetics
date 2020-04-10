@@ -1,3 +1,4 @@
+#m1-noncoding;m2-synonymous;m3-nonsynonymous;m4-nonsynonymous
 #OUT: 10000 SS p2 25 /Users/williarj/Desktop/pop2.txt
 Mutations:
 115 21827 m4 89691 0.0123235 0.8 p1 1982 15
