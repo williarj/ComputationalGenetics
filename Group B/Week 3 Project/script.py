@@ -61,6 +61,12 @@ def main():
 			selection2.append("+")
 		else:
 			selection2.append("-")
+	print("Gene Locations for Population 1:")
+	for r in gRanges1:
+		print(r.start, r.end)
+	print("Gene Locations for Population 2:")
+	for r in gRanges2:
+		print(r.start, r.end)
 	print(selection1)
 	print(selection2)
 
