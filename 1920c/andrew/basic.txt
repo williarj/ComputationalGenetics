@@ -1,0 +1,30 @@
+initialize() {
+initializeMutationRate(1e-7);
+
+initializeMutationType("m1", 0.5, "f", 0.0);//noncoding
+initializeMutationType("m2", 0.5, "f", 0.0);//synonymous
+initializeMutationType("m3", 0.5, "f", -0.005);//nonsynonymous
+initializeMutationType("m4", 0.5, "f", 0.001);//nonsynonymous
+
+initializeGenomicelementType("g1", m1, 1.0);//intergenic
+initializeGenomicelementType("g2", c(m2,m3,m4), c(2,3,1));//exon
+initializeGenomicelementType("g3", m1, 1);//intron
+
+initializeGenomicElement(g1,0,99999);
+initializeGenomicElement(g1,100000,199999);
+initializeGenomicElement(g1,200000,299999);
+initializeGenomicElement(g1,300000,399999);
+initializeGenomicElement(g1,400000,499999);
+initializeGenomicElement(g1,500000,599999);
+initializeGenomicElement(g1,600000,649999);
+initializeGenomicElement(g1,650000,699999);
+initializeGenomicElement(g1,700000,899999);
+initializeGenomicElement(g1,900000,999999);
+initializeRecombinationRate(1e-8);
+}
+
+1 {
+	sim.addSubpop("p1", 500);
+}
+
+2000 late() { p1.outputSample(20); }
