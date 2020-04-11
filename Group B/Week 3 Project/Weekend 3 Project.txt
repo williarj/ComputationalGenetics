@@ -1,0 +1,136 @@
+﻿Weekend 3 Simulation Report
+Kathi Munoz-Hofmann, Andrew Meng, and Joseph Zou
+
+
+Location of Genes
+
+
+Our analysis determined there were 25 genes in population one and approximated the locations of these genes to be within the ranges from the list “Gene Locations for Population 1” in the Results section. In population two, 36 genes were determined to be within the ranges from the list “Gene Locations for Population 2” in the Results section.
+
+
+Selection on Genes by Population
+In each population, the vast majority of genes appear to be under neutral selection; our script described these neutrally selected genes as having numerically identical polymorphism and divergence, using pN/pS and dN/dS respectively. In the first population, several genes exhibit negative selection, but none exhibit positive selection; in the second population, several genes exhibit positive selection, but none exhibit negative selection. Those genes under negative selection (from the first population) were found to be located in the following ranges (described by the “Population 1” list below): Genes 1, 5, 7, 19, and 24, while genes under positive selection (in the second population) were found to be, again described by the “Population 2” list below, Genes 15, 16, and 34.
+
+
+Although both populations have experienced primarily neutral selection, the first has experienced some negative selection and no positive selection, whereas the second has experienced no negative selection and some positive selection. 
+
+
+Comparing Populations: Selection and History
+
+
+Clearly, populations one and two have experienced different kinds of selection, with population one having some genes under negative selection and population two having some under positive selection. From this, we can attempt to draw some conclusions about these populations’ history.
+
+
+ Having genes exclusively under neutral and negative selection indicates that population one perhaps experienced a reduction in population size early on in its history. The negative selection indicates selection against change, so perhaps they have lived in a certain environment for a considerable amount of time, and as such has already been well established and well mixed genetically.
+
+
+In population two, however, the presence of genes under positive selection along with neutral indicates that perhaps the population is growing, or maybe has relatively recently moved to a new area. In this case, selection for different kinds of traits from ancestral populations would be encouraged, leading to positive selection. 
+
+
+Results:
+
+
+
+
+Gene Locations for Population 1:
+1. (3855, 6523)
+2. (12083, 13605)
+3. (20165, 20165)
+4. (25394, 25394)
+5. (26800, 26843)
+6. (28915, 34309)
+7. (51764, 52436)
+8. (53124, 53124)
+9. (54546, 54622)
+10. (55248, 56027)
+11. (58064, 58064)
+12. (60012, 60012)
+13. (65506, 65506)
+14. (66777, 66777)
+15. (69029, 69651)
+16. (71864, 71864)
+17. (73021, 73021)
+18. (74566, 74629)
+19. (79866, 84899)
+20. (85574, 85647)
+21. (89121, 89121)
+22. (96351, 97110)
+23. (98630, 98733)
+24. (99588, 99616)
+25. (101133, 102459)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gene Locations for Population 2:
+1. (4242, 4242)
+2. (4909, 4909)
+3. (12064, 13051)
+4. (13759, 13860)
+5. (19418, 19418)
+6. (21653, 21653)
+7. (26030, 26030)
+8. (28934, 28934)
+9. (31172, 31172)
+10. (35524, 35524)
+11. (39842, 41517)
+12. (51717, 51785)
+13. (52409, 52615)
+14. (53136, 53308)
+15. (53964, 54641)
+16. (55294, 57403)
+17. (58045, 58663)
+18. (59231, 59266)
+19. (59988, 60135)
+20. (68981, 68981)
+21. (71875, 71875)
+22. (72349, 72349)
+23. (73094, 73094)
+24. (73663, 73776)
+25. (74576, 74584)
+26. (75215, 76160)
+27. (79711, 82130)
+28. (82813, 82813)
+29. (83541, 84208)
+30. (84851, 84953)
+31. (85530, 85636)
+32. (91469, 91469)
+33. (97113, 97129)
+34. (98707, 101880)
+35. (102519, 103530)
+36. (104017, 104094)
+
+
+
+
+
+
+Selection types: 
+0: Neutral, +: positive , -: Negative
+Neutral selection was determined to be a polymorphism (PN/PS) to divergence (dN/dS) ratio within the range of 0.9 to 1.1.
+
+
+Selection Types of Genes in Population One:
+['-', '0', '0', '0', '-', '0', '-', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-', '0', '0', '0', '0', '-', '0']
+
+
+Selection Types of Genes in Population Two:
+['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '+', '+', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '+', '0', '0']
