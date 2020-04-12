@@ -1,0 +1,22 @@
+We estimated that genes were in the following locations:
+Gene 1: from 2526 to 2800
+Gene 2: from 3837 to 4966
+Gene 3: from 9289 to 12462
+Gene 4: from 19625 to 36291
+Gene 5: from 40732 to 46330
+Gene 6: from 56673 to 69194
+Gene 7: from 73173 to 96442
+Gene 8: from 100044 to 106478
+
+Based on a dN/dS test on Gene 1, gene 1 was under positive selection for one population at that gene and negative selection for the other at that gene.
+Based on a dN/dS test on Gene 2, gene 2 was under negative selection for one population at that gene and for the other population we got conflicting results between our dN/dS test and our pN/pS test.
+Based on a dN/dS test on Gene 3, gene 1 was under positive selection for one population at that gene and negative selection for the other at that gene.
+For Gene 4, we got conflicting results between our dN/dS test and our pN/pS test for both populations.
+Based on a dN/dS test on Gene 5, gene 2 was under negative selection for one population at that gene and for the other population we got conflicting results between our dN/dS test and our pN/pS test.
+Based on a dN/dS test on Gene 6, both populations were under negative selection at that gene.
+For Gene 7, we got conflicting results between our dN/dS test and our pN/pS test for both populations.
+Based on a dN/dS test on Gene 8, gene 2 was under negative selection for one population at that gene and for the other population we got conflicting results between our dN/dS test and our pN/pS test.
+
+Based on a dN/dS test, swapping the two populations for which one was the sample and which one was the divergence, we found that both populations were under negative selection.
+
+Based on our dN/dS tests and looking at the overall number of mutations between populations, we can conclude that the two populations had different population histories based on the difference in dN/dS tests at different genes and the greater number of mutations in population 2.
