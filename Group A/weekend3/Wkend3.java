@@ -59,11 +59,11 @@ public class Wkend3 {
 			
 		}
 		
-		
+		range();
 
 	}
 	
-	public void range() {
+	public static void range() {
 		
 		ArrayList<Integer[]> geneRanges = new ArrayList<Integer[]>();
 		
@@ -77,12 +77,31 @@ public class Wkend3 {
 			}
 			
 			if(starting) {
-				range[0] = mutations.get(i).pos - this.buffer;
+				range[0] = mutations.get(i).pos - buffer/2;
+				starting = false;
 			}
 			
 			if(mutations.get(i+1).type.equals("m1")) {
-				range[1] =  mutations.get(i).pos + this.buffer;
+				range[1] =  mutations.get(i).pos + buffer/2;
+				geneRanges.add(range);
+				
+				range = new Integer[2];
+				
+				starting = true;
 			}
+		}
+		
+		
+		System.out.println();
+		System.out.println("Predicted gene ranges:");
+		
+		
+		for(Integer[] r : geneRanges) {
+			
+			
+			System.out.println("Starting from "+r[0] +" to "+r[1]);
+			
+			
 		}
 		
 	}
