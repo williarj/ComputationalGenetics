@@ -21,7 +21,7 @@ public class Wkend3 {
 	
 	static ArrayList<Mutation> mutations = new ArrayList<Mutation>();
 	
-	
+	static int buffer = 0;
 	public static void main(String[] args) {
 		
 		
@@ -48,11 +48,45 @@ public class Wkend3 {
 		
 		mutations.sort(null);
 		
+		
+		buffer = mutations.get(mutations.size()-1).pos / (mutations.size());
+		System.out.println(buffer);
+		
+		
 		for(Mutation m : mutations) {
 			System.out.println(m);
+			
+			
 		}
+		
+		
 
 	}
+	
+	public void range() {
+		
+		ArrayList<Integer[]> geneRanges = new ArrayList<Integer[]>();
+		
+		Integer[] range = new Integer[2];
+		Boolean starting = true;
+		
+		for(int i = 0; i < mutations.size(); i++) {
+			
+			if(mutations.get(i).type.equals("m1")) {
+				continue;
+			}
+			
+			if(starting) {
+				range[0] = mutations.get(i).pos - this.buffer;
+			}
+			
+			if(mutations.get(i+1).type.equals("m1")) {
+				range[1] =  mutations.get(i).pos + this.buffer;
+			}
+		}
+		
+	}
+	
 	
 	static class Mutation implements Comparable<Mutation> {
 
@@ -60,7 +94,7 @@ public class Wkend3 {
 
 		int pos;
 
-		boolean type; // m1=true
+		String type;
 
 		public Mutation(String input){
 
@@ -70,31 +104,44 @@ public class Wkend3 {
 
 			sc.next();
 
-			String mutType = sc.next();
-
-			if (mutType.equals("m1")) {
-				type = true;
-			} else {
-				type = false;
-			}
+			type = sc.next();
 
 			pos = sc.nextInt();
 
 			sc.close();
 
-			// System.out.println(this.toString());
-
 		}
+		
 		
 		
 		public int compareTo(Mutation m) {
 			return this.pos - m.pos;
 		}
+		
+		@Override
+		public boolean equals(Object m) {
+			
+			if(m.getClass().equals(this.getClass())) {
+				Mutation mu = (Mutation) m;
+				if(this.pos == mu.pos && this.type.equals(mu.type)) {
+					return true;
+				}
+			}
+			
+			return false;
+			
+		}
 
 		@Override
 		public String toString() {
 
-			return String.format("id: %2d, pos: %2d type (m1 = true) = %b", id, pos, type);
+			Boolean gene = true;
+			
+			if(type.equals("m1")) {
+				gene = false;
+			}
+			
+			return String.format("Gene: %b, pos (buffered): %2d -> %2d, type = %s, id: %2d", gene, pos-buffer/2,pos+buffer/2, type, id); //id: %2d,  //id
 
 		}
 		
