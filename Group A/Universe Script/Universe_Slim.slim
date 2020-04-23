@@ -76,7 +76,7 @@ initialize() {
 	for(i in 0:16){
 
 	if(i%2==0)
-		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
+		initializeGenomicElement(g4, s+i*l, s+(i+1)*l-1);
 	else
 		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
 	
@@ -130,7 +130,7 @@ initialize() {
 	initializeRecombinationRate(rates,ends);
 }
 
-2000 {sim.addSubpopSplit("p2", 500, p1);}
+800 {sim.addSubpopSplit("p2", 10, p1);}
 
 //see manual section 9.2 for explanation of this
 //m4 mutations are 10% better in population p2
@@ -138,5 +138,5 @@ fitness(m4, p2){
 	return relFitness*1.1;
 }
 
-1 { sim.addSubpop("p1", 5000); }
-10000 { sim.simulationFinished(); }
+1 { sim.addSubpop("p1", 50); }
+100000 { sim.simulationFinished(); }
