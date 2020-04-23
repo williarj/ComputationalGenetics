@@ -11,25 +11,32 @@ initialize() {
 	initializeGenomicElementType("g4", c(m2,m3,m4), c(2,8,0.1));  // exontype2 (more positive selection)
 	
 	//non-coding
-	initializeGenomicElement(g3, 0, 999);
+	ncl = 15000;
+	initializeGenomicElement(g3, 0, ncl-1);
 	
+	s=0;
 	
 	//ACTG1
 	l = 220;
+	s = s + ncl;
 	for(i in 0:12){
 
 	if(i%2==0)
-		initializeGenomicElement(g1, 1000+i*l, 1000+(i+1)*l-1);
+		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
 	else
-		initializeGenomicElement(g2, 1000+i*l, 1000+(i+1)*l-1);
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
 	
 	}
+	
+	
 	//non-coding
-	initializeGenomicElement(g3, 3860, 3999);
+	ncl = 20000;
+	initializeGenomicElement(g3, s+l*13, s+l*13+ncl-1);
 	
 	//DLG3
+	s = s+l*13+ncl;
 	l = 1200;
-	s = 4000;
+	
 	for(i in 0:50){
 
 	if(i%2==0)
@@ -40,12 +47,14 @@ initialize() {
 	}
 	
 	//non-coding
-	initializeGenomicElement(g3, 65200, 65999);
+	ncl = 26000;
+	initializeGenomicElement(g3, s+l*51, s+l*51+ncl-1);
 	
 	
 	//LHX2
+	s = s+l*51+ncl;
 	l = 1150;
-	s = 66000;
+	
 	for(i in 0:10){
 
 	if(i%2==0)
@@ -56,12 +65,14 @@ initialize() {
 	}
 	
 	//non-coding
-	initializeGenomicElement(g3, 78650, 79999);
+	ncl = 42000;
+	initializeGenomicElement(g3, s+l*11, s+l*11+ncl-1);
 
 
 	//GRM5
+	s = s+l*11+ncl;
 	l = 33000;
-	s = 80000;
+	
 	for(i in 0:16){
 
 	if(i%2==0)
@@ -72,25 +83,28 @@ initialize() {
 	}
 	
 	//non-coding
-	initializeGenomicElement(g3, 641000, 644999);
+	ncl = 30000;
+	initializeGenomicElement(g3, s+l*17, s+l*17+ncl-1);
 	
 	
 	//MC4R
-	l = 645000;
-	s = 1700;
+	s = s+l*17+ncl;
+	l = 1714;
 	
-	initializeGenomicElement(g1, l, s+l-1);
+	initializeGenomicElement(g1, s, s+l-1);
 	
 	
 	
 	
 	//non-coding
-	initializeGenomicElement(g3, 646700, 649999);
+	ncl = 10000;
+	initializeGenomicElement(g3, s+l, s+l+ncl-1);
 	
 	
 	//Opsin
+	s = s+l+ncl;
 	l = 1300;
-	s = 650000;
+	
 	for(i in 0:10){
 
 	if(i%2==0)
@@ -99,16 +113,16 @@ initialize() {
 		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
 	}
 	
-	
+	end = 850000;
 	
 	//non-coding
-	initializeGenomicElement(g3, 664300, 999999); //679999
+	initializeGenomicElement(g3, s+l*11, end); //679999
 
 	
 	
 	
 	
-	ends = c(10000,50000,80000,999999);
+	ends = c(10000,50000,80000,end);
 	
 	rates = c(1e-7,1e-8,1e-6,1e-8);
 	
