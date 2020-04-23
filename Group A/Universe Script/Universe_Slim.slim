@@ -1,0 +1,128 @@
+initialize() {
+	initializeMutationRate(1e-7);
+	initializeMutationType("m1", 0.5, "f", 0.0);         // non-coding
+	initializeMutationType("m2", 0.5, "f", 0.0);         // synonymous
+	initializeMutationType("m3", 0.1, "g", -0.03, 0.2);  // deleterious
+	initializeMutationType("m4", 0.8, "e", 0.1);         // beneficial
+	
+	initializeGenomicElementType("g1", c(m2,m3,m4), c(2,8,0.01));  // exon
+	initializeGenomicElementType("g2", c(m1,m3), c(9,1));       // intron
+	initializeGenomicElementType("g3", c(m1), 1);          // non-coding
+	initializeGenomicElementType("g4", c(m2,m3,m4), c(2,8,0.1));  // exontype2 (more positive selection)
+	
+	//non-coding
+	initializeGenomicElement(g3, 0, 999);
+	
+	
+	//ACTG1
+	l = 220;
+	for(i in 0:12){
+
+	if(i%2==0)
+		initializeGenomicElement(g1, 1000+i*l, 1000+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, 1000+i*l, 1000+(i+1)*l-1);
+	
+	}
+	//non-coding
+	initializeGenomicElement(g3, 3860, 3999);
+	
+	//DLG3
+	l = 1200;
+	s = 4000;
+	for(i in 0:50){
+
+	if(i%2==0)
+		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	//non-coding
+	initializeGenomicElement(g3, 65200, 65999);
+	
+	
+	//LHX2
+	l = 1150;
+	s = 66000;
+	for(i in 0:10){
+
+	if(i%2==0)
+		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	//non-coding
+	initializeGenomicElement(g3, 78650, 79999);
+
+
+	//GRM5
+	l = 33000;
+	s = 80000;
+	for(i in 0:16){
+
+	if(i%2==0)
+		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	//non-coding
+	initializeGenomicElement(g3, 641000, 644999);
+	
+	
+	//MC4R
+	l = 645000;
+	s = 1700;
+	
+	initializeGenomicElement(g1, l, s+l-1);
+	
+	
+	
+	
+	//non-coding
+	initializeGenomicElement(g3, 646700, 649999);
+	
+	
+	//Opsin
+	l = 1300;
+	s = 650000;
+	for(i in 0:10){
+
+	if(i%2==0)
+		initializeGenomicElement(g1, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	}
+	
+	
+	
+	//non-coding
+	initializeGenomicElement(g3, 664300, 999999); //679999
+
+	
+	
+	
+	
+	ends = c(10000,50000,80000,999999);
+	
+	rates = c(1e-7,1e-8,1e-6,1e-8);
+	
+	
+	initializeRecombinationRate(rates,ends);
+}
+
+2000 {sim.addSubpopSplit("p2", 500, p1);}
+
+//see manual section 9.2 for explanation of this
+//m4 mutations are 10% better in population p2
+fitness(m4, p2){
+	return relFitness*1.1;
+}
+
+1 { sim.addSubpop("p1", 5000); }
+10000 { sim.simulationFinished(); }
