@@ -1,0 +1,50 @@
+// set up a simple neutral simulation
+initialize() {
+	initializeMutationRate(1e-7);
+	
+	// m1 mutation type: neutral
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	
+	// g1 genomic element type: uses m1 for all mutations
+	initializeGenomicElementType("g1", m1, 1.0);
+	
+	// uniform chromosome of length 100 kb with uniform recombination
+	initializeGenomicElement(g1, 0, 99999);
+	initializeRecombinationRate(1e-8);
+}
+
+// create a population of 500 individuals
+1 {
+	sim.addSubpop("p1", 500);
+}
+
+2000 {
+	sim.addSubpopSplit(2, 1000, p1);
+}
+
+2500 {
+	sim.addSubpopSplit(3, 500, p2);
+}
+
+9800 {
+	p1.setMigrationRates(p2, 0.005);
+	p2.setMigrationRates(p1, 0.005);
+	
+	
+	p3.setMigrationRates(p2, 0.001);
+	p2.setMigrationRates(p3, 0.001);
+}
+
+// output samples of 10 genomes periodically, all fixed mutations at end
+10000 late() { 
+	p1_sample = sample(p1.individuals, 10, replace = F);
+	p2_sample = sample(p2.individuals, 10, replace = F);
+	p3_sample = sample(p3.individuals, 10, replace = F);
+	
+	full_samples = c(p1_sample, p2_sample, p3_sample);
+	
+	full_samples.genomes.outputMS(filePath="~/Desktop/samp.txt");
+	
+	
+	
+}
