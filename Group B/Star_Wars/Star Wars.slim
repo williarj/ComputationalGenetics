@@ -25,11 +25,19 @@ initialize() {
 	
 	
 	// uniform chromosome of length 100 kb with uniform recombination
-	initializeGenomicElement(g2, 0, 44999);
-	initializeGenomicElement(g1, 45000, 49999); //ANGPT2
-	initializeGenomicElement(g3, 50000, 50999); //ANGPT2
-	initializeGenomicElement(g1, 51000, 52999); //ANGPT2
-	initializeGenomicElement(g2, 53000, 99999);
+	initializeGenomicElement(g2, 0, 7000);
+	initializeGenomicElement(g1, 7001, 11623); //ANGPT2
+	initializeGenomicElement(g2, 11624, 14632);
+	initializeGenomicElement(g1, 14633, 17004); //HR
+	initializeGenomicElement(g2, 17005, 35531);
+	initializeGenomicElement(g1, 35532, 36943); //FBN1
+	initializeGenomicElement(g2, 36944, 49182);
+	initializeGenomicElement(g1, 49183, 53668); //PAX3
+	initializeGenomicElement(g2, 53669, 72756);
+	initializeGenomicElement(g1, 72757, 77388); //OCA2
+	initializeGenomicElement(g2, 77389, 84307);
+	initializeGenomicElement(g1, 84308, 87332); //UBR4
+	initializeGenomicElement(g2, 87333, 99999);
 	initializeRecombinationRate(1e-8);
 }
 
@@ -61,6 +69,10 @@ initialize() {
 	sim.addSubpopSplit("p6", 1500, p10);
 	sim.addSubpopSplit("p11", 1500, p10);
 	sim.addSubpopSplit("p7", 1500, p9);
+}
+15500{
+	sim.addSubpopSplit("p60", 500, p6);
+	p60.setMigrationRates(p6, 0.01);
 }
 15800 { p3.setSubpopulationSize(400); }
 20000 {
