@@ -1,0 +1,40 @@
+initialize() {
+	initializeMutationRate(1e-7);
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	
+	initializeGenomicElementType("g1", m1, 1.0);
+	initializeGenomicElement(g1, 0, 99999);
+	initializeRecombinationRate(1e-8);
+}
+
+1 {
+	sim.addSubpop("p1", 500);
+	sim.addSubpop("p4", 500);
+}
+
+2000 {
+	sim.addSubpopSplit("p3", 500, p2);
+}
+
+9800 {
+	p1.setMigrationRates(p2, 0.005);
+	p2.setMigrationRates(p1, 0.005);
+
+	p3.setMigrationRates(p2, 0.001);
+	p2.setMigrationRates(p3, 0.001);
+
+	p4.setMigrationRates(p5, 0.005);
+	p5.setMigrationRates(p4, 0.001);
+}
+
+10000 late() {
+	s1 = sample(p1.individuals, 10, replace = F);
+	s2 = sample(p2.individuals, 10, replace = F);
+	s3 = sample(p3.individuals, 10, replace = F);
+	s4 = sample(p4.individuals, 10, replace = F);
+	s5 = sample(p5.individuals, 10, replace = F);
+	
+	full_samples = c(s1, s2, s3, s4, s5);
+
+	full_samples.genomes.outputMS(filePath=~Desktop/samp.txt");
+}
