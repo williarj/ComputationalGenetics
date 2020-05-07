@@ -4,6 +4,7 @@
 //p4 - Mon Calamari
 //p5 - Abednedo
 //p6 - Humans
+//p60 - Humans-sub1
 //p7 - Ewoks
 //p8 - Wookies
 //p9 - Intermediate Wookies
@@ -16,28 +17,38 @@ initialize() {
 	// m1 mutation type: neutral
 	initializeMutationType("m1", 0.5, "f", 0.0); //non-coding
 	initializeMutationType("m2", 0.5, "f", 0.0); //synonymous
-	initializeMutationType("m3", 0.5, "f", 0.01); //non-synonymous
+	initializeMutationType("m3", 0.5, "f", 0.01); //ANGPT2
+	initializeMutationType("m4", 0.5, "f", -0.01); //HR
+	initializeMutationType("m5", 0.5, "f", 0); //FBN1
+	initializeMutationType("m6", 0.5, "f", 0.01); //PAX3
+	initializeMutationType("m7", 0.5, "f", 0); //OCA2
+	initializeMutationType("m8", 0.5, "f", 0); //UBR4
 	
 	// g1 genomic element type: uses m1 for all mutations
-	initializeGenomicElementType("g1", c(m2, m3), c(0.3, 0.6)); //exon
-	initializeGenomicElementType("g2", m1, 1.0); //intergenic
-	initializeGenomicElementType("g3", m1, 1.0); //intron
+	initializeGenomicElementType("g1", c(m2, m3), c(0.3, 0.6)); //ANGPT2
+	initializeGenomicElementType("g2", c(m2, m4), c(0.3, 0.6)); //HR
+	initializeGenomicElementType("g3", c(m2, m5), c(0.3, 0.6)); //FBN1
+	initializeGenomicElementType("g4", c(m2, m6), c(0.3, 0.6)); //PAX3
+	initializeGenomicElementType("g5", c(m2, m7), c(0.3, 0.6)); //OCA2
+	initializeGenomicElementType("g6", c(m2, m8), c(0.3, 0.6)); //UBR4
+	initializeGenomicElementType("g7", m1, 1.0); //intergenic
+	initializeGenomicElementType("g8", m1, 1.0); //intron
 	
 	
 	// uniform chromosome of length 100 kb with uniform recombination
-	initializeGenomicElement(g2, 0, 7000);
+	initializeGenomicElement(g7, 0, 7000);
 	initializeGenomicElement(g1, 7001, 11623); //ANGPT2
-	initializeGenomicElement(g2, 11624, 14632);
-	initializeGenomicElement(g1, 14633, 17004); //HR
-	initializeGenomicElement(g2, 17005, 35531);
-	initializeGenomicElement(g1, 35532, 36943); //FBN1
-	initializeGenomicElement(g2, 36944, 49182);
-	initializeGenomicElement(g1, 49183, 53668); //PAX3
-	initializeGenomicElement(g2, 53669, 72756);
-	initializeGenomicElement(g1, 72757, 77388); //OCA2
-	initializeGenomicElement(g2, 77389, 84307);
-	initializeGenomicElement(g1, 84308, 87332); //UBR4
-	initializeGenomicElement(g2, 87333, 99999);
+	initializeGenomicElement(g7, 11624, 14632);
+	initializeGenomicElement(g2, 14633, 17004); //HR
+	initializeGenomicElement(g7, 17005, 35531);
+	initializeGenomicElement(g3, 35532, 36943); //FBN1
+	initializeGenomicElement(g7, 36944, 49182);
+	initializeGenomicElement(g4, 49183, 53668); //PAX3
+	initializeGenomicElement(g7, 53669, 72756);
+	initializeGenomicElement(g5, 72757, 77388); //OCA2
+	initializeGenomicElement(g7, 77389, 84307);
+	initializeGenomicElement(g6, 84308, 87332); //UBR4
+	initializeGenomicElement(g7, 87333, 99999);
 	initializeRecombinationRate(1e-8);
 }
 
@@ -50,19 +61,26 @@ initialize() {
 	sim.addSubpopSplit("p2", 840, p1);
 }
 
+3300: fitness(m3, p2) { return 0.99 * relFitness; }
+
 5000 {
 	sim.addSubpopSplit("p5", 1250, p1);
 }
 
 6600 { sim.addSubpopSplit("p3", 800, p2); }
+6600: fitness(m3, p3) { return 0.99 * relFitness; }
+6600: fitness(m6, p3) { return 0.99 * relFitness; }
 
 8300 {
 	sim.addSubpopSplit("p9", 1000, p5);
 	sim.addSubpopSplit("p10", 1000, p5);
 }
+8300: fitness(m4, p9){return 1/relFitness;}
 
 // output samples of 10 genomes periodically, all fixed mutations at end
 10000 { sim.addSubpopSplit("p4", 1000, p2); }
+10000: fitness(m3, p4) { return 0.99 * relFitness; }
+10000: fitness(m6, p4) { return 0.99 * relFitness; }
 15000 { 
 	p3.setSubpopulationSize(200); 
 	sim.addSubpopSplit("p8", 1500, p9);
@@ -70,6 +88,12 @@ initialize() {
 	sim.addSubpopSplit("p11", 1500, p10);
 	sim.addSubpopSplit("p7", 1500, p9);
 }
+15000: fitness(m4, p7){return 1.01 * relFitness;}
+15000: fitness(m4, p8){return 1.01 * relFitness;}
+15000: fitness(m5, p7){return 0.99 * relFitness;}
+15000: fitness(m5, p8){return 1.01 * relFitness;}
+15000: fitness(m7, p11){return 1.01 * relFitness;}
+15000: fitness(m8, p11){return 1.01 * relFitness;}
 15500{
 	sim.addSubpopSplit("p60", 500, p6);
 	p60.setMigrationRates(p6, 0.01);
