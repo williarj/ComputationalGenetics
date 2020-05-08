@@ -117,6 +117,8 @@ initialize() {
 	p9_sample = sample(p9.individuals, 10, replace = F);
 	p10_sample = sample(p10.individuals, 10, replace = F);
 	p11_sample = sample(p11.individuals, 10, replace = F);
+	p60_sample = sample(p60.individuals, 10, replace = F);
+	humans_samples = c(p6_sample, p60_sample);
 	
 	p1_sample.genomes.outputMS(filePath="~/Desktop/CA-p1.txt");
 	p2_sample.genomes.outputMS(filePath="~/Desktop/Crol-p2.txt");
@@ -131,8 +133,7 @@ initialize() {
 	p11_sample.genomes.outputMS(filePath="~/Desktop/Twi-p11.txt");
 
 	p60_sample.genomes.outputMS(filePath="~/Desktop/SubHum-p60.txt");
-	
-	full_samples.genomes.outputMS(filePath="~/Desktop/samp.txt");
+	humans_samples.genomes.outputMS(filePath="~/Desktop/Humans-total.txt");
 }
 
 
