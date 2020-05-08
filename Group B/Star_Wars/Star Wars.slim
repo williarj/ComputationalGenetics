@@ -105,6 +105,34 @@ initialize() {
 	p11.setSubpopulationSize(4000);
 } 
 24800 { p11.setSubpopulationSize(3000); }
-25000 late() {p3.outputSample(20);}
+25000 late() {
+	p1_sample = sample(p1.individuals, 10, replace = F);
+	p2_sample = sample(p2.individuals, 10, replace = F);
+	p3_sample = sample(p3.individuals, 10, replace = F);
+	p4_sample = sample(p4.individuals, 10, replace = F);
+	p5_sample = sample(p5.individuals, 10, replace = F);
+	p6_sample = sample(p6.individuals, 10, replace = F);
+	p7_sample = sample(p7.individuals, 10, replace = F);
+	p8_sample = sample(p8.individuals, 10, replace = F);
+	p9_sample = sample(p9.individuals, 10, replace = F);
+	p10_sample = sample(p10.individuals, 10, replace = F);
+	p11_sample = sample(p11.individuals, 10, replace = F);
+	
+	p1_sample.genomes.outputMS(filePath="~/Desktop/CA-p1.txt");
+	p2_sample.genomes.outputMS(filePath="~/Desktop/Crol-p2.txt");
+	p3_sample.genomes.outputMS(filePath="~/Desktop/Gung-p3.txt");
+	p4_sample.genomes.outputMS(filePath="~/Desktop/MonC-p4.txt");
+	p5_sample.genomes.outputMS(filePath="~/Desktop/Abed-p5.txt");
+	p6_sample.genomes.outputMS(filePath="~/Desktop/Human-p6.txt");
+	p7_sample.genomes.outputMS(filePath="~/Desktop/Ewok-p7.txt");
+	p8_sample.genomes.outputMS(filePath="~/Desktop/Wook-p8.txt");
+	p9_sample.genomes.outputMS(filePath="~/Desktop/IntWook-p9.txt");
+	p10_sample.genomes.outputMS(filePath="~/Desktop/IntHum-p10.txt");
+	p11_sample.genomes.outputMS(filePath="~/Desktop/Twi-p11.txt");
+
+	p60_sample.genomes.outputMS(filePath="~/Desktop/SubHum-p60.txt");
+	
+	full_samples.genomes.outputMS(filePath="~/Desktop/samp.txt");
+}
 
 
