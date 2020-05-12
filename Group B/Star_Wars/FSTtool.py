@@ -25,7 +25,7 @@ def main():
 		iqr = quartile[1] - quartile[0]
 		upperbound = quartile[1] + 1.5 * iqr
 		lowerbound = quartile[0] - 1.5 * iqr
-		plt.xticks(np.arange(min(position), 100 * (max(position) / 100 + 1), 50))
+		plt.xticks(np.arange(0, 1, 0.1), rotation=90)
 		plt.title('FST vs Sites w/ Outlier Boundaries')
 		plt.xlabel('Site')
 		plt.ylabel('FST')
@@ -41,22 +41,26 @@ def main():
 
 def generateFST(h_s, h_t):
 	fst = []
-	for i in range(0, len(h_s)):
-		if(h_t[i] == 0):
+	for key in h_s:
+		if(h_s[key] == 0):
 			continue
-		fst.append([i, 1-(h_s[i]/h_t[i])])
+		fst.append([key, 1-(h_s[key]/h_t[key])])
 	return fst
 
 
 def parsePopulation(lines):
-	h = []
+	h = {}
+	pos_raw = lines[2].split(" ");
+	positions = []
+	for i in range(1, len(pos_raw)):
+		positions.append(float(pos_raw[i]))
 	for i in range(0, len(lines[3]) - 1):
 		num_zero = 0;
 		for j in range(3, len(lines)):
 			if(int(lines[j][i]) == 0):
 				num_zero += 1
 		temp_q = num_zero/(len(lines) - 3)
-		h.append(temp_q * (1-temp_q))
+		h[positions[i]] = temp_q * (1-temp_q)
 	return h
 
 
