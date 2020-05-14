@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-
+#Requires file to be in  SLiM's sample format - 'outputSample' or 'outputFull'
 #input: genome size, number of windows, file name
 
 # 0 - non-coding
