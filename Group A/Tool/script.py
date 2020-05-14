@@ -34,7 +34,7 @@ def main():
     i = 0
     windowsProb = []
     totalProb = countProbability(0, maxPos, mutations, total)
-    while windowSize*(i+1) <= maxPos:
+    while windowSize*(i+1) <= maxPos: 
         posMin = windowSize*i
         posMax = windowSize*(i+1)
         windowsProb.append(countProbability(posMin, posMax, mutations, total)-totalProb)
