@@ -8,9 +8,12 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 def main():
     file = open(sys.argv[1], "r")
     windowSize = int(sys.argv[2])
+    stdDevMultiLim = 1.5
+    if (len(sys.argv) >= 4):
+        stdDevMultiLim = float(sys.argv[3])
     foundMutations = False
     total = 0
-    mutations = {}
+    mutations = {} 
     maxPos = -1
     for line in file:
         if "Mutations:" in line:
@@ -21,7 +24,7 @@ def main():
             break
         if "#OUT:" in line:
             parts = line.split(" ")
-            total = int(parts[4])
+            total = int(parts[4])  
         if foundMutations:
             lines = line.split(" ")
             mutations[int(lines[3])] = int(lines[8])
@@ -31,27 +34,24 @@ def main():
     i = 0
     windowsProb = []
     totalProb = countProbability(0, maxPos, mutations, total)
-    print(totalProb)
     while windowSize*(i+1) <= maxPos:
         posMin = windowSize*i
         posMax = windowSize*(i+1)
-        print(countProbability(posMin, posMax, mutations, total))
         windowsProb.append(countProbability(posMin, posMax, mutations, total)-totalProb)
         i += 1
-    print(windowsProb)
     windows = []
     i = 1
     while i <= len(windowsProb):
-        windows.append(i*windowSize)
+        windows.append(i)
         i = i+1
     fig, ax = plt.subplots()
-    windowsProbDiff = np.ma.masked_where(np.abs(windowsProb-np.mean(windowsProb)) <= 1.3*np.std(windowsProb), windowsProb)
-    windowsProb = np.ma.masked_where(np.abs(windowsProb-np.mean(windowsProb)) > 1.3*np.std(windowsProb), windowsProb)
-    plt.scatter(windows, windowsProb, c='g')
-    # scatter warning points in red (c='r')
-    plt.scatter(windows, windowsProbDiff, c='r')
-    ax.plot(windows, windowsProb)
-    ax.set_xlabel('Position')
+    barlist = ax.bar(windows, windowsProb)
+    for i in range(0, len(barlist)):
+        if (np.abs(windowsProb[i]-np.mean(windowsProb)) > stdDevMultiLim*np.std(windowsProb)):
+            barlist[i].set_facecolor('r')
+        else:
+            barlist[i].set_facecolor('g')
+    ax.set_xlabel('Window')
     ax.set_ylabel('CLR')
     ax.grid(True)
     plt.show()
