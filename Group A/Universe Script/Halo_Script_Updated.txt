@@ -1,0 +1,658 @@
+initialize() {
+
+
+	initializeMutationRate(1e-7);
+	
+	//------------------------------------------
+	//					MUTATIONS GENERAL
+	//------------------------------------------
+	
+	initializeMutationType("m1", 0.5, "f", 0.0);         // non-coding
+	initializeMutationType("m2", 0.5, "f", 0.0);         // synonymous M2
+	initializeMutationType("m3", 0.1, "g", -0.03, 0.2);  // deleterious
+	//initializeMutationType("m4", 0.8, "e", 0.01);         // beneficial
+	
+	
+	
+	
+	//initializeGenomicElementType("g1", c(m2,m3,m4), c(2,8,0.01));  // exon
+	initializeGenomicElementType("g2", c(m1,m3), c(9,1));       // intron
+	initializeGenomicElementType("g3", c(m1), 1);          // non-coding
+	//initializeGenomicElementType("g4", c(m2,m3,m4), c(2,8,0.1));  // exontype2 (more positive selection)
+	
+	//------------------------------------------
+	//				MUTATIONS GENE SPECIFIC
+	//------------------------------------------
+
+	
+	initializeMutationType("m50", 0.5, "e", 0.01);         // beneficial ACTG1 -- Spartans, Elites, Brutes
+	initializeMutationType("m51", 0.5, "e", -0.01);         // deleterious ACTG1 -- Humans, Jackals, Prophets
+	initializeGenomicElementType("g5", c(m2,m50,m51), c(10,3,4));  // exon ACTG1
+	
+	initializeMutationType("m60", 0.5, "e", 0.01);         // beneficial DLG3 -- Humans, Spartans, Elites, Prophets
+	initializeMutationType("m61", 0.5, "e", -0.01);         // deleterious DLG3
+	initializeGenomicElementType("g6", c(m2,m60,m61), c(10,3,4));  // exon DLG3
+	
+	initializeMutationType("m70", 0.5, "e", 0.01);         // beneficial LHX2 -- Brutes
+	initializeMutationType("m71", 0.5, "e", -0.01);         // deleterious LHX2
+	initializeGenomicElementType("g7", c(m2,m70,m71), c(10,3,4));  // exon LHX2
+
+	initializeMutationType("m80", 0.5, "e", 0.01);         // beneficial GRM5 -- Brutes and Spartans
+	initializeMutationType("m81", 0.5, "e", -0.01);         // deleterious GRM5 -- Grunts, Jackals, Prophets
+	initializeGenomicElementType("g8", c(m2,m80,m81), c(10,3,4));  // exon GRM5
+	
+	initializeMutationType("m90", 0.5, "e", 0.01);         // beneficial MC4R -- Jackals, Spartans, and Elitess
+	initializeMutationType("m91", 0.5, "e", -0.01);         // deleterious MC4R -- Brutes
+	initializeGenomicElementType("g9", c(m2,m90,m91), c(10,3,4));  // exon MC4R
+	
+	initializeMutationType("m100", 0.5, "e", 0.01);         // beneficial Opsin -- Jackals, Spartans
+	initializeMutationType("m101", 0.5, "e", -0.01);         // deleterious Opsin -- Grunts
+	initializeGenomicElementType("g10", c(m2,m100,m101), c(10,3,4));  // exon Opsin
+
+
+
+
+
+	
+	
+	//------------------------------------------
+	//						GENOME
+	//------------------------------------------
+	
+	//non-coding
+	ncl = 15000;
+	initializeGenomicElement(g3, 0, ncl-1);
+	
+	s=0;
+	
+	recombinationRates = c(3e-8); //recombination rate for zone
+	
+	//ACTG1
+	l = 220;
+	s = s + ncl;
+	
+	recombinationEnds = c(s); //initial recombination zone
+	
+	
+	for(i in 0:12){
+
+	if(i%2==0)
+		initializeGenomicElement(g5, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	recombinationRates = c(recombinationRates, 1e-10);
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l*13); //update to recombination zones before nc
+	
+	ncl = 20000;
+	initializeGenomicElement(g3,s+l*13 , s+l*13+ncl-1);
+	
+	recombinationRates = c(recombinationRates, 4e-9);
+	
+	
+	//DLG3
+	s = s+l*13+ncl;
+	l = 1200;
+	
+	recombinationEnds = c(recombinationEnds, s); //update to recombination zones
+	
+	for(i in 0:50){
+
+	if(i%2==0)
+		initializeGenomicElement(g6, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	recombinationRates = c(recombinationRates, 1e-11);
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l*51); //update to recombination zones before nc
+	
+	ncl = 26000;
+	initializeGenomicElement(g3, s+l*51, s+l*51+ncl-1);
+	
+	recombinationRates = c(recombinationRates, 1e-7);
+	
+	//LHX2
+	s = s+l*51+ncl;
+	l = 1150;
+	
+	recombinationEnds = c(recombinationEnds, s); //update to recombination zones
+	
+	for(i in 0:10){
+
+	if(i%2==0)
+		initializeGenomicElement(g7, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	recombinationRates = c(recombinationRates, 1e-11);
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l*11); //update to recombination zones before nc
+
+	ncl = 42000;
+	initializeGenomicElement(g3, s+l*11, s+l*11+ncl-1);
+	
+	recombinationRates = c(recombinationRates, 2e-7);
+
+
+	//GRM5
+	s = s+l*11+ncl;
+	l = 33000;
+	
+	recombinationEnds = c(recombinationEnds, s); //update to recombination zones
+	
+	for(i in 0:16){
+
+	if(i%2==0)
+		initializeGenomicElement(g8, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	
+	}
+	
+	recombinationRates = c(recombinationRates, 4e-9);
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l*17); //update to recombination zones before nc
+	
+	ncl = 30000;
+	initializeGenomicElement(g3, s+l*17, s+l*17+ncl-1);
+	
+	recombinationRates = c(recombinationRates, 5e-8);
+	
+	
+	//MC4R
+	s = s+l*17+ncl;
+	l = 1714;
+	
+	recombinationEnds = c(recombinationEnds, s); //update to recombination zones
+	
+	initializeGenomicElement(g9, s, s+l-1);
+	
+	recombinationRates = c(recombinationRates, 4e-9);
+	
+	
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l); //update to recombination zones before nc
+	
+	ncl = 10000;
+	initializeGenomicElement(g3, s+l, s+l+ncl-1);
+	
+	recombinationRates = c(recombinationRates, 8e-8);
+	
+	//Opsin
+	s = s+l+ncl;
+	l = 1300;
+	
+	recombinationEnds = c(recombinationEnds, s); //update to recombination zones
+	
+	for(i in 0:10){
+
+	if(i%2==0)
+		initializeGenomicElement(g10, s+i*l, s+(i+1)*l-1);
+	else
+		initializeGenomicElement(g2, s+i*l, s+(i+1)*l-1);
+	}
+	
+	recombinationRates = c(recombinationRates, 3e-10);
+	
+	
+	
+	end = 850000;
+	
+	//non-coding
+	
+	recombinationEnds = c(recombinationEnds, s+l*11); //update to recombination zones before nc
+	
+	initializeGenomicElement(g3, s+l*11, end); //679999
+
+	recombinationRates = c(recombinationRates, 2e-7);
+	
+	//------------------------------------------
+	//				RECOMBINATION RATE
+	//------------------------------------------
+	
+	recombinationEnds = c(recombinationEnds,end);
+	
+	print("----------");
+	print("Recombination zones: ");
+	print(recombinationEnds);
+	print("-----------");
+	print("Recombination rates: ");
+	print(recombinationRates);
+	print("-----------");
+	
+	
+	
+	//rates = c(1e-7,1e-8,1e-6,1e-8,1e-6,1e-8,1e-6,1e-6,1e-8,1e-6,1e-8,1e-6,1e-8);
+	//no longer accurate
+	//bigger -> more time
+	
+	initializeRecombinationRate(recombinationRates,recombinationEnds);
+
+	
+	
+	//------------------------------------------
+	//						CONSTANTS
+	//------------------------------------------
+
+
+
+	defineConstant("populationMultiplier", 100);
+	
+
+	defineConstant("goodX0", 1.1);
+	defineConstant("goodX1", 1.05);
+	
+	defineConstant("badX0", 0.95);
+	defineConstant("badX1", 0.9);
+	
+	defineConstant("startTime", time());
+
+	defineConstant("location", "~/Desktop/");
+	
+	}
+
+
+//------------------------------------------
+//						POPULATIONS
+//------------------------------------------
+
+	
+	
+
+
+1{
+
+
+
+sim.addSubpop("p72", 100*populationMultiplier); //Humans
+
+
+
+
+}
+
+//Lack in Strength
+fitness(m50, p72){ // Humans ACTG1 good 
+	return relFitness*badX0;
+}
+fitness(m51, p72){ // Humans ACTG1 bad
+	return relFitness*badX1;
+}
+
+
+// Good Memory
+fitness(m60, p72){ // Humans DLG3 good
+	return relFitness*goodX0;
+}
+fitness(m61, p72){ // Humans DLG3 bad
+	return relFitness*goodX1;
+}
+
+
+
+
+
+2500{
+p72.setSubpopulationSize(1*populationMultiplier); //bottleneck
+
+}
+
+
+
+2500:6500 {
+ t = sim.generation - 2500;
+ 
+ multi = 20*populationMultiplier;
+ 
+ p72_size = round(multi * exp(0.00038 * t)); //back up to 914 ind
+
+p72.setSubpopulationSize(asInteger(p72_size));
+}
+
+
+
+7000 {
+
+sim.addSubpop("p65", 100*populationMultiplier); //Aliens enter the picture -- Prophets
+
+}
+
+//Weak Strength
+fitness(m50, p65){ // Prophets ACTG1 good 
+	return relFitness*badX0;
+}
+fitness(m51, p72){ // Prophets ACTG1 bad
+	return relFitness*badX1;
+}
+
+
+// Good Memory
+fitness(m60, p65){ // Prophets DLG3 good
+	return relFitness*goodX0;
+}
+fitness(m61, p65){ // Prophets DLG3 bad
+	return relFitness*goodX1;
+}
+
+// Bad Endurance
+fitness(m80, p65){ // Prophets GRM5 good
+	return relFitness*badX0;
+}
+fitness(m81, p65){ // Prophets GRM5 bad
+	return relFitness*badX1;
+}
+
+
+
+
+
+
+7006{
+ sim.addSubpopSplit("p66", 20*populationMultiplier, p65); //Elites
+ p65.setSubpopulationSize(80*populationMultiplier); //reduces Prophets by 20p
+ 
+}
+
+//High Strength ACTG1
+fitness(m50, p66){ // Elites ACTG1 good 
+	return relFitness*goodX0;
+}
+fitness(m51, p66){ // Elites ACTG1 bad
+	return relFitness*goodX1;
+}
+
+
+// High Memory Recall DLG3
+fitness(m60, p66){ // Elites DLG3 good
+	return relFitness*goodX0;
+}
+fitness(m61, p66){ // Elites DLG3 bad
+	return relFitness*goodX1;
+}
+
+// High Mobility MC4R
+fitness(m90, p66){ // Elites MC4R good
+	return relFitness*goodX0;
+}
+fitness(m91, p66){ // Elites MC4R bad
+	return relFitness*goodX1;
+}
+
+
+
+
+7016{
+ sim.addSubpopSplit("p67", 20*populationMultiplier, p65); //brutes
+ p65.setSubpopulationSize(60*populationMultiplier); //reduces Prophets by 20p
+ 
+}
+
+//High Strength ACTG1
+fitness(m50, p67){ // Brutes ACTG1 good 
+	return relFitness*goodX0;
+}
+fitness(m51, p67){ // Brutes ACTG1 bad
+	return relFitness*goodX1;
+}
+
+
+// 'Good' Fur LHX2
+fitness(m70, p67){ // Brutes LHX2 good
+	return relFitness*goodX0;
+}
+fitness(m71, p67){ // Brutes LHX2 bad
+	return relFitness*goodX1;
+}
+
+// High Endurance GRM5
+fitness(m80, p67){ // Brutes MC4R good
+	return relFitness*goodX0;
+}
+fitness(m81, p67){ // Brutes MC4R bad
+	return relFitness*goodX1;
+}
+
+
+// Low Mobility MC4R
+fitness(m90, p67){ // Brutes MC4R good
+	return relFitness*badX0;
+}
+fitness(m91, p67){ // Brutes MC4R bad
+	return relFitness*badX1;
+}
+
+
+7021{
+ sim.addSubpopSplit("p68", 20*populationMultiplier, p65); //Jackals
+ p65.setSubpopulationSize(40*populationMultiplier); //reduces Prophets by 20p
+ 
+}
+
+//Weak Strength ACTG1
+fitness(m50, p68){ // Jackals ACTG1 good 
+	return relFitness*badX0;
+}
+fitness(m51, p68){ // Jackals ACTG1 bad
+	return relFitness*badX1;
+}
+
+// High Mobility MC4R
+fitness(m90, p68){ // Jackals MC4R good
+	return relFitness*goodX0;
+}
+fitness(m91, p68){ // Jackals MC4R bad
+	return relFitness*goodX1;
+}
+
+// Good Accuracy Opsin
+fitness(m100, p68){ // Jackals MC4R good
+	return relFitness*goodX0;
+}
+fitness(m101, p68){ // Jackals MC4R bad
+	return relFitness*goodX1;
+}
+
+7027{
+ sim.addSubpopSplit("p69", 20*populationMultiplier, p65); //Grunts
+ p65.setSubpopulationSize(20*populationMultiplier); //reduces Prophets by 20p to final of 20p
+ 
+}
+
+// Low Endurance GRM5
+fitness(m80, p69){ // Grunts MC4R good
+	return relFitness*badX0;
+}
+fitness(m81, p69){ // Grunts MC4R bad
+	return relFitness*badX1;
+}
+
+
+// Low Accuracy MC4R
+fitness(m100, p69){ // Grunts MC4R good
+	return relFitness*badX0;
+}
+fitness(m101, p69){ // Grunts MC4R bad
+	return relFitness*badX1;
+}
+
+
+7626{
+ sim.addSubpopSplit("p73", 2*populationMultiplier, p72); //spartan 1
+}
+
+//High Strength ACTG1
+fitness(m50, p73){ // spartan ACTG1 good 
+	return relFitness*goodX0;
+}
+fitness(m51, p73){ // spartan ACTG1 bad
+	return relFitness*goodX1;
+}
+
+
+// High in Memory Recall
+fitness(m60, p73){ // spartan LHX2 good
+	return relFitness*goodX0;
+}
+fitness(m61, p73){ // spartan LHX2 bad
+	return relFitness*goodX1;
+}
+
+// High Endurance GRM5
+fitness(m80, p73){ // spartan MC4R good
+	return relFitness*goodX0;
+}
+fitness(m81, p73){ // spartan MC4R bad
+	return relFitness*goodX1;
+}
+
+
+// High Mobility MC4R
+fitness(m90, p73){ // spartan MC4R good
+	return relFitness*goodX0;
+}
+fitness(m91, p73){ // spartan MC4R bad
+	return relFitness*goodX1;
+}
+
+// High Accuracy MC4R
+fitness(m100, p73){ // spartan MC4R good
+	return relFitness*goodX0;
+}
+fitness(m101, p73){ // spartan MC4R bad
+	return relFitness*goodX1;
+}
+
+
+
+//WAR
+
+7628{
+p65.setSubpopulationSize(19*populationMultiplier); //bottleneck Prophets
+p66.setSubpopulationSize(18*populationMultiplier); //bottleneck elites
+p67.setSubpopulationSize(17*populationMultiplier); //bottleneck brutes
+p68.setSubpopulationSize(14*populationMultiplier); //bottleneck jackals
+p69.setSubpopulationSize(13*populationMultiplier); //bottleneck grunts
+
+p73.setSubpopulationSize(1*populationMultiplier); //bottleneck spartans
+p72.setSubpopulationSize(70*populationMultiplier); //bottleneck humans
+}
+
+
+
+8000{
+//Elites & brutes
+p66.setMigrationRates(p67, 0.005);
+p67.setMigrationRates(p66, 0.005);
+
+//Grunts and Jackals
+p68.setMigrationRates(p69, 0.005);
+p69.setMigrationRates(p68, 0.005);
+
+//Humans & Spartans
+p72.setMigrationRates(p73, 0.005);
+p73.setMigrationRates(p72, 0.002);
+
+
+}
+
+15000 late() {
+
+	
+	
+	standard = location + "haloSample.txt";
+	mutation = location + "haloSampleMS.txt";
+	
+	deleteFile(standard);
+	deleteFile(mutation);
+	
+	initial = "data for HALO universe script. Recorded at ";
+	
+	writeFile(standard, "Standard format " + initial + time(), append = F);
+	writeFile(mutation, "MS format " + initial + time(), append = F);
+
+
+	writeFile(standard, "Start time: " + startTime, append = T);
+	writeFile(mutation, "Start time: " + startTime, append = T);
+	
+	
+	writeFile(standard, "\nProphets:", append = T);
+	p65.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nElites:", append = T);
+	p66.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nBrutes:", append = T);
+	p67.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nJackals:", append = T);
+	p68.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nGrunts:", append = T);
+	p69.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nHumans:", append = T);
+	p72.outputSample(20, filePath=standard, append = T);
+	
+	writeFile(standard, "\nSpartans:", append = T);
+	p73.outputSample(20, filePath=standard, append = T);
+	
+	//haloSampleMS
+	
+	writeFile(mutation, "\nProphets:", append = T);
+	p65.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nElites:", append = T);
+	p66.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nBrutes:", append = T);
+	p67.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nJackals:", append = T);
+	p68.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nGrunts:", append = T);
+	p69.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nHumans:", append = T);
+	p72.outputMSSample(20, filePath=mutation, append = T);
+	
+	writeFile(mutation, "\nSpartans:", append = T);
+	p73.outputMSSample(20, filePath=mutation, append = T);
+
+
+
+	//No text
+	
+//	deleteFile(standard);
+//	deleteFile(mutation);
+
+//	p65.outputMSSample(20, filePath=mutation, append = T);
+//	p66.outputMSSample(20, filePath=mutation, append = T);
+//	p67.outputMSSample(20, filePath=mutation, append = T);
+//	p68.outputMSSample(20, filePath=mutation, append = T);
+//	p69.outputMSSample(20, filePath=mutation, append = T);
+//	p72.outputMSSample(20, filePath=mutation, append = T);
+//	p73.outputMSSample(20, filePath=mutation, append = T);
+
+}
+
+//see manual section 9.2 for explanation of this
+//m4 mutations are 10% better in population p2

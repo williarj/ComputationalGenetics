@@ -1,6 +1,8 @@
 import sys
 import numpy as np
-#input: filename, popSize, genome Size, number of windows
+import operator
+# requires file to be in SLiM's sample data format - 'outputSample' or 'outputFull'
+#input: filename, popSize (sample size of file), genome Size, number of windows
 
 class Mutation:
     def __init__(self, kind, position, num):
@@ -25,8 +27,17 @@ def main():
     
     print('Resulting Window Size: ', float(gSize/numWindows))
     print('Avg Pi: ', avgPi)
+    print()
     print('Pi in each window:')
     print(windowPis)
+    print()
+    
+    orderedMap = {}
+    for i in range(len(windowPis)):
+        orderedMap[i] = windowPis[i]
+    orderedMap = sorted(orderedMap.items(), key = operator.itemgetter(1))
+    print("Pi's ordered by magnitude")
+    print(orderedMap)
     
 def inWindow(wholePi, mmap,gSize,numWindows):
     wSize = float(gSize/numWindows)
