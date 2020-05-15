@@ -57,7 +57,7 @@ def main():
         
     #graph stuff
     fig, ax = plt.subplots()
-    barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.95)
+    barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.9)
     fig.canvas.set_window_title("Window Analysis " + axisLable(type) + "[" + str(windowSize) + "]") #Window title
     
     rect = fig.patch
@@ -75,6 +75,7 @@ def main():
     plt.tight_layout()
     plt.show()
 
+#name of correct type
 def axisLable(type):
     if type == 0: #clr
         return "CLR"
@@ -90,8 +91,7 @@ def axisLable(type):
         print("error 1")
         sys.exit()
 
-    
-    
+#calles function based on type input
 def callCorrectType(posMin, posMax, mutations, total, type, popSize):
     if type == 0: #clr
         return clrProbability(posMin, posMax, mutations, total)
@@ -109,9 +109,6 @@ def callCorrectType(posMin, posMax, mutations, total, type, popSize):
     
 #CLR window calculation
 def clrProbability(posMin, posMax, mutations, total):
-   
-    #print("CLR plot")
-    
     pos = posMin
     prob = 1.0
     while pos <= posMax:
@@ -124,43 +121,29 @@ def clrProbability(posMin, posMax, mutations, total):
 
 #Pi window calculation
 def piProbability(posMin, posMax, mutations, total):
-    
-    # print("Pi plot")
-    
     pos = posMin
     prob = 1.0
     while pos <= posMax:
         if pos in mutations:
             indProb = mutations[pos].number * (total-mutations[pos].number)
-            
             prob +=indProb
         pos += 1
-    
     divide = float((float(total)*(float(total-1)))/2)
-    
     #print(prob/divide)
     return prob/divide
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
-   
-    #print("Dn/Ds plot")
-    
     pos = posMin
-    
     countSyn = 0
     countNonSyn = -1
-    
     while pos <= posMax:
         if pos in mutations:
-            
             if mutations[pos].type == "m1" or mutations[pos].type == "m2":
                 countSyn += 1
             else:
                 countNonSyn += 1
-            
         pos += 1
-    
     if countSyn == 0:
         return 0
     else:
@@ -194,7 +177,7 @@ def ne(popSize):
     sys.exit()
     
     
-    
+#stores mutation type (eg m1) & how many individuals in sample have it
 class Mut:
 
     def __init__(self, type, number): #number: how many people have it
