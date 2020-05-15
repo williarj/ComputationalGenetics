@@ -14,6 +14,8 @@ def main():
 	for i in range(1, len(raw_h)):
 		fst.append(generateFST(raw_h[i], raw_h[0]))
 	for i in range(0, num_file - 1):
+		tempStr = sys.argv[3 + i].split('/')
+		filename = tempStr[len(tempStr) - 1]
 		position = []
 		temp_fst = []
 		for j in range(0, len(fst[i])):
@@ -35,14 +37,14 @@ def main():
 		plt.legend(bbox_to_anchor=(0.8, 1.15), loc='upper left', borderaxespad=0.)
 		if not os.path.exists(sys.argv[1]):
 			os.makedirs(sys.argv[1])
-		plt.savefig(sys.argv[1] + '/' + sys.argv[3 + i][:len(sys.argv[3 + i]) - 3] + 'png', dpi=300)
+		plt.savefig(sys.argv[1] + '/' + filename[:len(filename) - 3] + 'png', dpi=300)
 
 
 
 def generateFST(h_s, h_t):
 	fst = []
 	for key in h_s:
-		if(h_s[key] == 0):
+		if(h_t[key] == 0):
 			continue
 		fst.append([key, 1-(h_s[key]/h_t[key])])
 	return fst
