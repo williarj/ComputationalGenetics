@@ -34,7 +34,7 @@ def main():
     i = 0
     windowsProb = []
     totalProb = countProbability(0, maxPos, mutations, total)
-    while windowSize*(i+1) <= maxPos: 
+    while windowSize*(i) <= maxPos: 
         posMin = windowSize*i
         posMax = windowSize*(i+1)
         windowsProb.append(countProbability(posMin, posMax, mutations, total)-totalProb)
@@ -55,6 +55,7 @@ def main():
     ax.set_ylabel('CLR')
     ax.grid(True)
     plt.show()
+    plt.savefig(sys.argv[1].split(".")[0] + '.png')
     
 def countProbability(posMin, posMax, mutations, total):
     pos = posMin
