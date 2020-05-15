@@ -7,9 +7,8 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 
 def main():
     file = open(sys.argv[1], "r")
-    windowSize = int(sys.argv[2])
-    type = int(sys.argv[3])
-    
+    #type = int(sys.argv[2])
+    windowSize = 16000
     fileName = sys.argv[1].split(".")[0]
     
     stdDevMultiLim = 1.5
@@ -39,6 +38,12 @@ def main():
                 maxPos = int(lines[3])
     max = windowSize
     
+    plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0)
+    plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2)
+    
+    
+    
+def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, type):
     #Window calculations depending on type called
     i = 0
     windowsProb = []
