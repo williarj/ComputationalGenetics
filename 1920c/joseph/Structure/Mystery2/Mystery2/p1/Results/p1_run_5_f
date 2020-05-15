@@ -1,0 +1,3211 @@
+
+
+----------------------------------------------------
+STRUCTURE by Pritchard, Stephens and Donnelly (2000)
+     and Falush, Stephens and Pritchard (2003)
+       Code by Pritchard, Falush and Hubisz
+             Version 2.3.4 (Jul 2012)
+----------------------------------------------------
+
+
+
+Command line arguments:   bin\structure -m C:\Users\Joseph Zou\Desktop\ComputationalGenetics\1920c\joseph\Structure\Mystery2\Mystery2\p1\mainparams -e C:\Users\Joseph Zou\Desktop\ComputationalGenetics\1920c\joseph\Structure\Mystery2\Mystery2\p1\extraparams 
+Input File:    C:\Users\Joseph Zou\Desktop\ComputationalGenetics\1920c\joseph\Structure\Mystery2\Mystery2\project_data
+
+Run parameters:
+   30 individuals
+   487 loci
+   2 populations assumed
+   3 Burn-in period
+   1000 Reps
+
+
+--------------------------------------------
+Proportion of membership of each pre-defined
+ population in each of the 2 clusters
+
+Given    Inferred Clusters       Number of
+ Pop       1      2             Individuals
+
+  1:     0.989  0.011              10
+  2:     0.248  0.752              10
+  3:     0.110  0.890              10
+--------------------------------------------
+
+Allele-freq. divergence among pops (Net nucleotide distance),
+computed using point estimates of P.
+
+      1       2      
+ 1      -    0.1672  
+ 2   0.1672     -    
+
+Average distances (expected heterozygosity) between individuals in same cluster:
+cluster  1  : 0.0866 
+cluster  2  : 0.3730 
+
+--------------------------------------------
+Estimated Ln Prob of Data   = -139192.3
+Mean value of ln likelihood = -5669.6
+Variance of ln likelihood   = 267045.5
+Mean value of alpha         = 0.1371
+
+Mean value of Fst_1         = 0.7867
+Mean value of Fst_2         = 0.0371
+
+
+Inferred ancestry of individuals:
+        Label (%Miss) Pop:  Inferred clusters
+  1  Sample1    (0)    1 :  0.980 0.020 
+  2  Sample2    (0)    1 :  0.994 0.006 
+  3  Sample3    (0)    1 :  0.988 0.012 
+  4  Sample4    (0)    1 :  0.994 0.006 
+  5  Sample5    (0)    1 :  0.988 0.012 
+  6  Sample6    (0)    1 :  0.988 0.012 
+  7  Sample7    (0)    1 :  0.987 0.013 
+  8  Sample8    (0)    1 :  0.991 0.009 
+  9  Sample9    (0)    1 :  0.984 0.016 
+ 10 Sample10    (0)    1 :  0.993 0.007 
+ 11 Sample11    (0)    2 :  0.005 0.995 
+ 12 Sample12    (0)    2 :  0.853 0.147 
+ 13 Sample13    (0)    2 :  0.008 0.992 
+ 14 Sample14    (0)    2 :  0.298 0.702 
+ 15 Sample15    (0)    2 :  0.007 0.993 
+ 16 Sample16    (0)    2 :  0.361 0.639 
+ 17 Sample17    (0)    2 :  0.024 0.976 
+ 18 Sample18    (0)    2 :  0.220 0.780 
+ 19 Sample19    (0)    2 :  0.295 0.705 
+ 20 Sample20    (0)    2 :  0.412 0.588 
+ 21 Sample21    (0)    3 :  0.015 0.985 
+ 22 Sample22    (0)    3 :  0.995 0.005 
+ 23 Sample23    (0)    3 :  0.013 0.987 
+ 24 Sample24    (0)    3 :  0.009 0.991 
+ 25 Sample25    (0)    3 :  0.019 0.981 
+ 26 Sample26    (0)    3 :  0.007 0.993 
+ 27 Sample27    (0)    3 :  0.011 0.989 
+ 28 Sample28    (0)    3 :  0.003 0.997 
+ 29 Sample29    (0)    3 :  0.012 0.988 
+ 30 Sample30    (0)    3 :  0.014 0.986 
+
+
+Estimated Allele Frequencies in each cluster
+First column gives estimated ancestral frequencies
+
+
+Locus 1 : Site0 
+2 alleles
+0.0% missing data
+   0   (0.781) 0.992 0.796 
+   1   (0.219) 0.008 0.204 
+
+Locus 2 : Site1 
+3 alleles
+0.0% missing data
+   0   (0.686) 0.983 0.715 
+   1   (0.191) 0.012 0.187 
+   2   (0.123) 0.005 0.099 
+
+Locus 3 : Site2 
+3 alleles
+0.0% missing data
+   0   (0.571) 0.970 0.585 
+   1   (0.311) 0.023 0.320 
+   2   (0.118) 0.006 0.095 
+
+Locus 4 : Site3 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.997 0.897 
+   1   (0.126) 0.003 0.103 
+
+Locus 5 : Site4 
+2 alleles
+0.0% missing data
+   0   (0.798) 0.990 0.809 
+   1   (0.202) 0.010 0.191 
+
+Locus 6 : Site5 
+2 alleles
+0.0% missing data
+   0   (0.790) 0.991 0.798 
+   1   (0.210) 0.009 0.202 
+
+Locus 7 : Site6 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.994 0.901 
+   1   (0.122) 0.006 0.099 
+
+Locus 8 : Site7 
+2 alleles
+0.0% missing data
+   0   (0.802) 0.993 0.811 
+   1   (0.198) 0.007 0.189 
+
+Locus 9 : Site8 
+2 alleles
+0.0% missing data
+   0   (0.790) 0.991 0.803 
+   1   (0.210) 0.009 0.197 
+
+Locus 10 : Site9 
+2 alleles
+0.0% missing data
+   0   (0.875) 0.995 0.901 
+   1   (0.125) 0.005 0.099 
+
+Locus 11 : Site10 
+3 alleles
+0.0% missing data
+   2   (0.129) 0.943 0.086 
+   1   (0.531) 0.037 0.559 
+   0   (0.340) 0.020 0.355 
+
+Locus 12 : Site11 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.993 0.903 
+   1   (0.122) 0.007 0.097 
+
+Locus 13 : Site12 
+2 alleles
+0.0% missing data
+   0   (0.888) 0.996 0.907 
+   1   (0.112) 0.004 0.093 
+
+Locus 14 : Site13 
+3 alleles
+0.0% missing data
+   2   (0.306) 0.971 0.273 
+   1   (0.415) 0.019 0.452 
+   0   (0.279) 0.010 0.275 
+
+Locus 15 : Site14 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.992 0.910 
+   1   (0.113) 0.008 0.090 
+
+Locus 16 : Site15 
+3 alleles
+0.0% missing data
+   0   (0.722) 0.978 0.747 
+   1   (0.178) 0.016 0.174 
+   2   (0.100) 0.006 0.079 
+
+Locus 17 : Site16 
+2 alleles
+0.0% missing data
+   0   (0.905) 0.945 0.942 
+   1   (0.095) 0.055 0.058 
+
+Locus 18 : Site17 
+2 alleles
+0.0% missing data
+   0   (0.871) 0.989 0.898 
+   1   (0.129) 0.011 0.102 
+
+Locus 19 : Site18 
+3 alleles
+0.0% missing data
+   1   (0.226) 0.419 0.198 
+   2   (0.092) 0.230 0.060 
+   0   (0.682) 0.351 0.743 
+
+Locus 20 : Site19 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.995 0.907 
+   1   (0.116) 0.005 0.093 
+
+Locus 21 : Site20 
+3 alleles
+0.0% missing data
+   2   (0.140) 0.948 0.094 
+   1   (0.514) 0.036 0.546 
+   0   (0.345) 0.016 0.359 
+
+Locus 22 : Site21 
+3 alleles
+0.0% missing data
+   1   (0.251) 0.416 0.232 
+   0   (0.636) 0.359 0.694 
+   2   (0.113) 0.225 0.074 
+
+Locus 23 : Site22 
+2 alleles
+0.0% missing data
+   0   (0.889) 0.993 0.910 
+   1   (0.111) 0.007 0.090 
+
+Locus 24 : Site23 
+2 alleles
+0.0% missing data
+   0   (0.885) 0.995 0.905 
+   1   (0.115) 0.005 0.095 
+
+Locus 25 : Site24 
+2 alleles
+0.0% missing data
+   1   (0.139) 0.189 0.097 
+   0   (0.861) 0.811 0.903 
+
+Locus 26 : Site25 
+3 alleles
+0.0% missing data
+   0   (0.572) 0.969 0.585 
+   1   (0.310) 0.026 0.320 
+   2   (0.118) 0.006 0.094 
+
+Locus 27 : Site26 
+2 alleles
+0.0% missing data
+   0   (0.836) 0.991 0.852 
+   1   (0.164) 0.009 0.148 
+
+Locus 28 : Site27 
+3 alleles
+0.0% missing data
+   0   (0.312) 0.971 0.278 
+   1   (0.414) 0.020 0.454 
+   2   (0.274) 0.010 0.268 
+
+Locus 29 : Site28 
+2 alleles
+0.0% missing data
+   0   (0.844) 0.985 0.858 
+   1   (0.156) 0.015 0.142 
+
+Locus 30 : Site29 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.993 0.910 
+   1   (0.113) 0.007 0.090 
+
+Locus 31 : Site30 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.992 0.905 
+   1   (0.118) 0.008 0.095 
+
+Locus 32 : Site31 
+2 alleles
+0.0% missing data
+   0   (0.794) 0.990 0.805 
+   1   (0.206) 0.010 0.195 
+
+Locus 33 : Site32 
+2 alleles
+0.0% missing data
+   0   (0.860) 0.991 0.887 
+   1   (0.140) 0.009 0.113 
+
+Locus 34 : Site33 
+2 alleles
+0.0% missing data
+   0   (0.891) 0.996 0.911 
+   1   (0.109) 0.004 0.089 
+
+Locus 35 : Site34 
+2 alleles
+0.0% missing data
+   0   (0.664) 0.986 0.652 
+   1   (0.336) 0.014 0.348 
+
+Locus 36 : Site35 
+2 alleles
+0.0% missing data
+   1   (0.134) 0.185 0.093 
+   0   (0.866) 0.815 0.907 
+
+Locus 37 : Site36 
+2 alleles
+0.0% missing data
+   0   (0.778) 0.988 0.790 
+   1   (0.222) 0.012 0.210 
+
+Locus 38 : Site37 
+2 alleles
+0.0% missing data
+   0   (0.879) 0.991 0.908 
+   1   (0.121) 0.009 0.092 
+
+Locus 39 : Site38 
+3 alleles
+0.0% missing data
+   0   (0.307) 0.967 0.272 
+   1   (0.432) 0.016 0.467 
+   2   (0.261) 0.017 0.262 
+
+Locus 40 : Site39 
+3 alleles
+0.0% missing data
+   0   (0.678) 0.976 0.716 
+   1   (0.205) 0.017 0.189 
+   2   (0.117) 0.006 0.095 
+
+Locus 41 : Site40 
+3 alleles
+0.0% missing data
+   0   (0.594) 0.970 0.598 
+   1   (0.302) 0.022 0.316 
+   2   (0.104) 0.008 0.086 
+
+Locus 42 : Site41 
+2 alleles
+0.0% missing data
+   0   (0.782) 0.989 0.794 
+   1   (0.218) 0.011 0.206 
+
+Locus 43 : Site42 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.995 0.906 
+   1   (0.116) 0.005 0.094 
+
+Locus 44 : Site43 
+2 alleles
+0.0% missing data
+   0   (0.891) 0.994 0.913 
+   1   (0.109) 0.006 0.087 
+
+Locus 45 : Site44 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.992 0.904 
+   1   (0.118) 0.008 0.096 
+
+Locus 46 : Site45 
+2 alleles
+0.0% missing data
+   0   (0.867) 0.991 0.893 
+   1   (0.133) 0.009 0.107 
+
+Locus 47 : Site46 
+3 alleles
+0.0% missing data
+   2   (0.133) 0.945 0.087 
+   1   (0.506) 0.032 0.543 
+   0   (0.361) 0.023 0.370 
+
+Locus 48 : Site47 
+2 alleles
+0.0% missing data
+   0   (0.795) 0.992 0.804 
+   1   (0.205) 0.008 0.196 
+
+Locus 49 : Site48 
+2 alleles
+0.0% missing data
+   0   (0.807) 0.993 0.815 
+   1   (0.193) 0.007 0.185 
+
+Locus 50 : Site49 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.993 0.907 
+   1   (0.118) 0.007 0.093 
+
+Locus 51 : Site50 
+3 alleles
+0.0% missing data
+   2   (0.143) 0.951 0.099 
+   1   (0.482) 0.030 0.510 
+   0   (0.375) 0.019 0.391 
+
+Locus 52 : Site51 
+2 alleles
+0.0% missing data
+   0   (0.651) 0.986 0.648 
+   1   (0.349) 0.014 0.352 
+
+Locus 53 : Site52 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.994 0.905 
+   1   (0.118) 0.006 0.095 
+
+Locus 54 : Site53 
+3 alleles
+0.0% missing data
+   0   (0.721) 0.977 0.748 
+   1   (0.172) 0.018 0.167 
+   2   (0.106) 0.004 0.085 
+
+Locus 55 : Site54 
+3 alleles
+0.0% missing data
+   0   (0.598) 0.975 0.605 
+   1   (0.307) 0.021 0.319 
+   2   (0.095) 0.004 0.077 
+
+Locus 56 : Site55 
+2 alleles
+0.0% missing data
+   0   (0.892) 0.997 0.911 
+   1   (0.108) 0.003 0.089 
+
+Locus 57 : Site56 
+2 alleles
+0.0% missing data
+   0   (0.752) 0.987 0.760 
+   1   (0.248) 0.013 0.240 
+
+Locus 58 : Site57 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.993 0.905 
+   1   (0.122) 0.007 0.095 
+
+Locus 59 : Site58 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.993 0.907 
+   1   (0.122) 0.007 0.093 
+
+Locus 60 : Site59 
+2 alleles
+0.0% missing data
+   0   (0.877) 0.994 0.900 
+   1   (0.123) 0.006 0.100 
+
+Locus 61 : Site60 
+3 alleles
+0.0% missing data
+   0   (0.700) 0.980 0.734 
+   1   (0.198) 0.016 0.185 
+   2   (0.102) 0.005 0.081 
+
+Locus 62 : Site61 
+3 alleles
+0.0% missing data
+   2   (0.137) 0.940 0.091 
+   1   (0.522) 0.043 0.552 
+   0   (0.340) 0.017 0.357 
+
+Locus 63 : Site62 
+2 alleles
+0.0% missing data
+   0   (0.885) 0.996 0.906 
+   1   (0.115) 0.004 0.094 
+
+Locus 64 : Site63 
+3 alleles
+0.0% missing data
+   2   (0.149) 0.946 0.100 
+   1   (0.518) 0.036 0.547 
+   0   (0.333) 0.018 0.352 
+
+Locus 65 : Site64 
+2 alleles
+0.0% missing data
+   0   (0.872) 0.996 0.899 
+   1   (0.128) 0.004 0.101 
+
+Locus 66 : Site65 
+3 alleles
+0.0% missing data
+   2   (0.136) 0.934 0.092 
+   1   (0.334) 0.024 0.349 
+   0   (0.529) 0.042 0.560 
+
+Locus 67 : Site66 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.993 0.907 
+   1   (0.113) 0.007 0.093 
+
+Locus 68 : Site67 
+2 alleles
+0.0% missing data
+   0   (0.804) 0.973 0.822 
+   1   (0.196) 0.027 0.178 
+
+Locus 69 : Site68 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.994 0.909 
+   1   (0.114) 0.006 0.091 
+
+Locus 70 : Site69 
+3 alleles
+0.0% missing data
+   2   (0.132) 0.945 0.091 
+   1   (0.513) 0.037 0.542 
+   0   (0.355) 0.017 0.367 
+
+Locus 71 : Site70 
+2 alleles
+0.0% missing data
+   0   (0.802) 0.982 0.814 
+   1   (0.198) 0.018 0.186 
+
+Locus 72 : Site71 
+3 alleles
+0.0% missing data
+   2   (0.302) 0.965 0.271 
+   1   (0.391) 0.022 0.412 
+   0   (0.307) 0.013 0.317 
+
+Locus 73 : Site72 
+2 alleles
+0.0% missing data
+   0   (0.792) 0.982 0.810 
+   1   (0.208) 0.018 0.190 
+
+Locus 74 : Site73 
+2 alleles
+0.0% missing data
+   0   (0.825) 0.989 0.846 
+   1   (0.175) 0.011 0.154 
+
+Locus 75 : Site74 
+2 alleles
+0.0% missing data
+   1   (0.125) 0.152 0.077 
+   0   (0.875) 0.848 0.923 
+
+Locus 76 : Site75 
+2 alleles
+0.0% missing data
+   0   (0.833) 0.992 0.851 
+   1   (0.167) 0.008 0.149 
+
+Locus 77 : Site76 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.992 0.908 
+   1   (0.120) 0.008 0.092 
+
+Locus 78 : Site77 
+2 alleles
+0.0% missing data
+   0   (0.749) 0.984 0.755 
+   1   (0.251) 0.016 0.245 
+
+Locus 79 : Site78 
+2 alleles
+0.0% missing data
+   0   (0.894) 0.994 0.913 
+   1   (0.106) 0.006 0.087 
+
+Locus 80 : Site79 
+3 alleles
+0.0% missing data
+   0   (0.725) 0.980 0.752 
+   1   (0.183) 0.017 0.173 
+   2   (0.092) 0.004 0.075 
+
+Locus 81 : Site80 
+2 alleles
+0.0% missing data
+   0   (0.857) 0.994 0.870 
+   1   (0.143) 0.006 0.130 
+
+Locus 82 : Site81 
+2 alleles
+0.0% missing data
+   0   (0.836) 0.992 0.852 
+   1   (0.164) 0.008 0.148 
+
+Locus 83 : Site82 
+2 alleles
+0.0% missing data
+   0   (0.835) 0.923 0.875 
+   1   (0.165) 0.077 0.125 
+
+Locus 84 : Site83 
+2 alleles
+0.0% missing data
+   0   (0.837) 0.993 0.855 
+   1   (0.163) 0.007 0.145 
+
+Locus 85 : Site84 
+3 alleles
+0.0% missing data
+   0   (0.714) 0.975 0.740 
+   1   (0.180) 0.017 0.174 
+   2   (0.106) 0.008 0.086 
+
+Locus 86 : Site85 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.994 0.904 
+   1   (0.116) 0.006 0.096 
+
+Locus 87 : Site86 
+3 alleles
+0.0% missing data
+   0   (0.629) 0.973 0.651 
+   1   (0.271) 0.018 0.267 
+   2   (0.100) 0.008 0.082 
+
+Locus 88 : Site87 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.994 0.911 
+   1   (0.113) 0.006 0.089 
+
+Locus 89 : Site88 
+2 alleles
+0.0% missing data
+   0   (0.871) 0.995 0.897 
+   1   (0.129) 0.005 0.103 
+
+Locus 90 : Site89 
+3 alleles
+0.0% missing data
+   2   (0.136) 0.941 0.092 
+   1   (0.503) 0.039 0.541 
+   0   (0.361) 0.020 0.368 
+
+Locus 91 : Site90 
+3 alleles
+0.0% missing data
+   0   (0.311) 0.969 0.277 
+   1   (0.395) 0.019 0.419 
+   2   (0.294) 0.012 0.304 
+
+Locus 92 : Site91 
+2 alleles
+0.0% missing data
+   0   (0.883) 0.994 0.908 
+   1   (0.117) 0.006 0.092 
+
+Locus 93 : Site92 
+3 alleles
+0.0% missing data
+   2   (0.143) 0.942 0.097 
+   1   (0.520) 0.043 0.549 
+   0   (0.337) 0.015 0.354 
+
+Locus 94 : Site93 
+3 alleles
+0.0% missing data
+   0   (0.315) 0.964 0.281 
+   1   (0.390) 0.022 0.414 
+   2   (0.295) 0.014 0.305 
+
+Locus 95 : Site94 
+3 alleles
+0.0% missing data
+   0   (0.320) 0.971 0.285 
+   1   (0.391) 0.018 0.413 
+   2   (0.289) 0.011 0.302 
+
+Locus 96 : Site95 
+3 alleles
+0.0% missing data
+   0   (0.653) 0.973 0.661 
+   1   (0.242) 0.021 0.253 
+   2   (0.104) 0.006 0.086 
+
+Locus 97 : Site96 
+3 alleles
+0.0% missing data
+   0   (0.328) 0.972 0.292 
+   1   (0.365) 0.014 0.394 
+   2   (0.307) 0.013 0.314 
+
+Locus 98 : Site97 
+2 alleles
+0.0% missing data
+   0   (0.869) 0.993 0.898 
+   1   (0.131) 0.007 0.102 
+
+Locus 99 : Site98 
+3 alleles
+0.0% missing data
+   0   (0.631) 0.973 0.645 
+   1   (0.268) 0.022 0.270 
+   2   (0.101) 0.005 0.085 
+
+Locus 100 : Site99 
+2 alleles
+0.0% missing data
+   0   (0.876) 0.995 0.900 
+   1   (0.124) 0.005 0.100 
+
+Locus 101 : Site100 
+3 alleles
+0.0% missing data
+   2   (0.320) 0.973 0.287 
+   1   (0.386) 0.014 0.407 
+   0   (0.295) 0.013 0.307 
+
+Locus 102 : Site101 
+2 alleles
+0.0% missing data
+   0   (0.876) 0.992 0.899 
+   1   (0.124) 0.008 0.101 
+
+Locus 103 : Site102 
+3 alleles
+0.0% missing data
+   0   (0.298) 0.968 0.266 
+   1   (0.395) 0.017 0.422 
+   2   (0.306) 0.015 0.311 
+
+Locus 104 : Site103 
+3 alleles
+0.0% missing data
+   0   (0.325) 0.971 0.289 
+   1   (0.387) 0.016 0.412 
+   2   (0.288) 0.013 0.299 
+
+Locus 105 : Site104 
+2 alleles
+0.0% missing data
+   0   (0.820) 0.696 0.866 
+   1   (0.180) 0.304 0.134 
+
+Locus 106 : Site105 
+2 alleles
+0.0% missing data
+   0   (0.739) 0.990 0.747 
+   1   (0.261) 0.010 0.253 
+
+Locus 107 : Site106 
+3 alleles
+0.0% missing data
+   0   (0.299) 0.967 0.268 
+   1   (0.413) 0.020 0.432 
+   2   (0.288) 0.013 0.300 
+
+Locus 108 : Site107 
+2 alleles
+0.0% missing data
+   0   (0.837) 0.993 0.852 
+   1   (0.163) 0.007 0.148 
+
+Locus 109 : Site108 
+2 alleles
+0.0% missing data
+   0   (0.733) 0.989 0.744 
+   1   (0.267) 0.011 0.256 
+
+Locus 110 : Site109 
+3 alleles
+0.0% missing data
+   0   (0.281) 0.969 0.249 
+   1   (0.393) 0.015 0.419 
+   2   (0.325) 0.015 0.332 
+
+Locus 111 : Site110 
+2 alleles
+0.0% missing data
+   0   (0.892) 0.991 0.913 
+   1   (0.108) 0.009 0.087 
+
+Locus 112 : Site111 
+2 alleles
+0.0% missing data
+   0   (0.900) 0.990 0.919 
+   1   (0.100) 0.010 0.081 
+
+Locus 113 : Site112 
+3 alleles
+0.0% missing data
+   0   (0.713) 0.978 0.742 
+   1   (0.176) 0.016 0.167 
+   2   (0.111) 0.007 0.091 
+
+Locus 114 : Site113 
+3 alleles
+0.0% missing data
+   2   (0.144) 0.945 0.098 
+   1   (0.512) 0.036 0.541 
+   0   (0.344) 0.018 0.361 
+
+Locus 115 : Site114 
+3 alleles
+0.0% missing data
+   2   (0.304) 0.969 0.269 
+   1   (0.415) 0.019 0.440 
+   0   (0.281) 0.012 0.291 
+
+Locus 116 : Site115 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.992 0.905 
+   1   (0.120) 0.008 0.095 
+
+Locus 117 : Site116 
+2 alleles
+0.0% missing data
+   0   (0.830) 0.989 0.849 
+   1   (0.170) 0.011 0.151 
+
+Locus 118 : Site117 
+3 alleles
+0.0% missing data
+   0   (0.633) 0.971 0.646 
+   1   (0.265) 0.021 0.269 
+   2   (0.102) 0.008 0.084 
+
+Locus 119 : Site118 
+3 alleles
+0.0% missing data
+   0   (0.311) 0.969 0.273 
+   1   (0.403) 0.019 0.425 
+   2   (0.286) 0.012 0.303 
+
+Locus 120 : Site119 
+3 alleles
+0.0% missing data
+   2   (0.128) 0.944 0.086 
+   1   (0.510) 0.038 0.540 
+   0   (0.361) 0.018 0.374 
+
+Locus 121 : Site120 
+3 alleles
+0.0% missing data
+   2   (0.317) 0.965 0.282 
+   1   (0.379) 0.020 0.411 
+   0   (0.304) 0.015 0.306 
+
+Locus 122 : Site121 
+2 alleles
+0.0% missing data
+   0   (0.902) 0.929 0.937 
+   1   (0.098) 0.071 0.063 
+
+Locus 123 : Site122 
+2 alleles
+0.0% missing data
+   0   (0.769) 0.790 0.809 
+   1   (0.231) 0.210 0.191 
+
+Locus 124 : Site123 
+2 alleles
+0.0% missing data
+   0   (0.879) 0.993 0.902 
+   1   (0.121) 0.007 0.098 
+
+Locus 125 : Site124 
+2 alleles
+0.0% missing data
+   0   (0.888) 0.989 0.912 
+   1   (0.112) 0.011 0.088 
+
+Locus 126 : Site125 
+2 alleles
+0.0% missing data
+   0   (0.839) 0.989 0.860 
+   1   (0.161) 0.011 0.140 
+
+Locus 127 : Site126 
+2 alleles
+0.0% missing data
+   0   (0.775) 0.977 0.782 
+   1   (0.225) 0.023 0.218 
+
+Locus 128 : Site127 
+3 alleles
+0.0% missing data
+   0   (0.631) 0.976 0.651 
+   1   (0.269) 0.019 0.269 
+   2   (0.100) 0.005 0.080 
+
+Locus 129 : Site128 
+2 alleles
+0.0% missing data
+   0   (0.838) 0.994 0.853 
+   1   (0.162) 0.006 0.147 
+
+Locus 130 : Site129 
+2 alleles
+0.0% missing data
+   0   (0.826) 0.988 0.846 
+   1   (0.174) 0.012 0.154 
+
+Locus 131 : Site130 
+2 alleles
+0.0% missing data
+   0   (0.894) 0.995 0.912 
+   1   (0.106) 0.005 0.088 
+
+Locus 132 : Site131 
+3 alleles
+0.0% missing data
+   0   (0.739) 0.554 0.809 
+   1   (0.163) 0.381 0.125 
+   2   (0.098) 0.065 0.067 
+
+Locus 133 : Site132 
+3 alleles
+0.0% missing data
+   2   (0.133) 0.949 0.093 
+   1   (0.517) 0.037 0.550 
+   0   (0.350) 0.014 0.357 
+
+Locus 134 : Site133 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.990 0.911 
+   1   (0.114) 0.010 0.089 
+
+Locus 135 : Site134 
+2 alleles
+0.0% missing data
+   0   (0.872) 0.992 0.901 
+   1   (0.128) 0.008 0.099 
+
+Locus 136 : Site135 
+3 alleles
+0.0% missing data
+   0   (0.310) 0.970 0.277 
+   1   (0.388) 0.017 0.411 
+   2   (0.302) 0.013 0.312 
+
+Locus 137 : Site136 
+2 alleles
+0.0% missing data
+   0   (0.849) 0.992 0.865 
+   1   (0.151) 0.008 0.135 
+
+Locus 138 : Site137 
+2 alleles
+0.0% missing data
+   0   (0.839) 0.988 0.853 
+   1   (0.161) 0.012 0.147 
+
+Locus 139 : Site138 
+3 alleles
+0.0% missing data
+   0   (0.316) 0.971 0.280 
+   1   (0.398) 0.014 0.423 
+   2   (0.287) 0.015 0.298 
+
+Locus 140 : Site139 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.993 0.904 
+   1   (0.118) 0.007 0.096 
+
+Locus 141 : Site140 
+3 alleles
+0.0% missing data
+   0   (0.323) 0.970 0.287 
+   1   (0.381) 0.016 0.411 
+   2   (0.296) 0.014 0.303 
+
+Locus 142 : Site141 
+3 alleles
+0.0% missing data
+   2   (0.129) 0.739 0.084 
+   1   (0.299) 0.219 0.276 
+   0   (0.572) 0.042 0.640 
+
+Locus 143 : Site142 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.994 0.904 
+   1   (0.122) 0.006 0.096 
+
+Locus 144 : Site143 
+2 alleles
+0.0% missing data
+   0   (0.875) 0.992 0.898 
+   1   (0.125) 0.008 0.102 
+
+Locus 145 : Site144 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.939 0.927 
+   1   (0.113) 0.061 0.073 
+
+Locus 146 : Site145 
+2 alleles
+0.0% missing data
+   0   (0.756) 0.975 0.771 
+   1   (0.244) 0.025 0.229 
+
+Locus 147 : Site146 
+2 alleles
+0.0% missing data
+   0   (0.728) 0.987 0.738 
+   1   (0.272) 0.013 0.262 
+
+Locus 148 : Site147 
+3 alleles
+0.0% missing data
+   0   (0.301) 0.969 0.271 
+   1   (0.382) 0.019 0.405 
+   2   (0.317) 0.011 0.325 
+
+Locus 149 : Site148 
+2 alleles
+0.0% missing data
+   0   (0.833) 0.993 0.852 
+   1   (0.167) 0.007 0.148 
+
+Locus 150 : Site149 
+3 alleles
+0.0% missing data
+   2   (0.098) 0.300 0.063 
+   1   (0.245) 0.458 0.216 
+   0   (0.657) 0.243 0.720 
+
+Locus 151 : Site150 
+3 alleles
+0.0% missing data
+   1   (0.224) 0.428 0.194 
+   2   (0.114) 0.227 0.072 
+   0   (0.661) 0.344 0.734 
+
+Locus 152 : Site151 
+2 alleles
+0.0% missing data
+   0   (0.885) 0.993 0.909 
+   1   (0.115) 0.007 0.091 
+
+Locus 153 : Site152 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.983 0.912 
+   1   (0.116) 0.017 0.088 
+
+Locus 154 : Site153 
+2 alleles
+0.0% missing data
+   0   (0.792) 0.988 0.796 
+   1   (0.208) 0.012 0.204 
+
+Locus 155 : Site154 
+3 alleles
+0.0% missing data
+   0   (0.345) 0.968 0.303 
+   1   (0.389) 0.021 0.430 
+   2   (0.266) 0.011 0.267 
+
+Locus 156 : Site155 
+3 alleles
+0.0% missing data
+   0   (0.230) 0.965 0.185 
+   1   (0.447) 0.022 0.484 
+   2   (0.323) 0.013 0.331 
+
+Locus 157 : Site156 
+3 alleles
+0.0% missing data
+   2   (0.126) 0.943 0.083 
+   1   (0.502) 0.032 0.516 
+   0   (0.373) 0.025 0.400 
+
+Locus 158 : Site157 
+3 alleles
+0.0% missing data
+   2   (0.128) 0.944 0.086 
+   1   (0.487) 0.036 0.513 
+   0   (0.385) 0.020 0.401 
+
+Locus 159 : Site158 
+3 alleles
+0.0% missing data
+   0   (0.238) 0.966 0.198 
+   1   (0.443) 0.018 0.478 
+   2   (0.319) 0.016 0.324 
+
+Locus 160 : Site159 
+3 alleles
+0.0% missing data
+   2   (0.114) 0.301 0.076 
+   1   (0.198) 0.456 0.163 
+   0   (0.688) 0.243 0.762 
+
+Locus 161 : Site160 
+2 alleles
+0.0% missing data
+   0   (0.881) 0.996 0.905 
+   1   (0.119) 0.004 0.095 
+
+Locus 162 : Site161 
+3 alleles
+0.0% missing data
+   0   (0.252) 0.958 0.208 
+   1   (0.447) 0.026 0.480 
+   2   (0.302) 0.016 0.312 
+
+Locus 163 : Site162 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.996 0.906 
+   1   (0.113) 0.004 0.094 
+
+Locus 164 : Site163 
+3 alleles
+0.0% missing data
+   2   (0.134) 0.942 0.089 
+   1   (0.484) 0.038 0.508 
+   0   (0.381) 0.020 0.403 
+
+Locus 165 : Site164 
+2 alleles
+0.0% missing data
+   0   (0.869) 0.993 0.896 
+   1   (0.131) 0.007 0.104 
+
+Locus 166 : Site165 
+2 alleles
+0.0% missing data
+   0   (0.891) 0.988 0.915 
+   1   (0.109) 0.012 0.085 
+
+Locus 167 : Site166 
+3 alleles
+0.0% missing data
+   0   (0.244) 0.969 0.199 
+   1   (0.425) 0.018 0.465 
+   2   (0.331) 0.013 0.336 
+
+Locus 168 : Site167 
+2 alleles
+0.0% missing data
+   0   (0.885) 0.982 0.914 
+   1   (0.115) 0.018 0.086 
+
+Locus 169 : Site168 
+3 alleles
+0.0% missing data
+   2   (0.146) 0.947 0.097 
+   1   (0.458) 0.033 0.490 
+   0   (0.395) 0.020 0.413 
+
+Locus 170 : Site169 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.779 0.929 
+   1   (0.113) 0.221 0.071 
+
+Locus 171 : Site170 
+3 alleles
+0.0% missing data
+   0   (0.231) 0.961 0.191 
+   1   (0.481) 0.028 0.505 
+   2   (0.288) 0.011 0.304 
+
+Locus 172 : Site171 
+2 alleles
+0.0% missing data
+   0   (0.831) 0.991 0.849 
+   1   (0.169) 0.009 0.151 
+
+Locus 173 : Site172 
+3 alleles
+0.0% missing data
+   0   (0.252) 0.967 0.208 
+   1   (0.453) 0.022 0.483 
+   2   (0.295) 0.011 0.309 
+
+Locus 174 : Site173 
+2 alleles
+0.0% missing data
+   0   (0.706) 0.989 0.702 
+   1   (0.294) 0.011 0.298 
+
+Locus 175 : Site174 
+3 alleles
+0.0% missing data
+   0   (0.632) 0.977 0.648 
+   1   (0.266) 0.018 0.269 
+   2   (0.102) 0.005 0.083 
+
+Locus 176 : Site175 
+2 alleles
+0.0% missing data
+   0   (0.690) 0.783 0.716 
+   1   (0.310) 0.217 0.284 
+
+Locus 177 : Site176 
+2 alleles
+0.0% missing data
+   0   (0.837) 0.991 0.860 
+   1   (0.163) 0.009 0.140 
+
+Locus 178 : Site177 
+3 alleles
+0.0% missing data
+   0   (0.228) 0.964 0.187 
+   1   (0.446) 0.021 0.480 
+   2   (0.326) 0.016 0.333 
+
+Locus 179 : Site178 
+3 alleles
+0.0% missing data
+   0   (0.623) 0.969 0.641 
+   1   (0.272) 0.021 0.275 
+   2   (0.105) 0.009 0.084 
+
+Locus 180 : Site179 
+2 alleles
+0.0% missing data
+   1   (0.113) 0.147 0.070 
+   0   (0.887) 0.853 0.930 
+
+Locus 181 : Site180 
+3 alleles
+0.0% missing data
+   0   (0.656) 0.983 0.665 
+   1   (0.234) 0.010 0.241 
+   2   (0.110) 0.007 0.094 
+
+Locus 182 : Site181 
+2 alleles
+0.0% missing data
+   0   (0.890) 0.995 0.909 
+   1   (0.110) 0.005 0.091 
+
+Locus 183 : Site182 
+3 alleles
+0.0% missing data
+   2   (0.226) 0.964 0.187 
+   1   (0.458) 0.020 0.488 
+   0   (0.316) 0.016 0.324 
+
+Locus 184 : Site183 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.993 0.912 
+   1   (0.113) 0.007 0.088 
+
+Locus 185 : Site184 
+2 alleles
+0.0% missing data
+   0   (0.675) 0.984 0.686 
+   1   (0.325) 0.016 0.314 
+
+Locus 186 : Site185 
+3 alleles
+0.0% missing data
+   2   (0.146) 0.942 0.098 
+   1   (0.472) 0.036 0.499 
+   0   (0.383) 0.022 0.402 
+
+Locus 187 : Site186 
+3 alleles
+0.0% missing data
+   0   (0.245) 0.966 0.202 
+   1   (0.431) 0.018 0.469 
+   2   (0.325) 0.016 0.329 
+
+Locus 188 : Site187 
+3 alleles
+0.0% missing data
+   2   (0.140) 0.939 0.093 
+   1   (0.485) 0.043 0.504 
+   0   (0.375) 0.018 0.403 
+
+Locus 189 : Site188 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.925 0.921 
+   1   (0.126) 0.075 0.079 
+
+Locus 190 : Site189 
+3 alleles
+0.0% missing data
+   0   (0.629) 0.976 0.645 
+   1   (0.263) 0.018 0.267 
+   2   (0.108) 0.006 0.088 
+
+Locus 191 : Site190 
+3 alleles
+0.0% missing data
+   0   (0.608) 0.975 0.625 
+   1   (0.267) 0.018 0.273 
+   2   (0.126) 0.007 0.103 
+
+Locus 192 : Site191 
+3 alleles
+0.0% missing data
+   0   (0.618) 0.971 0.636 
+   1   (0.269) 0.022 0.270 
+   2   (0.114) 0.007 0.095 
+
+Locus 193 : Site192 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.992 0.910 
+   1   (0.113) 0.008 0.090 
+
+Locus 194 : Site193 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.993 0.909 
+   1   (0.114) 0.007 0.091 
+
+Locus 195 : Site194 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.994 0.904 
+   1   (0.122) 0.006 0.096 
+
+Locus 196 : Site195 
+3 alleles
+0.0% missing data
+   0   (0.250) 0.964 0.211 
+   1   (0.458) 0.020 0.487 
+   2   (0.292) 0.016 0.302 
+
+Locus 197 : Site196 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.988 0.905 
+   1   (0.116) 0.012 0.095 
+
+Locus 198 : Site197 
+2 alleles
+0.0% missing data
+   0   (0.827) 0.993 0.847 
+   1   (0.173) 0.007 0.153 
+
+Locus 199 : Site198 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.992 0.907 
+   1   (0.114) 0.008 0.093 
+
+Locus 200 : Site199 
+2 alleles
+0.0% missing data
+   0   (0.876) 0.993 0.900 
+   1   (0.124) 0.007 0.100 
+
+Locus 201 : Site200 
+2 alleles
+0.0% missing data
+   0   (0.879) 0.992 0.901 
+   1   (0.121) 0.008 0.099 
+
+Locus 202 : Site201 
+3 alleles
+0.0% missing data
+   0   (0.242) 0.966 0.203 
+   1   (0.466) 0.018 0.490 
+   2   (0.292) 0.016 0.307 
+
+Locus 203 : Site202 
+3 alleles
+0.0% missing data
+   0   (0.242) 0.963 0.201 
+   1   (0.461) 0.022 0.493 
+   2   (0.296) 0.015 0.306 
+
+Locus 204 : Site203 
+3 alleles
+0.0% missing data
+   2   (0.195) 0.961 0.151 
+   1   (0.423) 0.021 0.451 
+   0   (0.382) 0.018 0.398 
+
+Locus 205 : Site204 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.993 0.905 
+   1   (0.120) 0.007 0.095 
+
+Locus 206 : Site205 
+2 alleles
+0.0% missing data
+   0   (0.795) 0.989 0.805 
+   1   (0.205) 0.011 0.195 
+
+Locus 207 : Site206 
+2 alleles
+0.0% missing data
+   0   (0.883) 0.991 0.906 
+   1   (0.117) 0.009 0.094 
+
+Locus 208 : Site207 
+2 alleles
+0.0% missing data
+   0   (0.694) 0.986 0.696 
+   1   (0.306) 0.014 0.304 
+
+Locus 209 : Site208 
+2 alleles
+0.0% missing data
+   0   (0.879) 0.995 0.906 
+   1   (0.121) 0.005 0.094 
+
+Locus 210 : Site209 
+3 alleles
+0.0% missing data
+   2   (0.238) 0.968 0.198 
+   1   (0.458) 0.021 0.488 
+   0   (0.305) 0.011 0.313 
+
+Locus 211 : Site210 
+2 alleles
+0.0% missing data
+   0   (0.897) 0.928 0.937 
+   2   (0.103) 0.072 0.063 
+
+Locus 212 : Site211 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.996 0.908 
+   1   (0.114) 0.004 0.092 
+
+Locus 213 : Site212 
+3 alleles
+0.0% missing data
+   2   (0.231) 0.966 0.184 
+   1   (0.475) 0.021 0.508 
+   0   (0.294) 0.013 0.309 
+
+Locus 214 : Site213 
+2 alleles
+0.0% missing data
+   0   (0.711) 0.987 0.708 
+   1   (0.289) 0.013 0.292 
+
+Locus 215 : Site214 
+2 alleles
+0.0% missing data
+   0   (0.875) 0.986 0.900 
+   1   (0.125) 0.014 0.100 
+
+Locus 216 : Site215 
+2 alleles
+0.0% missing data
+   0   (0.765) 0.979 0.772 
+   1   (0.235) 0.021 0.228 
+
+Locus 217 : Site216 
+2 alleles
+0.0% missing data
+   0   (0.881) 0.996 0.902 
+   1   (0.119) 0.004 0.098 
+
+Locus 218 : Site217 
+2 alleles
+0.0% missing data
+   0   (0.729) 0.972 0.729 
+   1   (0.271) 0.028 0.271 
+
+Locus 219 : Site218 
+3 alleles
+0.0% missing data
+   2   (0.138) 0.946 0.096 
+   1   (0.481) 0.031 0.504 
+   0   (0.381) 0.023 0.400 
+
+Locus 220 : Site219 
+2 alleles
+0.0% missing data
+   0   (0.842) 0.983 0.863 
+   1   (0.158) 0.017 0.137 
+
+Locus 221 : Site220 
+3 alleles
+0.0% missing data
+   0   (0.243) 0.967 0.204 
+   1   (0.445) 0.021 0.476 
+   2   (0.312) 0.012 0.320 
+
+Locus 222 : Site221 
+2 alleles
+0.0% missing data
+   0   (0.840) 0.987 0.862 
+   1   (0.160) 0.013 0.138 
+
+Locus 223 : Site222 
+3 alleles
+0.0% missing data
+   1   (0.189) 0.427 0.147 
+   2   (0.105) 0.223 0.069 
+   0   (0.705) 0.350 0.784 
+
+Locus 224 : Site223 
+2 alleles
+0.0% missing data
+   0   (0.722) 0.974 0.726 
+   1   (0.278) 0.026 0.274 
+
+Locus 225 : Site224 
+2 alleles
+0.0% missing data
+   0   (0.817) 0.993 0.840 
+   1   (0.183) 0.007 0.160 
+
+Locus 226 : Site225 
+2 alleles
+0.0% missing data
+   0   (0.798) 0.989 0.808 
+   1   (0.202) 0.011 0.192 
+
+Locus 227 : Site226 
+2 alleles
+0.0% missing data
+   0   (0.689) 0.986 0.691 
+   1   (0.311) 0.014 0.309 
+
+Locus 228 : Site227 
+2 alleles
+0.0% missing data
+   0   (0.730) 0.973 0.735 
+   1   (0.270) 0.027 0.265 
+
+Locus 229 : Site228 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.995 0.896 
+   1   (0.126) 0.005 0.104 
+
+Locus 230 : Site229 
+3 alleles
+0.0% missing data
+   0   (0.227) 0.960 0.187 
+   1   (0.464) 0.024 0.491 
+   2   (0.309) 0.015 0.322 
+
+Locus 231 : Site230 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.996 0.899 
+   1   (0.126) 0.004 0.101 
+
+Locus 232 : Site231 
+2 alleles
+0.0% missing data
+   0   (0.881) 0.992 0.908 
+   1   (0.119) 0.008 0.092 
+
+Locus 233 : Site232 
+2 alleles
+0.0% missing data
+   0   (0.740) 0.975 0.747 
+   1   (0.260) 0.025 0.253 
+
+Locus 234 : Site233 
+2 alleles
+0.0% missing data
+   0   (0.712) 0.984 0.705 
+   1   (0.288) 0.016 0.295 
+
+Locus 235 : Site234 
+3 alleles
+0.0% missing data
+   0   (0.249) 0.965 0.208 
+   1   (0.441) 0.019 0.471 
+   2   (0.310) 0.016 0.322 
+
+Locus 236 : Site235 
+2 alleles
+0.0% missing data
+   0   (0.840) 0.986 0.860 
+   1   (0.160) 0.014 0.140 
+
+Locus 237 : Site236 
+3 alleles
+0.0% missing data
+   0   (0.439) 0.978 0.427 
+   1   (0.399) 0.017 0.420 
+   2   (0.162) 0.006 0.153 
+
+Locus 238 : Site237 
+2 alleles
+0.0% missing data
+   0   (0.716) 0.970 0.724 
+   1   (0.284) 0.030 0.276 
+
+Locus 239 : Site238 
+3 alleles
+0.0% missing data
+   0   (0.225) 0.965 0.186 
+   1   (0.467) 0.018 0.496 
+   2   (0.308) 0.017 0.319 
+
+Locus 240 : Site239 
+2 alleles
+0.0% missing data
+   0   (0.698) 0.991 0.703 
+   1   (0.302) 0.009 0.297 
+
+Locus 241 : Site240 
+2 alleles
+0.0% missing data
+   0   (0.728) 0.968 0.732 
+   1   (0.272) 0.032 0.268 
+
+Locus 242 : Site241 
+2 alleles
+0.0% missing data
+   0   (0.843) 0.989 0.863 
+   1   (0.157) 0.011 0.137 
+
+Locus 243 : Site242 
+2 alleles
+0.0% missing data
+   0   (0.812) 0.991 0.817 
+   1   (0.188) 0.009 0.183 
+
+Locus 244 : Site243 
+2 alleles
+0.0% missing data
+   0   (0.731) 0.972 0.739 
+   1   (0.269) 0.028 0.261 
+
+Locus 245 : Site244 
+2 alleles
+0.0% missing data
+   0   (0.798) 0.986 0.809 
+   1   (0.202) 0.014 0.191 
+
+Locus 246 : Site245 
+2 alleles
+0.0% missing data
+   0   (0.889) 0.927 0.928 
+   1   (0.111) 0.073 0.072 
+
+Locus 247 : Site246 
+2 alleles
+0.0% missing data
+   0   (0.876) 0.996 0.898 
+   1   (0.124) 0.004 0.102 
+
+Locus 248 : Site247 
+3 alleles
+0.0% missing data
+   0   (0.156) 0.952 0.109 
+   1   (0.569) 0.034 0.613 
+   2   (0.275) 0.014 0.278 
+
+Locus 249 : Site248 
+2 alleles
+0.0% missing data
+   0   (0.842) 0.993 0.854 
+   1   (0.158) 0.007 0.146 
+
+Locus 250 : Site249 
+2 alleles
+0.0% missing data
+   0   (0.797) 0.991 0.808 
+   1   (0.203) 0.009 0.192 
+
+Locus 251 : Site250 
+3 alleles
+0.0% missing data
+   0   (0.148) 0.949 0.106 
+   1   (0.563) 0.034 0.610 
+   2   (0.288) 0.017 0.284 
+
+Locus 252 : Site251 
+3 alleles
+0.0% missing data
+   0   (0.158) 0.950 0.112 
+   1   (0.567) 0.038 0.614 
+   2   (0.274) 0.012 0.275 
+
+Locus 253 : Site252 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.990 0.908 
+   1   (0.118) 0.010 0.092 
+
+Locus 254 : Site253 
+2 alleles
+0.0% missing data
+   0   (0.779) 0.991 0.795 
+   1   (0.221) 0.009 0.205 
+
+Locus 255 : Site254 
+2 alleles
+0.0% missing data
+   0   (0.787) 0.990 0.801 
+   1   (0.213) 0.010 0.199 
+
+Locus 256 : Site255 
+2 alleles
+0.0% missing data
+   0   (0.893) 0.995 0.915 
+   1   (0.107) 0.005 0.085 
+
+Locus 257 : Site256 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.993 0.910 
+   1   (0.114) 0.007 0.090 
+
+Locus 258 : Site257 
+3 alleles
+0.0% missing data
+   0   (0.126) 0.952 0.089 
+   1   (0.582) 0.037 0.616 
+   2   (0.293) 0.012 0.295 
+
+Locus 259 : Site258 
+2 alleles
+0.0% missing data
+   0   (0.801) 0.973 0.819 
+   1   (0.199) 0.027 0.181 
+
+Locus 260 : Site259 
+2 alleles
+0.0% missing data
+   0   (0.789) 0.986 0.800 
+   1   (0.211) 0.014 0.200 
+
+Locus 261 : Site260 
+3 alleles
+0.0% missing data
+   0   (0.149) 0.950 0.102 
+   1   (0.574) 0.035 0.617 
+   2   (0.277) 0.015 0.281 
+
+Locus 262 : Site261 
+2 alleles
+0.0% missing data
+   0   (0.842) 0.988 0.859 
+   1   (0.158) 0.012 0.141 
+
+Locus 263 : Site262 
+3 alleles
+0.0% missing data
+   0   (0.137) 0.945 0.095 
+   1   (0.567) 0.043 0.617 
+   2   (0.296) 0.012 0.289 
+
+Locus 264 : Site263 
+3 alleles
+0.0% missing data
+   2   (0.145) 0.944 0.095 
+   1   (0.481) 0.041 0.507 
+   0   (0.374) 0.015 0.398 
+
+Locus 265 : Site264 
+3 alleles
+0.0% missing data
+   2   (0.146) 0.951 0.101 
+   1   (0.537) 0.034 0.592 
+   0   (0.316) 0.015 0.307 
+
+Locus 266 : Site265 
+3 alleles
+0.0% missing data
+   0   (0.152) 0.946 0.105 
+   1   (0.562) 0.038 0.607 
+   2   (0.285) 0.016 0.288 
+
+Locus 267 : Site266 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.991 0.907 
+   1   (0.114) 0.009 0.093 
+
+Locus 268 : Site267 
+2 alleles
+0.0% missing data
+   0   (0.886) 0.851 0.928 
+   1   (0.114) 0.149 0.072 
+
+Locus 269 : Site268 
+3 alleles
+0.0% missing data
+   0   (0.556) 0.795 0.583 
+   1   (0.341) 0.187 0.333 
+   2   (0.103) 0.017 0.084 
+
+Locus 270 : Site269 
+3 alleles
+0.0% missing data
+   0   (0.131) 0.945 0.091 
+   1   (0.575) 0.040 0.617 
+   2   (0.294) 0.015 0.291 
+
+Locus 271 : Site270 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.996 0.902 
+   1   (0.118) 0.004 0.098 
+
+Locus 272 : Site271 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.995 0.900 
+   1   (0.126) 0.005 0.100 
+
+Locus 273 : Site272 
+2 alleles
+0.0% missing data
+   0   (0.752) 0.979 0.767 
+   1   (0.248) 0.021 0.233 
+
+Locus 274 : Site273 
+2 alleles
+0.0% missing data
+   0   (0.778) 0.988 0.794 
+   1   (0.222) 0.012 0.206 
+
+Locus 275 : Site274 
+2 alleles
+0.0% missing data
+   0   (0.748) 0.982 0.759 
+   1   (0.252) 0.018 0.241 
+
+Locus 276 : Site275 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.994 0.907 
+   1   (0.122) 0.006 0.093 
+
+Locus 277 : Site276 
+2 alleles
+0.0% missing data
+   0   (0.885) 0.990 0.909 
+   1   (0.115) 0.010 0.091 
+
+Locus 278 : Site277 
+2 alleles
+0.0% missing data
+   0   (0.748) 0.971 0.747 
+   1   (0.252) 0.029 0.253 
+
+Locus 279 : Site278 
+3 alleles
+0.0% missing data
+   0   (0.230) 0.966 0.191 
+   1   (0.470) 0.022 0.497 
+   2   (0.300) 0.012 0.312 
+
+Locus 280 : Site279 
+3 alleles
+0.0% missing data
+   2   (0.134) 0.720 0.090 
+   1   (0.246) 0.230 0.219 
+   0   (0.621) 0.050 0.690 
+
+Locus 281 : Site280 
+3 alleles
+0.0% missing data
+   0   (0.573) 0.790 0.600 
+   1   (0.328) 0.195 0.324 
+   2   (0.099) 0.015 0.076 
+
+Locus 282 : Site281 
+3 alleles
+0.0% missing data
+   1   (0.163) 0.428 0.130 
+   2   (0.132) 0.228 0.088 
+   0   (0.704) 0.344 0.781 
+
+Locus 283 : Site282 
+2 alleles
+0.0% missing data
+   0   (0.686) 0.794 0.715 
+   1   (0.314) 0.206 0.285 
+
+Locus 284 : Site283 
+2 alleles
+0.0% missing data
+   0   (0.893) 0.995 0.913 
+   1   (0.107) 0.005 0.087 
+
+Locus 285 : Site284 
+2 alleles
+0.0% missing data
+   0   (0.725) 0.973 0.730 
+   1   (0.275) 0.027 0.270 
+
+Locus 286 : Site285 
+3 alleles
+0.0% missing data
+   2   (0.225) 0.968 0.190 
+   1   (0.473) 0.017 0.496 
+   0   (0.302) 0.015 0.314 
+
+Locus 287 : Site286 
+3 alleles
+0.0% missing data
+   2   (0.146) 0.949 0.098 
+   1   (0.484) 0.032 0.512 
+   0   (0.370) 0.018 0.390 
+
+Locus 288 : Site287 
+2 alleles
+0.0% missing data
+   0   (0.882) 0.986 0.912 
+   1   (0.118) 0.014 0.088 
+
+Locus 289 : Site288 
+2 alleles
+0.0% missing data
+   0   (0.706) 0.976 0.718 
+   1   (0.294) 0.024 0.282 
+
+Locus 290 : Site289 
+2 alleles
+0.0% missing data
+   0   (0.901) 0.997 0.918 
+   1   (0.099) 0.003 0.082 
+
+Locus 291 : Site290 
+3 alleles
+0.0% missing data
+   0   (0.250) 0.965 0.204 
+   1   (0.422) 0.019 0.458 
+   2   (0.328) 0.016 0.339 
+
+Locus 292 : Site291 
+3 alleles
+0.0% missing data
+   0   (0.217) 0.964 0.176 
+   1   (0.438) 0.019 0.483 
+   2   (0.345) 0.017 0.340 
+
+Locus 293 : Site292 
+2 alleles
+0.0% missing data
+   0   (0.765) 0.988 0.783 
+   1   (0.235) 0.012 0.217 
+
+Locus 294 : Site293 
+3 alleles
+0.0% missing data
+   0   (0.245) 0.963 0.206 
+   1   (0.451) 0.019 0.481 
+   2   (0.304) 0.018 0.313 
+
+Locus 295 : Site294 
+3 alleles
+0.0% missing data
+   2   (0.235) 0.964 0.194 
+   1   (0.426) 0.023 0.462 
+   0   (0.339) 0.013 0.345 
+
+Locus 296 : Site295 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.993 0.897 
+   1   (0.126) 0.007 0.103 
+
+Locus 297 : Site296 
+3 alleles
+0.0% missing data
+   0   (0.278) 0.970 0.227 
+   1   (0.452) 0.019 0.484 
+   2   (0.270) 0.010 0.289 
+
+Locus 298 : Site297 
+3 alleles
+0.0% missing data
+   2   (0.257) 0.966 0.206 
+   1   (0.434) 0.018 0.471 
+   0   (0.309) 0.016 0.323 
+
+Locus 299 : Site298 
+3 alleles
+0.0% missing data
+   2   (0.231) 0.965 0.191 
+   1   (0.449) 0.020 0.482 
+   0   (0.320) 0.015 0.327 
+
+Locus 300 : Site299 
+2 alleles
+0.0% missing data
+   0   (0.703) 0.984 0.704 
+   1   (0.297) 0.016 0.296 
+
+Locus 301 : Site300 
+3 alleles
+0.0% missing data
+   0   (0.736) 0.546 0.809 
+   1   (0.155) 0.388 0.118 
+   2   (0.109) 0.065 0.073 
+
+Locus 302 : Site301 
+2 alleles
+0.0% missing data
+   0   (0.767) 0.992 0.771 
+   1   (0.233) 0.008 0.229 
+
+Locus 303 : Site302 
+2 alleles
+0.0% missing data
+   0   (0.890) 0.996 0.913 
+   1   (0.110) 0.004 0.087 
+
+Locus 304 : Site303 
+3 alleles
+0.0% missing data
+   2   (0.140) 0.946 0.091 
+   1   (0.460) 0.036 0.496 
+   0   (0.401) 0.018 0.413 
+
+Locus 305 : Site304 
+3 alleles
+0.0% missing data
+   0   (0.282) 0.968 0.231 
+   1   (0.406) 0.019 0.449 
+   2   (0.312) 0.013 0.320 
+
+Locus 306 : Site305 
+2 alleles
+0.0% missing data
+   0   (0.795) 0.991 0.805 
+   1   (0.205) 0.009 0.195 
+
+Locus 307 : Site306 
+2 alleles
+0.0% missing data
+   0   (0.833) 0.992 0.853 
+   1   (0.167) 0.008 0.147 
+
+Locus 308 : Site307 
+3 alleles
+0.0% missing data
+   2   (0.238) 0.962 0.196 
+   1   (0.443) 0.024 0.477 
+   0   (0.319) 0.014 0.327 
+
+Locus 309 : Site308 
+2 alleles
+0.0% missing data
+   0   (0.741) 0.988 0.750 
+   1   (0.259) 0.012 0.250 
+
+Locus 310 : Site309 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.780 0.918 
+   1   (0.122) 0.220 0.082 
+
+Locus 311 : Site310 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.997 0.907 
+   1   (0.113) 0.003 0.093 
+
+Locus 312 : Site311 
+3 alleles
+0.0% missing data
+   0   (0.248) 0.963 0.203 
+   1   (0.446) 0.021 0.476 
+   2   (0.306) 0.015 0.322 
+
+Locus 313 : Site312 
+2 alleles
+0.0% missing data
+   0   (0.825) 0.995 0.848 
+   1   (0.175) 0.005 0.152 
+
+Locus 314 : Site313 
+3 alleles
+0.0% missing data
+   2   (0.132) 0.292 0.086 
+   1   (0.194) 0.465 0.162 
+   0   (0.674) 0.244 0.752 
+
+Locus 315 : Site314 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.990 0.905 
+   1   (0.120) 0.010 0.095 
+
+Locus 316 : Site315 
+2 alleles
+0.0% missing data
+   0   (0.839) 0.993 0.856 
+   1   (0.161) 0.007 0.144 
+
+Locus 317 : Site316 
+2 alleles
+0.0% missing data
+   0   (0.719) 0.977 0.729 
+   1   (0.281) 0.023 0.271 
+
+Locus 318 : Site317 
+3 alleles
+0.0% missing data
+   2   (0.134) 0.941 0.088 
+   1   (0.462) 0.034 0.496 
+   0   (0.404) 0.025 0.416 
+
+Locus 319 : Site318 
+2 alleles
+0.0% missing data
+   0   (0.883) 0.778 0.926 
+   1   (0.117) 0.222 0.074 
+
+Locus 320 : Site319 
+3 alleles
+0.0% missing data
+   0   (0.255) 0.972 0.210 
+   1   (0.475) 0.019 0.498 
+   2   (0.271) 0.009 0.291 
+
+Locus 321 : Site320 
+3 alleles
+0.0% missing data
+   0   (0.222) 0.965 0.184 
+   1   (0.449) 0.023 0.481 
+   2   (0.329) 0.012 0.335 
+
+Locus 322 : Site321 
+3 alleles
+0.0% missing data
+   0   (0.565) 0.796 0.590 
+   1   (0.336) 0.191 0.332 
+   2   (0.099) 0.013 0.078 
+
+Locus 323 : Site322 
+2 alleles
+0.0% missing data
+   0   (0.638) 0.984 0.637 
+   1   (0.362) 0.016 0.363 
+
+Locus 324 : Site323 
+3 alleles
+0.0% missing data
+   2   (0.239) 0.967 0.193 
+   1   (0.442) 0.020 0.478 
+   0   (0.319) 0.013 0.329 
+
+Locus 325 : Site324 
+2 alleles
+0.0% missing data
+   0   (0.719) 0.971 0.722 
+   1   (0.281) 0.029 0.278 
+
+Locus 326 : Site325 
+2 alleles
+0.0% missing data
+   0   (0.883) 0.994 0.902 
+   1   (0.117) 0.006 0.098 
+
+Locus 327 : Site326 
+2 alleles
+0.0% missing data
+   0   (0.711) 0.973 0.722 
+   1   (0.289) 0.027 0.278 
+
+Locus 328 : Site327 
+2 alleles
+0.0% missing data
+   0   (0.883) 0.992 0.905 
+   1   (0.117) 0.008 0.095 
+
+Locus 329 : Site328 
+2 alleles
+0.0% missing data
+   0   (0.845) 0.847 0.883 
+   1   (0.155) 0.153 0.117 
+
+Locus 330 : Site329 
+2 alleles
+0.0% missing data
+   0   (0.841) 0.994 0.856 
+   1   (0.159) 0.006 0.144 
+
+Locus 331 : Site330 
+3 alleles
+0.0% missing data
+   2   (0.265) 0.972 0.219 
+   1   (0.443) 0.017 0.474 
+   0   (0.292) 0.010 0.307 
+
+Locus 332 : Site331 
+3 alleles
+0.0% missing data
+   2   (0.247) 0.966 0.206 
+   1   (0.468) 0.026 0.497 
+   0   (0.284) 0.008 0.297 
+
+Locus 333 : Site332 
+3 alleles
+0.0% missing data
+   0   (0.402) 0.969 0.392 
+   1   (0.441) 0.022 0.461 
+   2   (0.156) 0.009 0.147 
+
+Locus 334 : Site333 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.996 0.905 
+   1   (0.113) 0.004 0.095 
+
+Locus 335 : Site334 
+2 alleles
+0.0% missing data
+   0   (0.713) 0.972 0.720 
+   1   (0.287) 0.028 0.280 
+
+Locus 336 : Site335 
+2 alleles
+0.0% missing data
+   0   (0.664) 0.980 0.653 
+   1   (0.336) 0.020 0.347 
+
+Locus 337 : Site336 
+3 alleles
+0.0% missing data
+   0   (0.232) 0.966 0.188 
+   1   (0.481) 0.017 0.511 
+   2   (0.287) 0.016 0.300 
+
+Locus 338 : Site337 
+3 alleles
+0.0% missing data
+   2   (0.140) 0.947 0.095 
+   1   (0.455) 0.032 0.486 
+   0   (0.405) 0.020 0.420 
+
+Locus 339 : Site338 
+3 alleles
+0.0% missing data
+   2   (0.116) 0.290 0.077 
+   1   (0.196) 0.461 0.161 
+   0   (0.688) 0.249 0.762 
+
+Locus 340 : Site339 
+2 alleles
+0.0% missing data
+   0   (0.783) 0.989 0.797 
+   1   (0.217) 0.011 0.203 
+
+Locus 341 : Site340 
+2 alleles
+0.0% missing data
+   0   (0.878) 0.995 0.903 
+   1   (0.122) 0.005 0.097 
+
+Locus 342 : Site341 
+2 alleles
+0.0% missing data
+   0   (0.725) 0.973 0.732 
+   1   (0.275) 0.027 0.268 
+
+Locus 343 : Site342 
+3 alleles
+0.0% missing data
+   0   (0.257) 0.969 0.212 
+   1   (0.430) 0.021 0.465 
+   2   (0.313) 0.011 0.323 
+
+Locus 344 : Site343 
+2 alleles
+0.0% missing data
+   0   (0.835) 0.993 0.851 
+   1   (0.165) 0.007 0.149 
+
+Locus 345 : Site344 
+2 alleles
+0.0% missing data
+   0   (0.790) 0.990 0.805 
+   1   (0.210) 0.010 0.195 
+
+Locus 346 : Site345 
+2 alleles
+0.0% missing data
+   0   (0.711) 0.975 0.720 
+   1   (0.289) 0.025 0.280 
+
+Locus 347 : Site346 
+2 alleles
+0.0% missing data
+   0   (0.802) 0.991 0.813 
+   1   (0.198) 0.009 0.187 
+
+Locus 348 : Site347 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.995 0.901 
+   1   (0.120) 0.005 0.099 
+
+Locus 349 : Site348 
+3 alleles
+0.0% missing data
+   2   (0.125) 0.945 0.084 
+   1   (0.487) 0.036 0.505 
+   0   (0.388) 0.019 0.411 
+
+Locus 350 : Site349 
+3 alleles
+0.0% missing data
+   0   (0.244) 0.970 0.200 
+   1   (0.449) 0.019 0.486 
+   2   (0.306) 0.011 0.314 
+
+Locus 351 : Site350 
+3 alleles
+0.0% missing data
+   0   (0.262) 0.968 0.213 
+   1   (0.437) 0.018 0.473 
+   2   (0.300) 0.013 0.314 
+
+Locus 352 : Site351 
+3 alleles
+0.0% missing data
+   2   (0.101) 0.298 0.066 
+   1   (0.204) 0.470 0.165 
+   0   (0.695) 0.232 0.770 
+
+Locus 353 : Site352 
+3 alleles
+0.0% missing data
+   0   (0.566) 0.790 0.591 
+   1   (0.345) 0.193 0.337 
+   2   (0.088) 0.017 0.072 
+
+Locus 354 : Site353 
+3 alleles
+0.0% missing data
+   2   (0.126) 0.298 0.083 
+   1   (0.200) 0.463 0.163 
+   0   (0.674) 0.239 0.754 
+
+Locus 355 : Site354 
+2 alleles
+0.0% missing data
+   0   (0.795) 0.972 0.815 
+   1   (0.205) 0.028 0.185 
+
+Locus 356 : Site355 
+2 alleles
+0.0% missing data
+   0   (0.798) 0.985 0.810 
+   1   (0.202) 0.015 0.190 
+
+Locus 357 : Site356 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.994 0.905 
+   1   (0.113) 0.006 0.095 
+
+Locus 358 : Site357 
+2 alleles
+0.0% missing data
+   0   (0.723) 0.969 0.735 
+   1   (0.277) 0.031 0.265 
+
+Locus 359 : Site358 
+3 alleles
+0.0% missing data
+   0   (0.243) 0.965 0.201 
+   1   (0.456) 0.022 0.488 
+   2   (0.301) 0.013 0.311 
+
+Locus 360 : Site359 
+2 alleles
+0.0% missing data
+   0   (0.893) 0.994 0.917 
+   1   (0.107) 0.006 0.083 
+
+Locus 361 : Site360 
+2 alleles
+0.0% missing data
+   0   (0.713) 0.971 0.723 
+   1   (0.287) 0.029 0.277 
+
+Locus 362 : Site361 
+2 alleles
+0.0% missing data
+   0   (0.840) 0.994 0.856 
+   1   (0.160) 0.006 0.144 
+
+Locus 363 : Site362 
+3 alleles
+0.0% missing data
+   0   (0.238) 0.963 0.197 
+   1   (0.479) 0.024 0.507 
+   2   (0.283) 0.013 0.296 
+
+Locus 364 : Site363 
+3 alleles
+0.0% missing data
+   0   (0.257) 0.962 0.212 
+   1   (0.448) 0.024 0.480 
+   2   (0.295) 0.013 0.308 
+
+Locus 365 : Site364 
+2 alleles
+0.0% missing data
+   0   (0.881) 0.993 0.906 
+   1   (0.119) 0.007 0.094 
+
+Locus 366 : Site365 
+2 alleles
+0.0% missing data
+   0   (0.773) 0.979 0.782 
+   1   (0.227) 0.021 0.218 
+
+Locus 367 : Site366 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.986 0.914 
+   1   (0.113) 0.014 0.086 
+
+Locus 368 : Site367 
+3 alleles
+0.0% missing data
+   0   (0.744) 0.554 0.810 
+   1   (0.158) 0.385 0.123 
+   2   (0.098) 0.061 0.067 
+
+Locus 369 : Site368 
+3 alleles
+0.0% missing data
+   2   (0.123) 0.940 0.083 
+   1   (0.476) 0.038 0.500 
+   0   (0.400) 0.022 0.416 
+
+Locus 370 : Site369 
+2 alleles
+0.0% missing data
+   0   (0.729) 0.971 0.735 
+   1   (0.271) 0.029 0.265 
+
+Locus 371 : Site370 
+2 alleles
+0.0% missing data
+   0   (0.875) 0.995 0.903 
+   1   (0.125) 0.005 0.097 
+
+Locus 372 : Site371 
+2 alleles
+0.0% missing data
+   0   (0.784) 0.990 0.799 
+   1   (0.216) 0.010 0.201 
+
+Locus 373 : Site372 
+2 alleles
+0.0% missing data
+   0   (0.779) 0.991 0.797 
+   1   (0.221) 0.009 0.203 
+
+Locus 374 : Site373 
+3 alleles
+0.0% missing data
+   0   (0.228) 0.965 0.185 
+   1   (0.438) 0.021 0.477 
+   2   (0.335) 0.014 0.338 
+
+Locus 375 : Site374 
+2 alleles
+0.0% missing data
+   0   (0.721) 0.976 0.729 
+   1   (0.279) 0.024 0.271 
+
+Locus 376 : Site375 
+3 alleles
+0.0% missing data
+   1   (0.401) 0.440 0.411 
+   0   (0.493) 0.270 0.520 
+   2   (0.106) 0.290 0.069 
+
+Locus 377 : Site376 
+3 alleles
+0.0% missing data
+   2   (0.257) 0.972 0.214 
+   1   (0.451) 0.019 0.485 
+   0   (0.292) 0.009 0.301 
+
+Locus 378 : Site377 
+3 alleles
+0.0% missing data
+   1   (0.369) 0.387 0.364 
+   0   (0.529) 0.602 0.553 
+   2   (0.102) 0.011 0.083 
+
+Locus 379 : Site378 
+3 alleles
+0.0% missing data
+   0   (0.254) 0.968 0.213 
+   1   (0.446) 0.019 0.476 
+   2   (0.300) 0.013 0.311 
+
+Locus 380 : Site379 
+2 alleles
+0.0% missing data
+   0   (0.823) 0.991 0.843 
+   1   (0.177) 0.009 0.157 
+
+Locus 381 : Site380 
+3 alleles
+0.0% missing data
+   1   (0.153) 0.148 0.116 
+   0   (0.737) 0.774 0.814 
+   2   (0.110) 0.078 0.071 
+
+Locus 382 : Site381 
+2 alleles
+0.0% missing data
+   0   (0.422) 0.977 0.397 
+   1   (0.578) 0.023 0.603 
+
+Locus 383 : Site382 
+2 alleles
+0.0% missing data
+   0   (0.731) 0.973 0.740 
+   1   (0.269) 0.027 0.260 
+
+Locus 384 : Site383 
+2 alleles
+0.0% missing data
+   0   (0.836) 0.988 0.852 
+   1   (0.164) 0.012 0.148 
+
+Locus 385 : Site384 
+3 alleles
+0.0% missing data
+   2   (0.133) 0.943 0.090 
+   1   (0.477) 0.036 0.501 
+   0   (0.390) 0.021 0.408 
+
+Locus 386 : Site385 
+2 alleles
+0.0% missing data
+   0   (0.869) 0.994 0.895 
+   1   (0.131) 0.006 0.105 
+
+Locus 387 : Site386 
+2 alleles
+0.0% missing data
+   0   (0.715) 0.971 0.723 
+   1   (0.285) 0.029 0.277 
+
+Locus 388 : Site387 
+2 alleles
+0.0% missing data
+   0   (0.722) 0.968 0.729 
+   1   (0.278) 0.032 0.271 
+
+Locus 389 : Site388 
+3 alleles
+0.0% missing data
+   1   (0.159) 0.430 0.127 
+   2   (0.114) 0.227 0.075 
+   0   (0.727) 0.343 0.798 
+
+Locus 390 : Site389 
+3 alleles
+0.0% missing data
+   0   (0.260) 0.967 0.218 
+   1   (0.429) 0.022 0.465 
+   2   (0.311) 0.011 0.317 
+
+Locus 391 : Site390 
+2 alleles
+0.0% missing data
+   0   (0.801) 0.990 0.812 
+   1   (0.199) 0.010 0.188 
+
+Locus 392 : Site391 
+2 alleles
+0.0% missing data
+   0   (0.870) 0.994 0.897 
+   1   (0.130) 0.006 0.103 
+
+Locus 393 : Site392 
+2 alleles
+0.0% missing data
+   0   (0.731) 0.968 0.741 
+   1   (0.269) 0.032 0.259 
+
+Locus 394 : Site393 
+3 alleles
+0.0% missing data
+   1   (0.165) 0.417 0.133 
+   2   (0.118) 0.230 0.076 
+   0   (0.717) 0.353 0.790 
+
+Locus 395 : Site394 
+2 alleles
+0.0% missing data
+   0   (0.873) 0.986 0.904 
+   1   (0.127) 0.014 0.096 
+
+Locus 396 : Site395 
+3 alleles
+0.0% missing data
+   2   (0.235) 0.969 0.192 
+   1   (0.447) 0.018 0.481 
+   0   (0.318) 0.014 0.327 
+
+Locus 397 : Site396 
+2 alleles
+0.0% missing data
+   0   (0.776) 0.988 0.789 
+   1   (0.224) 0.012 0.211 
+
+Locus 398 : Site397 
+2 alleles
+0.0% missing data
+   0   (0.890) 0.994 0.912 
+   1   (0.110) 0.006 0.088 
+
+Locus 399 : Site398 
+3 alleles
+0.0% missing data
+   1   (0.397) 0.442 0.401 
+   0   (0.481) 0.272 0.517 
+   2   (0.121) 0.287 0.082 
+
+Locus 400 : Site399 
+3 alleles
+0.0% missing data
+   2   (0.145) 0.940 0.096 
+   1   (0.457) 0.041 0.494 
+   0   (0.398) 0.019 0.410 
+
+Locus 401 : Site400 
+2 alleles
+0.0% missing data
+   1   (0.192) 0.335 0.154 
+   0   (0.808) 0.665 0.846 
+
+Locus 402 : Site401 
+2 alleles
+0.0% missing data
+   0   (0.729) 0.969 0.736 
+   1   (0.271) 0.031 0.264 
+
+Locus 403 : Site402 
+2 alleles
+0.0% missing data
+   0   (0.836) 0.993 0.853 
+   1   (0.164) 0.007 0.147 
+
+Locus 404 : Site403 
+2 alleles
+0.0% missing data
+   0   (0.722) 0.970 0.730 
+   1   (0.278) 0.030 0.270 
+
+Locus 405 : Site404 
+3 alleles
+0.0% missing data
+   0   (0.253) 0.966 0.209 
+   1   (0.427) 0.020 0.464 
+   2   (0.320) 0.014 0.326 
+
+Locus 406 : Site405 
+3 alleles
+0.0% missing data
+   0   (0.227) 0.962 0.186 
+   1   (0.457) 0.026 0.491 
+   2   (0.315) 0.012 0.323 
+
+Locus 407 : Site406 
+2 alleles
+0.0% missing data
+   0   (0.850) 0.982 0.868 
+   1   (0.150) 0.018 0.132 
+
+Locus 408 : Site407 
+2 alleles
+0.0% missing data
+   0   (0.753) 0.989 0.760 
+   1   (0.247) 0.011 0.240 
+
+Locus 409 : Site408 
+2 alleles
+0.0% missing data
+   0   (0.819) 0.977 0.834 
+   1   (0.181) 0.023 0.166 
+
+Locus 410 : Site409 
+3 alleles
+0.0% missing data
+   2   (0.131) 0.944 0.088 
+   1   (0.592) 0.044 0.635 
+   0   (0.277) 0.012 0.277 
+
+Locus 411 : Site410 
+2 alleles
+0.0% missing data
+   0   (0.874) 0.995 0.903 
+   1   (0.126) 0.005 0.097 
+
+Locus 412 : Site411 
+3 alleles
+0.0% missing data
+   0   (0.191) 0.949 0.144 
+   1   (0.660) 0.040 0.719 
+   2   (0.149) 0.011 0.137 
+
+Locus 413 : Site412 
+3 alleles
+0.0% missing data
+   2   (0.128) 0.942 0.082 
+   1   (0.476) 0.035 0.502 
+   0   (0.396) 0.022 0.416 
+
+Locus 414 : Site413 
+2 alleles
+0.0% missing data
+   0   (0.798) 0.989 0.809 
+   1   (0.202) 0.011 0.191 
+
+Locus 415 : Site414 
+2 alleles
+0.0% missing data
+   0   (0.884) 0.996 0.906 
+   1   (0.116) 0.004 0.094 
+
+Locus 416 : Site415 
+3 alleles
+0.0% missing data
+   0   (0.130) 0.947 0.090 
+   1   (0.580) 0.039 0.633 
+   2   (0.290) 0.014 0.277 
+
+Locus 417 : Site416 
+2 alleles
+0.0% missing data
+   0   (0.545) 0.963 0.533 
+   1   (0.455) 0.037 0.467 
+
+Locus 418 : Site417 
+2 alleles
+0.0% missing data
+   0   (0.740) 0.986 0.741 
+   1   (0.260) 0.014 0.259 
+
+Locus 419 : Site418 
+2 alleles
+0.0% missing data
+   0   (0.803) 0.991 0.812 
+   1   (0.197) 0.009 0.188 
+
+Locus 420 : Site419 
+3 alleles
+0.0% missing data
+   0   (0.137) 0.942 0.093 
+   1   (0.594) 0.046 0.640 
+   2   (0.270) 0.012 0.266 
+
+Locus 421 : Site420 
+2 alleles
+0.0% missing data
+   0   (0.893) 0.995 0.913 
+   1   (0.107) 0.005 0.087 
+
+Locus 422 : Site421 
+3 alleles
+0.0% missing data
+   2   (0.144) 0.945 0.098 
+   1   (0.470) 0.035 0.499 
+   0   (0.386) 0.020 0.403 
+
+Locus 423 : Site422 
+3 alleles
+0.0% missing data
+   0   (0.751) 0.584 0.831 
+   1   (0.137) 0.270 0.100 
+   2   (0.112) 0.145 0.069 
+
+Locus 424 : Site423 
+2 alleles
+0.0% missing data
+   0   (0.759) 0.991 0.760 
+   1   (0.241) 0.009 0.240 
+
+Locus 425 : Site424 
+2 alleles
+0.0% missing data
+   0   (0.790) 0.987 0.803 
+   1   (0.210) 0.013 0.197 
+
+Locus 426 : Site425 
+3 alleles
+0.0% missing data
+   0   (0.155) 0.948 0.105 
+   1   (0.556) 0.037 0.605 
+   2   (0.289) 0.015 0.290 
+
+Locus 427 : Site426 
+2 alleles
+0.0% missing data
+   0   (0.729) 0.988 0.744 
+   1   (0.271) 0.012 0.256 
+
+Locus 428 : Site427 
+2 alleles
+0.0% missing data
+   1   (0.143) 0.185 0.103 
+   0   (0.857) 0.815 0.897 
+
+Locus 429 : Site428 
+2 alleles
+0.0% missing data
+   0   (0.788) 0.989 0.803 
+   1   (0.212) 0.011 0.197 
+
+Locus 430 : Site429 
+3 alleles
+0.0% missing data
+   0   (0.194) 0.947 0.148 
+   1   (0.642) 0.046 0.711 
+   2   (0.164) 0.007 0.141 
+
+Locus 431 : Site430 
+2 alleles
+0.0% missing data
+   0   (0.843) 0.993 0.859 
+   1   (0.157) 0.007 0.141 
+
+Locus 432 : Site431 
+3 alleles
+0.0% missing data
+   0   (0.133) 0.942 0.087 
+   1   (0.512) 0.037 0.546 
+   2   (0.356) 0.020 0.367 
+
+Locus 433 : Site432 
+2 alleles
+0.0% missing data
+   0   (0.827) 0.986 0.846 
+   1   (0.173) 0.014 0.154 
+
+Locus 434 : Site433 
+2 alleles
+0.0% missing data
+   0   (0.839) 0.991 0.854 
+   1   (0.161) 0.009 0.146 
+
+Locus 435 : Site434 
+2 alleles
+0.0% missing data
+   0   (0.755) 0.990 0.759 
+   1   (0.245) 0.010 0.241 
+
+Locus 436 : Site435 
+3 alleles
+0.0% missing data
+   0   (0.135) 0.946 0.091 
+   1   (0.512) 0.033 0.544 
+   2   (0.353) 0.020 0.366 
+
+Locus 437 : Site436 
+2 alleles
+0.0% missing data
+   0   (0.733) 0.986 0.740 
+   1   (0.267) 0.014 0.260 
+
+Locus 438 : Site437 
+2 alleles
+0.0% missing data
+   1   (0.360) 0.392 0.335 
+   0   (0.640) 0.608 0.665 
+
+Locus 439 : Site438 
+2 alleles
+0.0% missing data
+   0   (0.796) 0.989 0.810 
+   1   (0.204) 0.011 0.190 
+
+Locus 440 : Site439 
+2 alleles
+0.0% missing data
+   0   (0.790) 0.990 0.805 
+   1   (0.210) 0.010 0.195 
+
+Locus 441 : Site440 
+3 alleles
+0.0% missing data
+   0   (0.132) 0.944 0.089 
+   1   (0.571) 0.040 0.618 
+   2   (0.297) 0.016 0.293 
+
+Locus 442 : Site441 
+2 alleles
+0.0% missing data
+   0   (0.792) 0.991 0.806 
+   1   (0.208) 0.009 0.194 
+
+Locus 443 : Site442 
+3 alleles
+0.0% missing data
+   0   (0.146) 0.945 0.097 
+   1   (0.564) 0.045 0.619 
+   2   (0.290) 0.010 0.285 
+
+Locus 444 : Site443 
+2 alleles
+0.0% missing data
+   0   (0.880) 0.996 0.905 
+   1   (0.120) 0.004 0.095 
+
+Locus 445 : Site444 
+3 alleles
+0.0% missing data
+   0   (0.135) 0.947 0.091 
+   1   (0.570) 0.040 0.622 
+   2   (0.295) 0.012 0.287 
+
+Locus 446 : Site445 
+3 alleles
+0.0% missing data
+   1   (0.179) 0.427 0.143 
+   2   (0.100) 0.227 0.064 
+   0   (0.721) 0.345 0.793 
+
+Locus 447 : Site446 
+2 alleles
+0.0% missing data
+   0   (0.806) 0.991 0.813 
+   1   (0.194) 0.009 0.187 
+
+Locus 448 : Site447 
+2 alleles
+0.0% missing data
+   0   (0.809) 0.989 0.814 
+   1   (0.191) 0.011 0.186 
+
+Locus 449 : Site448 
+3 alleles
+0.0% missing data
+   2   (0.136) 0.949 0.091 
+   1   (0.487) 0.033 0.510 
+   0   (0.378) 0.019 0.399 
+
+Locus 450 : Site449 
+3 alleles
+0.0% missing data
+   2   (0.128) 0.942 0.087 
+   1   (0.399) 0.028 0.410 
+   0   (0.473) 0.030 0.503 
+
+Locus 451 : Site450 
+2 alleles
+0.0% missing data
+   0   (0.802) 0.993 0.810 
+   1   (0.198) 0.007 0.190 
+
+Locus 452 : Site451 
+2 alleles
+0.0% missing data
+   0   (0.771) 0.987 0.785 
+   1   (0.229) 0.013 0.215 
+
+Locus 453 : Site452 
+2 alleles
+0.0% missing data
+   1   (0.109) 0.074 0.073 
+   0   (0.891) 0.926 0.927 
+
+Locus 454 : Site453 
+2 alleles
+0.0% missing data
+   0   (0.807) 0.990 0.814 
+   1   (0.193) 0.010 0.186 
+
+Locus 455 : Site454 
+3 alleles
+0.0% missing data
+   0   (0.133) 0.939 0.088 
+   1   (0.591) 0.047 0.637 
+   2   (0.276) 0.014 0.274 
+
+Locus 456 : Site455 
+2 alleles
+0.0% missing data
+   0   (0.890) 0.994 0.913 
+   1   (0.110) 0.006 0.087 
+
+Locus 457 : Site456 
+3 alleles
+0.0% missing data
+   0   (0.147) 0.942 0.098 
+   1   (0.574) 0.043 0.624 
+   2   (0.279) 0.015 0.278 
+
+Locus 458 : Site457 
+3 alleles
+0.0% missing data
+   2   (0.145) 0.944 0.096 
+   1   (0.408) 0.030 0.426 
+   0   (0.448) 0.026 0.478 
+
+Locus 459 : Site458 
+3 alleles
+0.0% missing data
+   2   (0.114) 0.942 0.079 
+   1   (0.400) 0.026 0.412 
+   0   (0.486) 0.031 0.509 
+
+Locus 460 : Site459 
+3 alleles
+0.0% missing data
+   2   (0.158) 0.947 0.105 
+   1   (0.392) 0.028 0.410 
+   0   (0.450) 0.026 0.485 
+
+Locus 461 : Site460 
+3 alleles
+0.0% missing data
+   0   (0.141) 0.943 0.093 
+   1   (0.580) 0.045 0.633 
+   2   (0.279) 0.012 0.274 
+
+Locus 462 : Site461 
+3 alleles
+0.0% missing data
+   0   (0.781) 0.580 0.856 
+   1   (0.117) 0.272 0.080 
+   2   (0.102) 0.148 0.064 
+
+Locus 463 : Site462 
+3 alleles
+0.0% missing data
+   0   (0.119) 0.946 0.079 
+   1   (0.612) 0.043 0.653 
+   2   (0.269) 0.012 0.268 
+
+Locus 464 : Site463 
+2 alleles
+0.0% missing data
+   0   (0.888) 0.988 0.911 
+   1   (0.112) 0.012 0.089 
+
+Locus 465 : Site464 
+3 alleles
+0.0% missing data
+   2   (0.139) 0.942 0.095 
+   1   (0.378) 0.023 0.394 
+   0   (0.483) 0.035 0.511 
+
+Locus 466 : Site465 
+2 alleles
+0.0% missing data
+   0   (0.895) 0.922 0.935 
+   1   (0.105) 0.078 0.065 
+
+Locus 467 : Site466 
+2 alleles
+0.0% missing data
+   0   (0.890) 0.993 0.909 
+   1   (0.110) 0.007 0.091 
+
+Locus 468 : Site467 
+3 alleles
+0.0% missing data
+   2   (0.143) 0.948 0.099 
+   1   (0.408) 0.025 0.420 
+   0   (0.449) 0.027 0.481 
+
+Locus 469 : Site468 
+2 alleles
+0.0% missing data
+   1   (0.359) 0.399 0.334 
+   0   (0.641) 0.601 0.666 
+
+Locus 470 : Site469 
+2 alleles
+0.0% missing data
+   0   (0.870) 0.994 0.895 
+   1   (0.130) 0.006 0.105 
+
+Locus 471 : Site470 
+3 alleles
+0.0% missing data
+   0   (0.128) 0.945 0.084 
+   1   (0.606) 0.038 0.643 
+   2   (0.266) 0.016 0.273 
+
+Locus 472 : Site471 
+2 alleles
+0.0% missing data
+   0   (0.887) 0.995 0.907 
+   1   (0.113) 0.005 0.093 
+
+Locus 473 : Site472 
+3 alleles
+0.0% missing data
+   0   (0.139) 0.940 0.092 
+   1   (0.605) 0.043 0.650 
+   2   (0.256) 0.017 0.258 
+
+Locus 474 : Site473 
+3 alleles
+0.0% missing data
+   0   (0.143) 0.948 0.097 
+   1   (0.588) 0.041 0.638 
+   2   (0.269) 0.011 0.266 
+
+Locus 475 : Site474 
+2 alleles
+0.0% missing data
+   0   (0.817) 0.992 0.824 
+   1   (0.183) 0.008 0.176 
+
+Locus 476 : Site475 
+2 alleles
+0.0% missing data
+   0   (0.842) 0.988 0.862 
+   1   (0.158) 0.012 0.138 
+
+Locus 477 : Site476 
+3 alleles
+0.0% missing data
+   2   (0.142) 0.943 0.094 
+   1   (0.587) 0.044 0.635 
+   0   (0.271) 0.013 0.272 
+
+Locus 478 : Site477 
+3 alleles
+0.0% missing data
+   2   (0.145) 0.951 0.098 
+   1   (0.572) 0.037 0.620 
+   0   (0.283) 0.012 0.282 
+
+Locus 479 : Site478 
+2 alleles
+0.0% missing data
+   0   (0.873) 0.994 0.897 
+   1   (0.127) 0.006 0.103 
+
+Locus 480 : Site479 
+2 alleles
+0.0% missing data
+   0   (0.840) 0.988 0.863 
+   1   (0.160) 0.012 0.137 
+
+Locus 481 : Site480 
+2 alleles
+0.0% missing data
+   0   (0.853) 0.990 0.867 
+   1   (0.147) 0.010 0.133 
+
+Locus 482 : Site481 
+2 alleles
+0.0% missing data
+   0   (0.826) 0.988 0.846 
+   1   (0.174) 0.012 0.154 
+
+Locus 483 : Site482 
+2 alleles
+0.0% missing data
+   0   (0.875) 0.993 0.902 
+   1   (0.125) 0.007 0.098 
+
+Locus 484 : Site483 
+3 alleles
+0.0% missing data
+   0   (0.129) 0.945 0.089 
+   1   (0.600) 0.044 0.643 
+   2   (0.271) 0.011 0.268 
+
+Locus 485 : Site484 
+2 alleles
+0.0% missing data
+   0   (0.843) 0.987 0.866 
+   1   (0.157) 0.013 0.134 
+
+Locus 486 : Site485 
+2 alleles
+0.0% missing data
+   0   (0.756) 0.977 0.769 
+   1   (0.244) 0.023 0.231 
+
+Locus 487 : Site486 
+2 alleles
+0.0% missing data
+   0   (0.724) 0.979 0.731 
+   1   (0.276) 0.021 0.269 
+
+Values of parameters used in structure:
+DATAFILE=C:\Users\Joseph Zou\Desktop\ComputationalGenetics\1920c\joseph\Structure\Mystery2\Mystery2\project_data,	OUTFILE=C:\Users\Joseph Zou\Desktop\ComputationalGenetics\1920c\joseph\Structure\Mystery2\Mystery2\p1\Results\p1_run_5,	NUMINDS=30,	NUMLOCI=487,	MISSING=-1,	LABEL=1,	POPDATA=1,	POPFLAG=0,	PHENOTYPE=0,	EXTRACOLS=0,	MAXPOPS=2,	BURNIN=3,	NUMREPS=1000,	USEPOPINFO=0,	INFERALPHA=1,	INFERLAMBDA=0,	POPSPECIFICLAMBDA=0,	POPALPHAS=0,	COMPUTEPROB=1,	NOADMIX=0,	ADMBURNIN=2500,	UPDATEFREQ=1,	PRINTLIKES=0,	INTERMEDSAVE=0,	PRINTKLD=0,	PRINTNET=0,	PRINTLAMBDA=0,	ANCESTDIST=0,	NUMBOXES=1000,	ANCESTPINT=0.90000,	GENSBACK=2,	MIGRPRIOR=0.05000,	PRINTQHAT=0,	PRINTQSUM=0,	ALPHA=1.0000,	FREQSCORR=1,	FPRIORMEAN=0.0100,	FPRIORSD=0.0500,	ONEFST=0,	LAMBDA=1.0000,	UNIFPRIORALPHA=1,	ALPHAMAX=10.0000,	ALPHAPRIORA=1.0000,	ALPHAPRIORB=2.0000,	ALPHAPROPSD=0.0250,	STARTATPOPINFO=0,	RANDOMIZE=1,	LINKAGE=0,	METROFREQ=10,	REPORTHITRATE=0,	MARKOVPHASE=-1,	PHASED=1,	PLOIDY=1,	PHASEINFO=0	LOCPRIOR=0, 	LOCPRIORINIT=1.000000, 	LOCDATA=0, 	LOCISPOP=0, 	LOCPRIORSTEP=0.100000, 	MAXLOCPRIOR=20.000000, 	SEED=1589504690,	
+[STRAT parameters]:    NUMSIMSTATS=1000,	PHENOTYPECOL=-9,	POOLFREQ=10,	LOCUSxONLY=0,	EMERROR=0.00100,	MISSINGPHENO=-9,	

@@ -1,0 +1,4 @@
+From the PCA diagram it can be seen that group 1 and 2 are very mixed at most of the locations, whereas group 3 are isolated in one place.
+This shows the effect of the migration rate of population 2.
+Similarly in the structure diagram (mine is sorted by Q), It can be seen that one population has a strong mix between the blue and green where as red is mostly just red.
+In my simulation Ln p(d) is the highest when K=3, which corresponds to the setup.

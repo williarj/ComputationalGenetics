@@ -1,0 +1,14 @@
+Mystery1:
+1. There are 4 populations
+2. One of them is slightly larger than the other three.
+3. One of them has a really low migration rate (possibly 0), the yellow one has a relatively high migration rate with the red one, and the blue population has a bit of everything.
+
+Mystery2:
+1. There are 8 populations
+2. The blue one is significantly larger than all other populations.
+3. 4 of the 8 populations have really low migration rate while the other three has really high migration rate.
+
+Mystery3:
+1. There are 10 populations
+2. The red and orange are significantly larger than all others
+3. 5 of the 10 populations have really low migration rate while the other 5 has really high migration rate.

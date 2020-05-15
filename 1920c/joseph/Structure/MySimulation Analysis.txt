@@ -1,0 +1,4 @@
+For my own simulation, I repurposed the script used in our project with a total of 12 populations and 1 migrating population.
+From the PCA diagram, it seems there are about 9 populations, and from the structure simulation, ln p(d) is the highest when K=12, 14, 15 and weirdly 4.
+Although from the structure output, it seems that only 7 populations have the largest gene proportion while the others are rather small.
+I suspect that it may has something to do with when the population split off and how the bottleneck affect their genes.
