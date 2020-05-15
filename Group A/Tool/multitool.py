@@ -40,14 +40,14 @@ def main():
     #Window calculations depending on type called
     i = 0
     windowsProb = []
-    totalProb = callCorrectType(0, maxPos, mutations, total, type, popSize)
-    while windowSize*(i+1) <= maxPos:
+    totalProb = callCorrectType(0, maxPos, mutations, total, type, popSize, maxPos)
+    while windowSize*(i) <= maxPos:
         posMin = windowSize*i
         posMax = windowSize*(i+1)
         if type == 0:
-            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize)-totalProb)
+            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos)-totalProb)
         else:
-            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize))
+            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos))
         i += 1
     windows = []
     i = 1
@@ -92,7 +92,7 @@ def axisLable(type):
         sys.exit()
 
 #calles function based on type input
-def callCorrectType(posMin, posMax, mutations, total, type, popSize):
+def callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos):
     if type == 0: #clr
         return clrProbability(posMin, posMax, mutations, total)
     elif type == 1: #pi
@@ -102,7 +102,7 @@ def callCorrectType(posMin, posMax, mutations, total, type, popSize):
     elif type == 3:#fst
         return fstProbability(posMin, posMax, mutations, total)
     elif type == 4: #ne
-        return ne(popSize)
+        return ne(popSize, mutations,  maxPos, total)
     else:
         print("error 2")
         sys.exit()
@@ -122,15 +122,18 @@ def clrProbability(posMin, posMax, mutations, total):
 #Pi window calculation
 def piProbability(posMin, posMax, mutations, total):
     pos = posMin
-    prob = 1.0
+    prob = 0.0
     while pos <= posMax:
         if pos in mutations:
             indProb = mutations[pos].number * (total-mutations[pos].number)
+            print(indProb)
             prob +=indProb
         pos += 1
-    divide = float((float(total)*(float(total-1)))/2)
-    #print(prob/divide)
-    return prob/divide
+    print(str(prob)+" total prob")
+    divide = float((float(total)*(float(total-1)))/2.0)
+    print(str(divide)+" choose value")
+    print(str(divide/prob)+" final pi")
+    return divide/prob #SWITCHED TO GET BETWEEN 0-1
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
@@ -166,13 +169,17 @@ def fstProbability(posMin, posMax, mutations, total):
     return float(countNonSyn)/float(countSyn)
 
 #Ne
-def ne(popSize):
+def ne(popSize, mutations, maxPos, total):
     
-    a = 4*0.5*float(popSize)*0.5*float(popSize)
-    b =float(popSize)
-     
+    pi =  piProbability(0,maxPos, mutations, total)
+    
+
+    mutationRate = 10**-7# == 1e-7
+
+    b =4.0*float(mutationRate)
+    
     print("The Ne of this population is aproximately:")
-    print(float(a/b)*1.01244425)
+    print(float(pi/b))
     
     sys.exit()
     
