@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import matplotlib.pyplot as plt
 import operator
 # requires file to be in SLiM's sample data format - 'outputSample' or 'outputFull'
 #input: filename, popSize (sample size of file), genome Size, number of windows
@@ -38,7 +39,9 @@ def main():
     orderedMap = sorted(orderedMap.items(), key = operator.itemgetter(1))
     print("Pi's ordered by magnitude")
     print(orderedMap)
-    
+    plt.scatter(range(len(windowPis)), windowPis)
+    plt.show()
+
 def inWindow(wholePi, mmap,gSize,numWindows):
     wSize = float(gSize/numWindows)
     ub = wSize-1
