@@ -48,12 +48,6 @@ initialize() {
 	initializeMutationType("m100", 0.5, "e", 0.01);         // beneficial Opsin -- Jackals, Spartans
 	initializeMutationType("m101", 0.5, "e", -0.01);         // deleterious Opsin -- Grunts
 	initializeGenomicElementType("g10", c(m2,m100,m101), c(10,3,4));  // exon Opsin
-
-
-
-
-
-	
 	
 	//------------------------------------------
 	//						GENOME
@@ -254,7 +248,7 @@ initialize() {
 
 
 
-	defineConstant("populationMultiplier", 100);
+	defineConstant("populationMultiplier", 10);
 	
 
 	defineConstant("goodX0", 1.1);
@@ -265,7 +259,7 @@ initialize() {
 	
 	defineConstant("startTime", time());
 
-	defineConstant("location", "~/Desktop/");
+	defineConstant("location", "./Data/");
 	
 	}
 
@@ -274,19 +268,8 @@ initialize() {
 //						POPULATIONS
 //------------------------------------------
 
-	
-	
-
-
 1{
-
-
-
-sim.addSubpop("p72", 100*populationMultiplier); //Humans
-
-
-
-
+	sim.addSubpop("p72", 100*populationMultiplier); //Humans
 }
 
 //Lack in Strength
@@ -297,7 +280,6 @@ fitness(m51, p72){ // Humans ACTG1 bad
 	return relFitness*badX1;
 }
 
-
 // Good Memory
 fitness(m60, p72){ // Humans DLG3 good
 	return relFitness*goodX0;
@@ -306,30 +288,21 @@ fitness(m61, p72){ // Humans DLG3 bad
 	return relFitness*goodX1;
 }
 
-
-
-
-
-2500{
-p72.setSubpopulationSize(1*populationMultiplier); //bottleneck
-
+250 {
+	p72.setSubpopulationSize(1*populationMultiplier); //bottleneck
 }
 
-
-
-2500:6500 {
- t = sim.generation - 2500;
+250:650 {
+ t = sim.generation - 250;
  
  multi = 20*populationMultiplier;
  
  p72_size = round(multi * exp(0.00038 * t)); //back up to 914 ind
 
-p72.setSubpopulationSize(asInteger(p72_size));
+ p72.setSubpopulationSize(asInteger(p72_size));
 }
 
-
-
-7000 {
+700 {
 
 sim.addSubpop("p65", 100*populationMultiplier); //Aliens enter the picture -- Prophets
 
@@ -360,12 +333,7 @@ fitness(m81, p65){ // Prophets GRM5 bad
 	return relFitness*badX1;
 }
 
-
-
-
-
-
-7006{
+706{
  sim.addSubpopSplit("p66", 20*populationMultiplier, p65); //Elites
  p65.setSubpopulationSize(80*populationMultiplier); //reduces Prophets by 20p
  
@@ -375,10 +343,10 @@ fitness(m81, p65){ // Prophets GRM5 bad
 fitness(m50, p66){ // Elites ACTG1 good 
 	return relFitness*goodX0;
 }
+
 fitness(m51, p66){ // Elites ACTG1 bad
 	return relFitness*goodX1;
 }
-
 
 // High Memory Recall DLG3
 fitness(m60, p66){ // Elites DLG3 good
@@ -396,10 +364,7 @@ fitness(m91, p66){ // Elites MC4R bad
 	return relFitness*goodX1;
 }
 
-
-
-
-7016{
+716{
  sim.addSubpopSplit("p67", 20*populationMultiplier, p65); //brutes
  p65.setSubpopulationSize(60*populationMultiplier); //reduces Prophets by 20p
  
@@ -440,7 +405,7 @@ fitness(m91, p67){ // Brutes MC4R bad
 }
 
 
-7021{
+721{
  sim.addSubpopSplit("p68", 20*populationMultiplier, p65); //Jackals
  p65.setSubpopulationSize(40*populationMultiplier); //reduces Prophets by 20p
  
@@ -470,7 +435,7 @@ fitness(m101, p68){ // Jackals MC4R bad
 	return relFitness*goodX1;
 }
 
-7027{
+727{
  sim.addSubpopSplit("p69", 20*populationMultiplier, p65); //Grunts
  p65.setSubpopulationSize(20*populationMultiplier); //reduces Prophets by 20p to final of 20p
  
@@ -494,7 +459,7 @@ fitness(m101, p69){ // Grunts MC4R bad
 }
 
 
-7626{
+766{
  sim.addSubpopSplit("p73", 2*populationMultiplier, p72); //spartan 1
 }
 
@@ -544,7 +509,7 @@ fitness(m101, p73){ // spartan MC4R bad
 
 //WAR
 
-7628{
+768{
 p65.setSubpopulationSize(19*populationMultiplier); //bottleneck Prophets
 p66.setSubpopulationSize(18*populationMultiplier); //bottleneck elites
 p67.setSubpopulationSize(17*populationMultiplier); //bottleneck brutes
@@ -557,7 +522,7 @@ p72.setSubpopulationSize(70*populationMultiplier); //bottleneck humans
 
 
 
-8000{
+800 {
 //Elites & brutes
 p66.setMigrationRates(p67, 0.005);
 p67.setMigrationRates(p66, 0.005);
@@ -569,16 +534,35 @@ p69.setMigrationRates(p68, 0.005);
 //Humans & Spartans
 p72.setMigrationRates(p73, 0.005);
 p73.setMigrationRates(p72, 0.002);
-
-
 }
 
-15000 late() {
-
-	
-	
+1500 late() {
 	standard = location + "haloSample.txt";
 	mutation = location + "haloSampleMS.txt";
+
+	standardProphets = location + "prophetsSample.txt";
+	mutationProphets = location + "prophetsSampleMS.txt";
+
+	standardElites = location + "elitesSample.txt";
+	mutationElites = location + "elitesSampleMS.txt";
+
+	standardBrutes = location + "brutesSample.txt";
+	mutationBrutes = location + "brutesSampleMS.txt";
+
+	standardJackals = location + "jackalsSample.txt";
+	mutationJackals = location + "jackalsSampleMS.txt";
+
+	standardGrunts = location + "gruntsSample.txt";
+	mutationGrunts = location + "gruntsSampleMS.txt";
+
+	standardHumans = location + "humansSample.txt";
+	mutationHumans = location + "humansSampleMS.txt";
+
+	standardSpartans = location + "spartansSample.txt";
+	mutationSpartans = location + "spartansSampleMS.txt";
+
+	fullSample = location + "fullSample.txt";
+	fullSampleMS = location + "fullSampleMS.txt";
 	
 	deleteFile(standard);
 	deleteFile(mutation);
@@ -588,55 +572,79 @@ p73.setMigrationRates(p72, 0.002);
 	writeFile(standard, "Standard format " + initial + time(), append = F);
 	writeFile(mutation, "MS format " + initial + time(), append = F);
 
-
 	writeFile(standard, "Start time: " + startTime, append = T);
 	writeFile(mutation, "Start time: " + startTime, append = T);
 	
-	
 	writeFile(standard, "\nProphets:", append = T);
 	p65.outputSample(20, filePath=standard, append = T);
+	p65.outputSample(20, filePath=standardProphets);
 	
 	writeFile(standard, "\nElites:", append = T);
 	p66.outputSample(20, filePath=standard, append = T);
+	p66.outputSample(20, filePath=standardElites);
 	
 	writeFile(standard, "\nBrutes:", append = T);
 	p67.outputSample(20, filePath=standard, append = T);
+	p67.outputSample(20, filePath=standardBrutes);
 	
 	writeFile(standard, "\nJackals:", append = T);
 	p68.outputSample(20, filePath=standard, append = T);
+	p68.outputSample(20, filePath=standardJackals);
 	
 	writeFile(standard, "\nGrunts:", append = T);
 	p69.outputSample(20, filePath=standard, append = T);
+	p69.outputSample(20, filePath=standardGrunts);
 	
 	writeFile(standard, "\nHumans:", append = T);
 	p72.outputSample(20, filePath=standard, append = T);
+	p72.outputSample(20, filePath=standardHumans);
 	
 	writeFile(standard, "\nSpartans:", append = T);
 	p73.outputSample(20, filePath=standard, append = T);
+	p73.outputSample(20, filePath=standardSpartans);
 	
 	//haloSampleMS
 	
 	writeFile(mutation, "\nProphets:", append = T);
 	p65.outputMSSample(20, filePath=mutation, append = T);
+	p65.outputMSSample(20, filePath=mutationProphets);
 	
 	writeFile(mutation, "\nElites:", append = T);
 	p66.outputMSSample(20, filePath=mutation, append = T);
+	p66.outputMSSample(20, filePath=mutationElites);
 	
 	writeFile(mutation, "\nBrutes:", append = T);
 	p67.outputMSSample(20, filePath=mutation, append = T);
+	p67.outputMSSample(20, filePath=mutationBrutes);
 	
 	writeFile(mutation, "\nJackals:", append = T);
 	p68.outputMSSample(20, filePath=mutation, append = T);
+	p68.outputMSSample(20, filePath=mutationJackals);
 	
 	writeFile(mutation, "\nGrunts:", append = T);
 	p69.outputMSSample(20, filePath=mutation, append = T);
+	p69.outputMSSample(20, filePath=mutationGrunts);
 	
 	writeFile(mutation, "\nHumans:", append = T);
 	p72.outputMSSample(20, filePath=mutation, append = T);
+	p72.outputMSSample(20, filePath=mutationHumans);
 	
 	writeFile(mutation, "\nSpartans:", append = T);
 	p73.outputMSSample(20, filePath=mutation, append = T);
+	p73.outputMSSample(20, filePath=mutationHumans);
 
+	p65_sample = sample(p65.individuals, 10, replace = F);
+	p66_sample = sample(p66.individuals, 10, replace = F);
+	p67_sample = sample(p67.individuals, 10, replace = F);
+	p68_sample = sample(p68.individuals, 10, replace = F);
+	p69_sample = sample(p69.individuals, 10, replace = F);
+	p72_sample = sample(p72.individuals, 10, replace = F);
+	p73_sample = sample(p73.individuals, 10, replace = F);
+	
+	full_samples = c(p65_sample, p66_sample, p67_sample, p68_sample, p69_sample, p72_sample, p73_sample);
+	
+	full_samples.genomes.outputMS(filePath=fullSampleMS);
+	full_samples.genomes.output(filePath=fullSample);
 
 
 	//No text
