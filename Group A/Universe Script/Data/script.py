@@ -28,6 +28,18 @@ def main():
             line += "2 "
         elif index < 30:
             line += "3 "
+        elif index < 40:
+            line += "4 "
+        elif index < 50:
+            line += "5 "
+        elif index < 60:
+            line += "6 "
+        elif index < 70:
+            line += "7 "
+        elif index < 80:
+            line += "8 "
+        elif index < 90:
+            line += "9 "
         index += 1
         while j < len(fLine):
             count = 0
