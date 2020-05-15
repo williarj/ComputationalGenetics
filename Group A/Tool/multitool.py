@@ -58,7 +58,7 @@ def main():
     #graph stuff
     fig, ax = plt.subplots()
     barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.9)
-    fig.canvas.set_window_title("Window Analysis " + axisLable(type) + "[" + str(windowSize) + "]") #Window title
+    fig.canvas.set_window_title("" + axisLable(type) + "[" + str(windowSize) + "]") #Window title
     
     rect = fig.patch
     rect.set_facecolor('dimgray')
