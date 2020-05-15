@@ -44,44 +44,74 @@ def main():
     while windowSize*(i+1) <= maxPos:
         posMin = windowSize*i
         posMax = windowSize*(i+1)
-        windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize))#-totalProb)
+        if type == 0:
+            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize)-totalProb)
+        else:
+            windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize))
         i += 1
     windows = []
     i = 1
     while i <= len(windowsProb):
-        windows.append(i)
+        windows.append(i*windowSize)
         i = i+1
         
     #graph stuff
     fig, ax = plt.subplots()
-    barlist = ax.bar(windows, windowsProb)
+    barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.95)
+    fig.canvas.set_window_title("Window Analysis " + axisLable(type) + "[" + str(windowSize) + "]") #Window title
+    
+    rect = fig.patch
+    rect.set_facecolor('dimgray')
+   
     for i in range(0, len(barlist)):
         if (np.abs(windowsProb[i]-np.mean(windowsProb)) > stdDevMultiLim*np.std(windowsProb)):
-            barlist[i].set_facecolor('r')
+            barlist[i].set_facecolor('orangered')
         else:
-            barlist[i].set_facecolor('g')
-    ax.set_xlabel('Window')
-    ax.set_ylabel('CLR')
-    ax.grid(True)
+            barlist[i].set_facecolor('gray')
+   
+    ax.set_xlabel('Base Pairs', fontsize=14)
+    ax.set_ylabel(axisLable(type), fontsize=14)
+    ax.grid(True, ls = '--', lw = .5)
+    plt.tight_layout()
     plt.show()
+
+def axisLable(type):
+    if type == 0: #clr
+        return "CLR"
+    elif type == 1: #pi
+        return "Pi"
+    elif type == 2: #dn/ds
+        return "Dn/Ds"
+    elif type == 3:#fst
+        return "FST"
+    elif type == 4: #ne
+        return "Null" #shouldn't show
+    else:
+        print("error 1")
+        sys.exit()
+
     
     
 def callCorrectType(posMin, posMax, mutations, total, type, popSize):
-    if type == 0:
+    if type == 0: #clr
         return clrProbability(posMin, posMax, mutations, total)
-    elif type == 1:
+    elif type == 1: #pi
         return piProbability(posMin, posMax, mutations, total)
-    elif type == 2:
+    elif type == 2: #dn/ds
         return dndsProbability(posMin, posMax, mutations, total)
-    elif type == 3:
+    elif type == 3:#fst
         return fstProbability(posMin, posMax, mutations, total)
     elif type == 4: #ne
         return ne(popSize)
     else:
-        print("error")
+        print("error 2")
+        sys.exit()
     
 #CLR window calculation
 def clrProbability(posMin, posMax, mutations, total):
+   
+    #print("CLR plot")
+    
     pos = posMin
     prob = 1.0
     while pos <= posMax:
@@ -94,7 +124,9 @@ def clrProbability(posMin, posMax, mutations, total):
 
 #Pi window calculation
 def piProbability(posMin, posMax, mutations, total):
-    print("yo Pi")
+    
+    # print("Pi plot")
+    
     pos = posMin
     prob = 1.0
     while pos <= posMax:
@@ -106,15 +138,18 @@ def piProbability(posMin, posMax, mutations, total):
     
     divide = float((float(total)*(float(total-1)))/2)
     
-    print(prob/divide)
+    #print(prob/divide)
     return prob/divide
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
+   
+    #print("Dn/Ds plot")
+    
     pos = posMin
     
     countSyn = 0
-    countNonSyn = 0
+    countNonSyn = -1
     
     while pos <= posMax:
         if pos in mutations:
@@ -126,10 +161,16 @@ def dndsProbability(posMin, posMax, mutations, total):
             
         pos += 1
     
-    return float(countNonSyn)/float(countSyn)
+    if countSyn == 0:
+        return 0
+    else:
+        return float(countNonSyn)/float(countSyn)
 
 #FST
 def fstProbability(posMin, posMax, mutations, total):
+   
+    #print("FST plot")
+    
     pos = posMin
   
                 
