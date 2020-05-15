@@ -1,9 +1,0 @@
-#OUT: 1500 SS p73 4 ./Data/spartansSample.txt
-Mutations:
-0 993 m1 0 0 0.5 p72 6 2
-1 994 m60 1 0.00972036831 0.5 p72 6 2
-Genomes:
-P73:1 1
-P73:0 0
-P73:1 1
-P73:0 0

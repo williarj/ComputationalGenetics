@@ -259,7 +259,7 @@ initialize() {
 	
 	defineConstant("startTime", time());
 
-	defineConstant("location", "./Data/");
+	defineConstant("location", "/Users/heinrich/ComputationalGenetics/Group A/Universe Script/New Data/");
 	
 	}
 
@@ -560,6 +560,8 @@ p73.setMigrationRates(p72, 0.002);
 
 	standardSpartans = location + "spartansSample.txt";
 	mutationSpartans = location + "spartansSampleMS.txt";
+	
+	allMS = location + "allMSForTool.txt";
 
 	fullSample = location + "fullSample.txt";
 	fullSampleMS = location + "fullSampleMS.txt";
@@ -645,7 +647,9 @@ p73.setMigrationRates(p72, 0.002);
 	
 	full_samples.genomes.outputMS(filePath=fullSampleMS);
 	full_samples.genomes.output(filePath=fullSample);
-
+	
+	sim.subpopulations.genomes.outputMS(filePath=allMS);
+	
 
 	//No text
 	
@@ -664,3 +668,5 @@ p73.setMigrationRates(p72, 0.002);
 
 //see manual section 9.2 for explanation of this
 //m4 mutations are 10% better in population p2
+
+
