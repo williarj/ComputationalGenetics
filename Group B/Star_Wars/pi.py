@@ -40,6 +40,9 @@ def main():
     print("Pi's ordered by magnitude")
     print(orderedMap)
     plt.scatter(range(len(windowPis)), windowPis)
+    plt.title('Pi in Windows across ' + sys.argv[1] + ' Genome')
+    plt.xlabel('Window in Genome')
+    plt.ylabel('Pi')
     plt.show()
 
 def inWindow(wholePi, mmap,gSize,numWindows):
