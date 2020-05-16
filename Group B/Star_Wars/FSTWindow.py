@@ -1,5 +1,6 @@
 import sys
 import os
+import matplotlib.pyplot as plt
 import numpy as np
 # requires file to be  in SLiM's MS format
 #input: gSize, number of windows, total pop file, sub pop 1, sub pop 2...
@@ -25,11 +26,20 @@ def main():
         sumFST = 0.0
         for j in fst[i]:
             sumFST += j[1]
-       
+        tempStr = sys.argv[4 + i].split('/')
+        filename = tempStr[len(tempStr) - 1]
         print('Avg FST result for ', sys.argv[4+i], ': ', np.round(sumFST/gSize,3))
         print('FST in windows of size ', gSize/numWindows, ': ')
-        print(fstWindows(fst[i], numWindows, gSize))
+        windowFST = fstWindows(fst[i], numWindows, gSize)
+        print(windowFST)
         print()
+        plt.figure(i)
+        plt.title('FST in Windows')
+        plt.xticks(range(numWindows))
+        plt.xlabel('Windows')
+        plt.ylabel('FST')
+        plt.scatter(range(len(windowFST)), windowFST)
+        plt.savefig(filename[:len(filename) - 3] + 'png', dpi=300)
         
 def fstWindows(fst, numWindows, gSize):
     windSize = 1.0/numWindows
