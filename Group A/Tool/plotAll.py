@@ -9,12 +9,13 @@ import os
 def main():
     folder = (sys.argv[1])
     for fileF in os.listdir(folder):
-        if not fileF.startswith('.'):
+        if not fileF.startswith('.') and fileF.endswith('.txt'):
             #type = int(sys.argv[2])
-            file = open(fileF, "r")
-            windowSize = 16000
+            fullPath =  os.path.join(folder, fileF)
+            file = open(fullPath, "r")
+            windowSize = 1000
             fileName = os.path.basename(fileF).split(".")[0]
-
+            print("working on "+fileName+" graphs.")
             stdDevMultiLim = 1.5
             if (len(sys.argv) >= 5):
                 stdDevMultiLim = float(sys.argv[4])
@@ -91,10 +92,11 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         ax.grid(True, ls = '--', lw = .5)
         plt.tight_layout()
         #plt.show()
-        saveFolder = "/Users/heinrich/ComputationalGenetics/Group\ A/Results/Star\ Wars\ Plots/"
+        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/StarWarsPlots/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
         plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
-    
+        
+        plt.close()
 
 #name of correct type
 def axisLable(type):
