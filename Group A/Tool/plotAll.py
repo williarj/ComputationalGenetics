@@ -1,10 +1,14 @@
 import math
+from math import comb
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.collections import LineCollection
 from matplotlib.colors import ListedColormap, BoundaryNorm
 import os
+
+#!
+#mutation type needs to be adjusted for Dn/Ds depending on data
 
 def main():
     folder = (sys.argv[1])
@@ -13,7 +17,7 @@ def main():
             #type = int(sys.argv[2])
             fullPath =  os.path.join(folder, fileF)
             file = open(fullPath, "r")
-            windowSize = 1000
+            windowSize = 16000
             fileName = os.path.basename(fileF).split(".")[0]
             print("working on "+fileName+" graphs.")
             stdDevMultiLim = 1.5
@@ -43,8 +47,9 @@ def main():
                         maxPos = int(lines[3])
             max = windowSize
         
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0)
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2)
+            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0) #CLR
+            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1) #Pi
+            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2) #Dn/Ds
             #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3)
     
     
@@ -92,7 +97,7 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         ax.grid(True, ls = '--', lw = .5)
         plt.tight_layout()
         #plt.show()
-        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/StarWarsPlots/"
+        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/plots/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
         plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
         
@@ -150,18 +155,27 @@ def piProbability(posMin, posMax, mutations, total):
     while pos <= posMax:
         if pos in mutations:
             indProb = mutations[pos].number * (total-mutations[pos].number)
-            prob +=indProb
+            prob += indProb
         pos += 1
-    divide = float((float(total)*(float(total-1)))/2.0)
+    divide = comb(total, 2) + 0.0
+    
+    #float((float(total)*(float(total-1)))/2.0)
     #print(str(divide)+" choose value")
-    #print(str(divide/prob)+" final pi")
-    return divide/prob #SWITCHED TO GET BETWEEN 0-1
+    print(str(prob/divide)+" final pi ->"+str(prob)+" / "+str(divide))
+    return prob/divide #SWITCHED TO GET BETWEEN 0-1
+    
+    #in the script we are
+    
+    #a) multiplying the how many people have the mutation by the total number of samples - many people have the mutation
+    #b) multiplying how many sample there are by 1 - that and then didide by 2
+    
+    # and finally divide a by b
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
     pos = posMin
     countSyn = 0
-    countNonSyn = -1
+    countNonSyn = 0
     while pos <= posMax:
         if pos in mutations:
             if mutations[pos].type == "m1" or mutations[pos].type == "m2":
