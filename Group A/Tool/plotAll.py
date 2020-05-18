@@ -48,7 +48,7 @@ def main():
             max = windowSize
         
             plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0) #CLR
-            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1) #Pi
+            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1) #Pi
             plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2) #Dn/Ds
             #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3)
     
@@ -124,7 +124,7 @@ def callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos):
     if type == 0: #clr
         return clrProbability(posMin, posMax, mutations, total)
     elif type == 1: #pi
-        return piProbability(posMin, posMax, mutations, total)
+        return piProbability(posMin, posMax, mutations, total, maxPos)
     elif type == 2: #dn/ds
         return dndsProbability(posMin, posMax, mutations, total)
     elif type == -45:#fst
@@ -149,7 +149,7 @@ def clrProbability(posMin, posMax, mutations, total):
     return prob
 
 #Pi window calculation
-def piProbability(posMin, posMax, mutations, total):
+def piProbability(posMin, posMax, mutations, total, maxPos):
     pos = posMin
     prob = 0.0
     while pos <= posMax:
@@ -158,11 +158,9 @@ def piProbability(posMin, posMax, mutations, total):
             prob += indProb
         pos += 1
     divide = comb(total, 2) + 0.0
-    
-    #float((float(total)*(float(total-1)))/2.0)
-    #print(str(divide)+" choose value")
-    print(str(prob/divide)+" final pi ->"+str(prob)+" / "+str(divide))
-    return prob/divide #SWITCHED TO GET BETWEEN 0-1
+    a =  prob/divide
+    b = a / maxPos
+    return b
     
     #in the script we are
     
@@ -190,23 +188,13 @@ def dndsProbability(posMin, posMax, mutations, total):
 
 #FST
 def fstProbability(posMin, posMax, mutations, total):
-   
-    #print("FST plot")
-    
-    pos = posMin
-  
-                
-    #TODO
-                
-        
-    print("we need some extra time for this...")
-    print("thx")
+    print("use other teams tool...")
     sys.exit()
     return float(countNonSyn)/float(countSyn)
 
 #Ne
 def ne(popSize, mutations, maxPos, total, fileName):
-    pi =  piProbability(0,maxPos, mutations, total)
+    pi =  piProbability(0,maxPos, mutations, total, maxPos)
     mutationRate = 10**-7# == 1e-7
     b =4.0*float(mutationRate)
     

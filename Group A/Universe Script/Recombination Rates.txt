@@ -1,0 +1,8 @@
+So for recombination rates we have varying ones across the genome. The two list below give the zone where a particular rate applies starting from zero for the first one and always going up to the number. So for example, the first one should be from 0-15000 base pairs with a rate of 3x10^-8. 
+
+Recombination zones:
+15000 17860 37860 99060 125060 137710 179710 740710 770710 772424 782424 796724 850000
+
+
+Recombination rates:
+3e-08 1e-10 4e-09 1e-11 1e-07 1e-11 2e-07 4e-09 5e-08 4e-09 8e-08 3e-10 2e-07
