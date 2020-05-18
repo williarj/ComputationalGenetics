@@ -1,0 +1,9 @@
+#OUT: 4 SS p1 4 /Users/heinrich/...
+Mutations:
+1 0 m1 1 0 0.5 p1 2 2
+2 1 m2 2 100 0.5 p1 6 2
+Genomes:
+p1: 1
+p1: 1
+p1: 2
+p1: 2

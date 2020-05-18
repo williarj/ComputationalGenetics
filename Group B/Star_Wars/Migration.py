@@ -15,10 +15,8 @@ def main():
 		fst.append(generateFST(raw_h[i], raw_h[0]))
 	tempStr = sys.argv[3].split('/')
 	filename = tempStr[len(tempStr) - 1]
-	position = []
 	temp_fst = []
 	for j in range(0, len(fst[0])):
-		position.append(fst[0][j][0])
 		temp_fst.append(fst[0][j][1])
 	fst_mean = np.mean(temp_fst)
 	migration_rate = abs((1-fst_mean)/(4*n*fst_mean))
@@ -42,11 +40,12 @@ def parsePopulation(lines):
 	for i in range(1, len(pos_raw)):
 		positions.append(float(pos_raw[i]))
 	for i in range(0, len(lines[3]) - 1):
-		num_zero = 0;
+		num_zero = 0.0;
 		for j in range(3, len(lines)):
-			if(int(lines[j][i]) == 0):
+			if(float(lines[j][i]) == 0):
 				num_zero += 1
 		temp_q = num_zero/(len(lines) - 3)
+		print(num_zero)
 		h[positions[i]] = temp_q * (1-temp_q)
 	return h
 
