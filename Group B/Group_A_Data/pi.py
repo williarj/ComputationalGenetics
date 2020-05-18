@@ -43,7 +43,7 @@ def main():
     plt.title('Pi in Windows across ' + sys.argv[1] + ' Genome')
     plt.xlabel('Window in Genome')
     plt.ylabel('Pi')
-    plt.show()
+    plt.savefig(sys.argv[1][:len(sys.argv[1]) - 3] + 'png', dpi=300)
 
 def inWindow(wholePi, mmap,gSize,numWindows):
     wSize = float(gSize/numWindows)

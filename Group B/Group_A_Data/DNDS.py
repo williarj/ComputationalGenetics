@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # 0 - non-coding
 # 1 - synonymous
 # 2 - nonsynonymous
-mTypeMap = {"m1" : 0, "m2" : 1, "m3" : 2, "m4" : 2,"m5": 1, "m6": 2, "m7": 1, "m8": 1}
+mTypeMap = {"m1" : 0, "m2" : 1, "m3" : 2, "m4" : 2,"m50": 2, "m51": 2, "m60": 2, "m61": 2, "m70": 2, "m71": 2, "m80": 2, "m81": 2, "m90": 2, "m91": 2, "m100": 2, "m101": 2}
 
 class Mutation:
     def __init__(self, kind, position, num):
