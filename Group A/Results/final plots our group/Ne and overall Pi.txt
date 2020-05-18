@@ -1,0 +1,39 @@
+The Ne of spartans is aproximately:
+138.90069954842403
+(pi value of 5.556027981936961e-05)
+
+
+
+The Ne of brutes is aproximately:
+284.61473620461305
+(pi value of 0.00011384589448184522)
+
+
+
+The Ne of grunts is aproximately:
+65.91364308239727
+(pi value of 2.6365457232958905e-05)
+
+
+
+The Ne of humans is aproximately:
+216.42067768620106
+(pi value of 8.656827107448042e-05)
+
+
+
+The Ne of elites is aproximately:
+223.33356837739325
+(pi value of 8.93334273509573e-05)
+
+
+
+The Ne of prophets is aproximately:
+91.30724649876834
+(pi value of 3.652289859950733e-05)
+
+
+
+The Ne of jackals is aproximately:
+222.17740312990708
+(pi value of 8.887096125196283e-05)
