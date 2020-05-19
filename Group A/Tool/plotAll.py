@@ -1,29 +1,24 @@
-import math
+import math, sys, os
 from math import comb
-import sys
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.collections import LineCollection
-from matplotlib.colors import ListedColormap, BoundaryNorm
-import os
 
 #!
 #mutation type needs to be adjusted for Dn/Ds depending on data
-
 #arguments: folder containing samples, ***, start pos (x1000), end pos (x1000)- e for max pos, # of windows (bars)
-#*** optional arguments: type, supress graph window(s), specific file
+#*** optional arguments: type, supress graph window(s) or don't save, specific file
 
 def main():
     req = ''
     argvI = 0
-    display = True
+    display, save = True, True
     calPi, calCLR, calcDnDs, calcNe = False, False, False, False
     
     if (len(sys.argv) >= 3):
         if isinstance(sys.argv[2], str):
             if sys.argv[2] == '-a':
                 argvI += 1
-                calPi, calCLR, calcDnDs, calcNe = True, True, True, True
+                calPi, calCLR, calcDnDs = True, True, True
             elif sys.argv[2] == '-p':
                 argvI += 1
                 calPi = True
@@ -42,6 +37,9 @@ def main():
             if sys.argv[2+argvI] == '-s':
                 argvI += 1
                 display = False
+            elif sys.argv[2+argvI] == '-d':
+                argvI += 1
+                save = False
     
     if (len(sys.argv) >= 3+argvI):
         if isinstance(sys.argv[2+argvI], str):
@@ -60,11 +58,9 @@ def main():
             if (len(sys.argv) >= 6+argvI):
                 stdDevMultiLim = float(sys.argv[5+argvI])
             foundMutations = False
-            total = -1
+            total, maxPos, popSize, start = -1, -1, -1, 0 #maxPos differs from end
             mutations = {}
-            maxPos = -1
-            popSize = -1
-            
+
             for line in file:
                 if "Mutations:" in line:
                     foundMutations = True
@@ -81,10 +77,9 @@ def main():
                     mutations[int(lines[3])] = Mut(lines[2], int(lines[8]))
                     if int(lines[3]) > maxPos:
                         maxPos = int(lines[3])
-           
-            start = 0
-            end = maxPos
+            
             #determines what part of the genome is shown in the graph
+            end = maxPos
             if (len(sys.argv) >= 4+argvI):
                 if sys.argv[3+argvI] == 'e':
                     start = int(sys.argv[2+argvI])*1000
@@ -94,44 +89,34 @@ def main():
                     start = int(sys.argv[2+argvI])*1000
                     end = int(sys.argv[3+argvI])*1000
                     print("custom start/end pos of: "+str(int(sys.argv[2+argvI])*1000)+"/"+str(int(sys.argv[3+argvI])*1000))
-            #determines the window (bar) width
+            
+            #determines the window width
             if (len(sys.argv) >= 5+argvI):
                 windowSize = int((end-start)/int(sys.argv[4+argvI]))
                 print("custom window width of: "+str(windowSize))
-               
             else:
                 windowSize = int((end-start)/50)
-           
-            max = windowSize
             
             if calCLR:
-                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0, start, end, display) #CLR
+                plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize,  0, start, end, display, save)
             if calPi:
-                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1, start, end, display) #Pi
+                plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize,  1, start, end, display, save)
             if calcDnDs:
-                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2, start, end, display) #Dn/Ds
+                plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize,  2, start, end, display, save)
             if calcNe:
-                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3, start, end, display) #Ne
+                plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize, 3, start, end, display, save)
     
-    
-    
-def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, type, start, end, display):
-
+def plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize, type, start, end, display, save):
     if type == 3:
         return ne(popSize, mutations,  maxPos, total, fileName)
     else:
         #Window calculations depending on type called
-        start = start
-        maxPos = end
-        #start = 120*1000
-        #maxPos = 220*1000
-        
-        i = start/windowSize  #start / window size (zero usually)
+        start, maxPos= start, end
+        i = start/windowSize  # (zero usually)
         windowsProb = []
         totalProb = callCorrectType(0, maxPos, mutations, total, type, popSize, maxPos)
         while windowSize*(i) <= maxPos:
-            posMin = windowSize*i
-            posMax = windowSize*(i+1)
+            posMin, posMax = windowSize*i, windowSize*(i+1)
             if type == 0:
                 windowsProb.append(callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos)-totalProb)
             else:
@@ -141,7 +126,7 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         i = 1
         while i <= len(windowsProb):
             windows.append(i*windowSize+start)
-            i = i+1
+            i += 1
             
         #graph stuff
         fig, ax = plt.subplots()
@@ -164,8 +149,9 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         plt.tight_layout()
         saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/plots/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
-        plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
-        if(display):
+        if save:
+            plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
+        if display:
             plt.show()
         plt.close()
 
@@ -177,15 +163,13 @@ def axisLable(type):
         return "Pi"
     elif type == 2: #dn/ds
         return "DnDs"
-    elif type == -45:#fst
-        return "FST"
     elif type == 3: #ne
         return "Null" #shouldn't show
     else:
         print("error 1")
         sys.exit()
 
-#calles function based on type input
+#calls function based on type input
 def callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos):
     if type == 0: #clr
         return clrProbability(posMin, posMax, mutations, total)
@@ -193,8 +177,6 @@ def callCorrectType(posMin, posMax, mutations, total, type, popSize, maxPos):
         return piProbability(posMin, posMax, mutations, total, maxPos)
     elif type == 2: #dn/ds
         return dndsProbability(posMin, posMax, mutations, total)
-    elif type == -45:#fst
-        return fstProbability(posMin, posMax, mutations, total)
     elif type == 3: #ne
         return ne(popSize, mutations,  maxPos, total)
         sys.exit()
@@ -216,8 +198,7 @@ def clrProbability(posMin, posMax, mutations, total):
 
 #Pi window calculation
 def piProbability(posMin, posMax, mutations, total, maxPos):
-    pos = posMin
-    prob = 0.0
+    pos, prob = posMin, 0.0
     while pos <= posMax:
         if pos in mutations:
             indProb = mutations[pos].number * (total-mutations[pos].number)
@@ -230,9 +211,7 @@ def piProbability(posMin, posMax, mutations, total, maxPos):
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
-    pos = posMin
-    countSyn = 0
-    countNonSyn = 0
+    countSyn, countNonSyn, pos = 0, 0, posMin
     while pos <= posMax:
         if pos in mutations:
             if mutations[pos].type == "m1" or mutations[pos].type == "m2":
@@ -245,25 +224,15 @@ def dndsProbability(posMin, posMax, mutations, total):
     else:
         return float(countNonSyn)/float(countSyn)
 
-#FST
-def fstProbability(posMin, posMax, mutations, total):
-    print("use other teams tool...")
-    sys.exit()
-    return float(countNonSyn)/float(countSyn)
-
 #Ne
 def ne(popSize, mutations, maxPos, total, fileName):
-    pi =  piProbability(0,maxPos, mutations, total, maxPos)
-    mutationRate = 10**-7# == 1e-7
-    b =4.0*float(mutationRate)
-    
+    mutationRate = 10**-7
     print("The Ne of " + fileName + " is aproximately:")
-    print(float(pi/b))
+    print(piProbability(0,maxPos, mutations, total, maxPos)/(4.0*float(mutationRate))) #4x
     
     
 #stores mutation type (eg m1) & how many individuals in sample have it
 class Mut:
-
     def __init__(self, type, number): #number: how many people have it
         self.type = type
         self.number = number
