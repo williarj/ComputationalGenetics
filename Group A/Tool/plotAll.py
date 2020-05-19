@@ -131,7 +131,7 @@ def plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize
             
         #graph stuff
         fig, ax = plt.subplots()
-        barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.99)
+        barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.95)
         fig.canvas.set_window_title("" + axisLable(type) + "[" + str(windowSize) + "]") #Window title
         
         rect = fig.patch
