@@ -10,19 +10,54 @@ import os
 #!
 #mutation type needs to be adjusted for Dn/Ds depending on data
 
+#arguments: folder containing samples, start pos (x1000), end pos (x1000)- e for max pos, # of windows (bars)
+
 def main():
+    req = ''
+    argvI = 0
+    display = True
+    calPi, calCLR, calcDnDs, calcNe = False, False, False, False
+    
+    if (len(sys.argv) >= 3):
+        if isinstance(sys.argv[2], str):
+            if sys.argv[2] == '-a':
+                argvI += 1
+                calPi, calCLR, calcDnDs, calcNe = True, True, True, True
+            elif sys.argv[2] == '-p':
+                argvI += 1
+                calPi = True
+            elif sys.argv[2] == '-c':
+                argvI += 1
+                calCLR = True
+            elif sys.argv[2] == '-d':
+                argvI += 1
+                calcDnDs = True
+            elif sys.argv[2] == '-n':
+                argvI += 1
+                calcNe = True
+
+    if (len(sys.argv) >= 3+argvI):
+        if isinstance(sys.argv[2+argvI], str):
+            if sys.argv[2+argvI] == '-s':
+                argvI += 1
+                display = False
+    
+    if (len(sys.argv) >= 3+argvI):
+        if isinstance(sys.argv[2+argvI], str):
+            req = sys.argv[2+argvI]
+            argvI += 1
+    
     folder = (sys.argv[1])
     for fileF in os.listdir(folder):
-        if not fileF.startswith('.') and fileF.endswith('.txt'):
+        if not fileF.startswith('.') and fileF.startswith(req) and fileF.endswith('.txt'):
             #type = int(sys.argv[2])
             fullPath =  os.path.join(folder, fileF)
             file = open(fullPath, "r")
-            windowSize = 16000
             fileName = os.path.basename(fileF).split(".")[0]
             print("working on "+fileName+" graphs.")
             stdDevMultiLim = 1.5
-            if (len(sys.argv) >= 5):
-                stdDevMultiLim = float(sys.argv[4])
+            if (len(sys.argv) >= 6+argvI):
+                stdDevMultiLim = float(sys.argv[5+argvI])
             foundMutations = False
             total = -1
             mutations = {}
@@ -45,22 +80,49 @@ def main():
                     mutations[int(lines[3])] = Mut(lines[2], int(lines[8]))
                     if int(lines[3]) > maxPos:
                         maxPos = int(lines[3])
+           
+            start = 0
+            end = maxPos
+            #determines what part of the genome is shown in the graph
+            if (len(sys.argv) >= 4+argvI):
+                if sys.argv[3+argvI] == 'e':
+                    start = int(sys.argv[2+argvI])*1000
+                    end = maxPos
+                    print("custom start pos of "+str(sys.argv[2])+" to end. ("+str(end)+")")
+                else:
+                    start = int(sys.argv[2+argvI])*1000
+                    end = int(sys.argv[3+argvI])*1000
+                    print("custom start/end pos of: "+str(int(sys.argv[2+argvI])*1000)+"/"+str(int(sys.argv[3+argvI])*1000))
+            #determines the window (bar) width
+            if (len(sys.argv) >= 5+argvI):
+                windowSize = int((end-start)/int(sys.argv[4+argvI]))
+                print("custom window width of: "+str(windowSize))
+               
+            else:
+                windowSize = int((end-start)/50)
+           
             max = windowSize
-        
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0) #CLR
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1) #Pi
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2) #Dn/Ds
-            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3)
+            
+               
+            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0, start, end, display) #CLR
+            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1, start, end, display) #Pi
+            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2, start, end, display) #Dn/Ds
+            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3, start, end, display)
     
     
     
-def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, type):
+def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, type, start, end, display):
 
     if type == 3:
         return ne(popSize, mutations,  maxPos, total, fileName)
     else:
         #Window calculations depending on type called
-        i = 0
+        start = start
+        maxPos = end
+        #start = 120*1000
+        #maxPos = 220*1000
+        
+        i = start/windowSize  #start / window size (zero usually)
         windowsProb = []
         totalProb = callCorrectType(0, maxPos, mutations, total, type, popSize, maxPos)
         while windowSize*(i) <= maxPos:
@@ -74,12 +136,12 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         windows = []
         i = 1
         while i <= len(windowsProb):
-            windows.append(i*windowSize)
+            windows.append(i*windowSize+start)
             i = i+1
             
         #graph stuff
         fig, ax = plt.subplots()
-        barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.9)
+        barlist = ax.bar(windows, windowsProb, lw = 0.25, edgecolor = 'black', width = windowSize * 0.99)
         fig.canvas.set_window_title("" + axisLable(type) + "[" + str(windowSize) + "]") #Window title
         
         rect = fig.patch
@@ -96,11 +158,11 @@ def plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windo
         ax.set_title(fileName.capitalize() + " " + axisLable(type) + " Plot", fontsize=14)
         ax.grid(True, ls = '--', lw = .5)
         plt.tight_layout()
-        #plt.show()
         saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/plots/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
         plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
-        
+        if(display):
+            plt.show()
         plt.close()
 
 #name of correct type
@@ -161,13 +223,6 @@ def piProbability(posMin, posMax, mutations, total, maxPos):
     a =  prob/divide
     b = a / maxPos
     return b
-    
-    #in the script we are
-    
-    #a) multiplying the how many people have the mutation by the total number of samples - many people have the mutation
-    #b) multiplying how many sample there are by 1 - that and then didide by 2
-    
-    # and finally divide a by b
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
