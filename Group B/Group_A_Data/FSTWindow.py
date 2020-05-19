@@ -35,7 +35,6 @@ def main():
         print()
         plt.figure(i)
         plt.title('FST in Windows')
-        plt.xticks(range(numWindows))
         plt.xlabel('Windows')
         plt.ylabel('FST')
         plt.scatter(range(len(windowFST)), windowFST)

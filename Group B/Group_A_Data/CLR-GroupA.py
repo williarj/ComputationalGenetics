@@ -54,7 +54,7 @@ def main():
     ax.set_xlabel('Window')
     ax.set_ylabel('CLR')
     ax.grid(True)
-    plt.savefig(sys.argv[1].split(".")[0] + '.png')
+    plt.savefig(sys.argv[1].split(".")[0] + '.png', dpi=300)
     
 def countProbability(posMin, posMax, mutations, total):
     pos = posMin
