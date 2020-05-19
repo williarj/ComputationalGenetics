@@ -3,7 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 # requires file to be  in SLiM's MS format
-#input: gSize, number of windows, total pop file, sub pop 1, sub pop 2...
+#input: genome Size, number of windows, total pop file, sub pop 1, sub pop 2...
 
 def main():
     num_file = len(sys.argv) - 3
