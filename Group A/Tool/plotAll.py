@@ -10,7 +10,8 @@ import os
 #!
 #mutation type needs to be adjusted for Dn/Ds depending on data
 
-#arguments: folder containing samples, start pos (x1000), end pos (x1000)- e for max pos, # of windows (bars)
+#arguments: folder containing samples, ***, start pos (x1000), end pos (x1000)- e for max pos, # of windows (bars)
+#*** optional arguments: type, supress graph window(s), specific file
 
 def main():
     req = ''
@@ -103,11 +104,14 @@ def main():
            
             max = windowSize
             
-               
-            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0, start, end, display) #CLR
-            plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1, start, end, display) #Pi
-            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2, start, end, display) #Dn/Ds
-            #plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3, start, end, display)
+            if calCLR:
+                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  0, start, end, display) #CLR
+            if calPi:
+                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  1, start, end, display) #Pi
+            if calcDnDs:
+                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize,  2, start, end, display) #Dn/Ds
+            if calcNe:
+                plot(total, mutations, maxPos, popSize, max, fileName, stdDevMultiLim, windowSize, 3, start, end, display) #Ne
     
     
     
