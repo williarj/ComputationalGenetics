@@ -54,6 +54,7 @@ def main():
             file = open(fullPath, "r")
             fileName = os.path.basename(fileF).split(".")[0]
             print("working on "+fileName+" graphs.")
+            #print()
             stdDevMultiLim = 1.5
             if (len(sys.argv) >= 6+argvI):
                 stdDevMultiLim = float(sys.argv[5+argvI])
@@ -138,7 +139,7 @@ def plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize
        
         for i in range(0, len(barlist)):
             if (np.abs(windowsProb[i]-np.mean(windowsProb)) > stdDevMultiLim*np.std(windowsProb)):
-                barlist[i].set_facecolor('orangered')
+                barlist[i].set_facecolor('dodgerblue')
             else:
                 barlist[i].set_facecolor('gray')
        
@@ -147,7 +148,7 @@ def plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize
         ax.set_title(fileName.capitalize() + " " + axisLable(type) + " Plot", fontsize=14)
         ax.grid(True, ls = '--', lw = .5)
         plt.tight_layout()
-        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/Results/plots/"
+        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/StarWarsAnalysis/Results/plots/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
         if save:
             plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')

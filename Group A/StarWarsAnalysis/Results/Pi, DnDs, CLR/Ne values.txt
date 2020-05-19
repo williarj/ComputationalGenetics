@@ -1,0 +1,35 @@
+The Ne of Gung-p3 is aproximately:
+527.7562993237356
+
+The Ne of Crol-p2 is aproximately:
+466.754763134535
+
+The Ne of Ewok-p7 is aproximately:
+1215.8024296035385
+
+The Ne of IntWook-p9 is aproximately:
+152.21311173780538
+
+The Ne of Abed-p5 is aproximately:
+362.3467134038181
+
+The Ne of Human-p6 is aproximately:
+1010.5978924683686
+
+The Ne of SubHum-p60 is aproximately:
+965.9746734737433
+
+The Ne of MonC-p4 is aproximately:
+374.45193348311415
+
+The Ne of IntHum-p10 is aproximately:
+377.1156186204608
+
+The Ne of CA-p1 is aproximately:
+382.57801978061826
+
+The Ne of Wook-p8 is aproximately:
+101.49883666717975
+
+The Ne of Twi-p11 is aproximately:
+2549.8679891178863
