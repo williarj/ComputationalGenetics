@@ -148,7 +148,7 @@ def plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize
         ax.set_title(fileName.capitalize() + " " + axisLable(type) + " Plot", fontsize=14)
         ax.grid(True, ls = '--', lw = .5)
         plt.tight_layout()
-        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/StarWarsAnalysis/Results/plots/"
+        saveFolder = "/Users/heinrich/ComputationalGenetics/Group A/StarWarsAnalysis/Results/Pi, DnDs, CLR/"
         location = (saveFolder + fileName + axisLable(type) + "[" + str(windowSize) + "]")
         if save:
             plt.savefig(location, dpi = 300, optimize = True, bbox_inches='tight')
