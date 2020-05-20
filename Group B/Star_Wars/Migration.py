@@ -1,7 +1,8 @@
 import sys
 import os
 import numpy as np
-#usage: n total subpop1
+# requires files in MS format
+#usage: pop size of island, total file, island pop file
 def main():
 	num_file = len(sys.argv) - 2
 	n = int(sys.argv[1])
@@ -45,7 +46,6 @@ def parsePopulation(lines):
 			if(float(lines[j][i]) == 0):
 				num_zero += 1
 		temp_q = num_zero/(len(lines) - 3)
-		print(num_zero)
 		h[positions[i]] = temp_q * (1-temp_q)
 	return h
 
