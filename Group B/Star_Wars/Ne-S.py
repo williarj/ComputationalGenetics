@@ -1,6 +1,7 @@
 import sys
 import os
 import numpy as np
+#requires file in SLiMs MS format
 #usage: mutation_rate genome_size subpop1 subpop2 .. s/4*mu
 def main():
 	num_file = len(sys.argv) - 3
