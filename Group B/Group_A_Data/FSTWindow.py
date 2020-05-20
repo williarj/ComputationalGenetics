@@ -30,6 +30,7 @@ def main():
         filename = tempStr[len(tempStr) - 1]
         print('Avg FST result for ', sys.argv[4+i], ': ', np.round(sumFST/gSize,3))
         print('FST in windows of size ', gSize/numWindows, ': ')
+        print('fst effective length', len(fst[i]))
         windowFST = fstWindows(fst[i], numWindows, gSize)
         print(windowFST)
         print()
@@ -60,7 +61,7 @@ def fstWindows(fst, numWindows, gSize):
 def generateFST(h_s, h_t):
     fst = []
     for key in h_s:
-        if(h_s[key] == 0):
+        if(h_t[key] == 0):
             continue
         fst.append([key, 1-(h_s[key]/h_t[key])])
     fst = sorted(fst, key = lambda m:m[0])
