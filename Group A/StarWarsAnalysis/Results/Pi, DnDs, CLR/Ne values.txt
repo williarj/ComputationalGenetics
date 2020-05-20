@@ -1,35 +1,47 @@
-The Ne of Gung-p3 is aproximately:
+The Ne of Gung-p3 is approximately:
 527.7562993237356
+Pi value of 0.0002111025197294942
 
-The Ne of Crol-p2 is aproximately:
+The Ne of Crol-p2 is approximately:
 466.754763134535
+Pi value of 0.000186701905253814
 
-The Ne of Ewok-p7 is aproximately:
+The Ne of Ewok-p7 is approximately:
 1215.8024296035385
+Pi value of 0.00048632097184141533
 
-The Ne of IntWook-p9 is aproximately:
+The Ne of IntWook-p9 is approximately:
 152.21311173780538
+Pi value of 6.0885244695122153e-05
 
-The Ne of Abed-p5 is aproximately:
+The Ne of Abed-p5 is approximately:
 362.3467134038181
+Pi value of 0.00014493868536152724
 
-The Ne of Human-p6 is aproximately:
+The Ne of Human-p6 is approximately:
 1010.5978924683686
+Pi value of 0.0004042391569873474
 
-The Ne of SubHum-p60 is aproximately:
+The Ne of SubHum-p60 is approximately:
 965.9746734737433
+Pi value of 0.0003863898693894973
 
-The Ne of MonC-p4 is aproximately:
+The Ne of MonC-p4 is approximately:
 374.45193348311415
+Pi value of 0.00014978077339324565
 
-The Ne of IntHum-p10 is aproximately:
+The Ne of IntHum-p10 is approximately:
 377.1156186204608
+Pi value of 0.0001508462474481843
 
-The Ne of CA-p1 is aproximately:
+The Ne of CA-p1 is approximately:
 382.57801978061826
+Pi value of 0.0001530312079122473
 
-The Ne of Wook-p8 is aproximately:
+The Ne of Wook-p8 is approximately:
 101.49883666717975
+Pi value of 4.0599534666871895e-05
 
-The Ne of Twi-p11 is aproximately:
+The Ne of Twi-p11 is approximately:
 2549.8679891178863
+Pi value of 0.0010199471956471545

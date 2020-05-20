@@ -228,9 +228,10 @@ def dndsProbability(posMin, posMax, mutations, total):
 #Ne
 def ne(popSize, mutations, maxPos, total, fileName):
     mutationRate = 10**-7
-    print("The Ne of " + fileName + " is aproximately:")
+    print("The Ne of " + fileName + " is approximately:")
     print(piProbability(0,maxPos, mutations, total, maxPos)/(4.0*float(mutationRate))) #4x
-    
+    print("Pi value of "+str(piProbability(0,maxPos, mutations, total, maxPos)))
+    print()
     
 #stores mutation type (eg m1) & how many individuals in sample have it
 class Mut:
