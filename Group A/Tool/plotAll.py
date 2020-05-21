@@ -5,6 +5,7 @@ import numpy as np
 
 #!
 #mutation type needs to be adjusted for Dn/Ds depending on data
+
 #arguments: folder containing samples, ***, start pos (x1000), end pos (x1000)- e for max pos, # of windows (bars)
 #*** optional arguments: type, supress graph window(s) or don't save, specific file
 
@@ -96,7 +97,7 @@ def main():
                 windowSize = int((end-start)/int(sys.argv[4+argvI]))
                 print("custom window width of: "+str(windowSize))
             else:
-                windowSize = int((end-start)/50)
+                windowSize = int((end-start)/10)
             
             if calCLR:
                 plot(total, mutations, maxPos, popSize, fileName, stdDevMultiLim, windowSize,  0, start, end, display, save)
@@ -212,10 +213,11 @@ def piProbability(posMin, posMax, mutations, total, maxPos):
 
 #Dn/Ds window calculation
 def dndsProbability(posMin, posMax, mutations, total):
+    sysMutations = ("m1", "m2", "m5", "m7", "m8") #CHANGE DEPENDING ON DATA
     countSyn, countNonSyn, pos = 0, 0, posMin
     while pos <= posMax:
         if pos in mutations:
-            if mutations[pos].type == "m1" or mutations[pos].type == "m2":
+            if mutations[pos].type in sysMutations:
                 countSyn += 1
             else:
                 countNonSyn += 1
